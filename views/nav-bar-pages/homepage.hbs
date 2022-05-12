@@ -1,0 +1,31 @@
+<nav>
+
+<a href="/profile">Profile</a>
+<a href="/search">Search</a>
+<a href="/homepage">Homepage</a>
+
+</nav>
+
+<form action="/homepage" method="POST" enctype="multipart/form-data">
+
+
+<h2>FEED</h2>
+
+{{#each recipe}}
+
+<div class="">
+
+<h4>{{title}}</h4>
+
+<p>Description: {{description}}</p>
+
+<img class="room-img {{_id}}" src="{{imageUrl}}" alt="{{name}}" />
+
+<h4>Made by: {{user.email}}</h4>
+
+<a href="/recipe/{{_id}}">See more</a>
+</div>
+
+{{/each}}
+
+</form>

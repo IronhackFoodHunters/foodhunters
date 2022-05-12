@@ -1,0 +1,22 @@
+<nav>
+
+<a href="/profile">Profile</a>
+<a href="/search">Search</a>
+<a href="/homepage">Homepage</a>
+
+</nav>
+
+<form action="/recipe/{{_id}}" method="POST" enctype="multipart/form-data">
+
+
+<h1>{{title}}</h1>
+
+  <label>Image:
+  <input type="file" name="imageUrl"/>
+  </label>
+
+<p>Description: {{description}}</p>
+
+<p>Instructions: {{instructions}} </p>
+
+</form>
