@@ -1,5 +1,13 @@
+<nav>
+
+<a href="/profile">Profile</a>
+<a href="/search">Search</a>
+<a href="/homepage">Homepage</a>
+
+</nav>
+
 <h2>Make your recipe</h2>
-<form action="/create/recipe" method="POST">
+<form action="/create/recipe" method="POST" enctype="multipart/form-data">
 
 <label>Title
     <input type="text" name="title" placeholder="Name of recipe">
@@ -13,7 +21,9 @@
     <input type="text" name="category" placeholder="Category">
 </label><br>
 
-add image
+  <label>Image:
+  <input type="file" name="imageUrl"/>
+  </label>
 
 add owner
 
