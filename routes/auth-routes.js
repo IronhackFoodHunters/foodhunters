@@ -33,7 +33,7 @@ router
     })
     .then((userFromDB) => {
       // console.log("Newly created user is: ", userFromDB);
-      res.redirect("/user-profile/user-profile");
+      res.redirect("/profile");
     })
     .catch((err) => res.render("auth/signup", { errorMessage: err.message }))
     .catch((error) => next(error));
@@ -52,9 +52,13 @@ router
         res.render("auth/login", {errorMessage: "Wrong credentials!"})
         return
       } else {
-        if(bcrypt.compareSync(password, user.passwordHash)){
-         req.session.currentUser = user
-		 req.session.email = email
+
+		const encryptedPassword = user.password;
+				const passwordCorrect = bcrypt.compareSync(password, encryptedPassword);
+
+        if(passwordCorrect){
+         req.session.currentUser = user;
+
           res.redirect("/profile") // redirect to wherever you want
           return
         }else{
