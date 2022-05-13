@@ -14,7 +14,6 @@ router.get("/profile", (req, res) => {
 });
 
 
-
 // homepage 
 
 router.get("/homepage", (req, res) =>{
@@ -63,10 +62,8 @@ router
         
         const userId = req.session.currentUser._id;
     
-        //Get the form data from the body
         const { title, instructions, category, likes, owner } = req.body;
     
-        //Get the image url from uploading
         const imageUrl = req.file.path
     
         console.log(title, instructions, category, likes, owner, imageUrl);
@@ -90,17 +87,17 @@ router
         
 })
 
-/*
+
 // search recipe by category
 router.get("/search", (req, res) => {
     res.render("recipe/search")
 })
 
-
-//favourite recipes
 /*
+//favourite recipes
+
 router.get("/favourites", (req, res) =>{
-    res.render("private/liked-post")
+    res.render("user-profile/private/liked-post")
 });
 */
 
