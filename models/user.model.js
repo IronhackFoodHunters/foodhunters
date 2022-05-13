@@ -19,7 +19,6 @@ const userSchema = new Schema({
 	},
     description: { 
         type: String,
-        required: true,
         maxlength: 280,
     },
     imageUrl: {
@@ -28,7 +27,7 @@ const userSchema = new Schema({
 			'https://images.unsplash.com/photo-1513694203232-719a280e022f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=749&q=80'
 	},
 	foodPreferences:{
-		type: String,
+		type: [String],
 		enum: [ "omnivorous", "vegetarian", "vegan", "no carbs", "gluten free", "pescatarian", "sweets", 
 		"drinks", "mediterranean", "asian", "african", "latinomerican", null ],
 		description: "needs to be at least one of the values and is required",
