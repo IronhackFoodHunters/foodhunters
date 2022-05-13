@@ -14,7 +14,6 @@ router.get("/profile", (req, res) => {
 });
 
 
-
 // homepage 
 
 router.get("/homepage", (req, res) =>{
@@ -90,17 +89,17 @@ router
         
 })
 
-/*
+
 // search recipe by category
 router.get("/search", (req, res) => {
     res.render("recipe/search")
 })
 
-
-//favourite recipes
 /*
+//favourite recipes
+
 router.get("/favourites", (req, res) =>{
-    res.render("private/liked-post")
+    res.render("user-profile/private/liked-post")
 });
 */
 
