@@ -58,11 +58,9 @@ POST | /recipecreate | Sends the new recipe to the server and it's created in t
 
 MODELS
 
-// JavaScript
+````` javascript
 
-
-
-// JavaScript
+`````
 
 USER MODEL
 
