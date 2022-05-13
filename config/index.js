@@ -42,17 +42,21 @@ module.exports = (app) => {
   app.use(favicon(path.join(__dirname, "..", "public", "images", "favicon.ico")));
 
   app.use(
-		session({
-			secret: 'PizzaBytes',
-			resave: true,
-			saveUninitialized: true,
-			cookie: {
-				maxAge: 30 * 24 * 60 * 60 * 1000
-			},
-			store: MongoStore.create({
-				mongoUrl: process.env.MONGODB_URI
-			})
-		})
-	);
+    session({
+      secret: process.env.SESSION_SECRET || "cappuccino secret",
+      resave: true,
+      saveUninitialized: false,
+      cookie: {
+        sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+        secure: process.env.NODE_ENV === "production",
+        httpOnly: true,
+        maxAge: 24 * 60 * 60 * 1000,
+      },
+      store: MongoStore.create({
+        mongoUrl: process.env.MONGODB_URI || "mongodb://localhost/default-db",
+      }),
+    })
+  );
+
 
 };
