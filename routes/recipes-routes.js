@@ -62,10 +62,8 @@ router
         
         const userId = req.session.currentUser._id;
     
-        //Get the form data from the body
         const { title, instructions, category, likes, owner } = req.body;
     
-        //Get the image url from uploading
         const imageUrl = req.file.path
     
         console.log(title, instructions, category, likes, owner, imageUrl);
