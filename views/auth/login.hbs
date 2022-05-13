@@ -1,24 +1,16 @@
-<div>
+<h1>Log in form</h1>
 
-  <h3>Login please</h3>
 
-  <form action="/login" method="POST">
+<form action="/auth/login" method='POST'>
 
-    <label>
-      Email
-      <input type="email" name="email" placeholder="chef@ironhack.com" />
-    </label>
+  <label>Username:</label>
+  <input type="text" name="username" required />
 
-    <label>Password
-      <input type="password" name="password" placeholder="********" />
-    </label>
+  <label>Email: </label>
+  <input type="email" name="email" required />
 
-    <button type="submit">Login</button>
+  <label>Password:</label>
+  <input type="password" name="password" required />
 
-  </form>
-
-    {{#if errorMessage}}
-    <p>There was a problem: {{errorMessage}}</p>
-    {{/if}}
-
-</div>
+  <button type="submit">Log in</button>
+</form>
