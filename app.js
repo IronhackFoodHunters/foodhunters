@@ -19,7 +19,7 @@ const app = express();
 require('./config')(app);
 
 // default value for title local
-const projectName = 'iron-rooms';
+const projectName = 'food-hunters';
 const capitalized = (string) =>
 	string[0].toUpperCase() + string.slice(1).toLowerCase();
 
@@ -30,6 +30,9 @@ const isLoggedIn = require('./middleware/isLoggedIn');
 
 const authRoutes = require('./routes/auth-routes');
 app.use('/auth', authRoutes);
+
+const recipesRoutes = require('./routes/recipes-routes');
+app.use('/', recipesRoutes);
 
 //const privateRoutes = require('./auth');
 //app.use('/private', isLoggedIn, privateRoutes);

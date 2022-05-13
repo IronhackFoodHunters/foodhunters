@@ -4,10 +4,10 @@ require("../db/index");
 
 const users = {
 username:"The chef of the house",
-password:,
+password:"",
 email: "thechefofthehouse@chefofthehouse.me",
 description:"I live for cooking",
-imageUrl:,
+imageUrl:"",
 foodPreferences:["omnivorous"],
 recipesMade :[],
 recipesLiked :[],

@@ -1,11 +1,19 @@
 const express = require('express');
 const router = express.Router();
 
-const User = require('./../models/User.model');
+const User = require('./../models/user.model');
 const Recipe = require('./../models/recipe.model');
 const Comments = require('./../models/comments.model');
 
 const fileUploader = require('./../config/cloudinary')
+
+// user profile
+
+router.get("/profile", (req, res) => {
+    res.render("user-profile/user-profile")
+});
+
+
 
 // homepage 
 
@@ -21,12 +29,13 @@ router.get("/homepage", (req, res) =>{
     
 })
 
+/*
 // recipe details
 
 router.get("/recipe-details/:id", (req, res) => {
     const { id } = req.params;
 	
-	Recipe.findById(req.params.id)
+	Recipe.findById(id)
 		.populate('owner')
 		.populate({
 			path: 'comments',
@@ -41,16 +50,17 @@ router.get("/recipe-details/:id", (req, res) => {
 			console.log(error);
 		});
 })
+*/
 
 // create recipe
 
 router
-.route
-.get("/create-recipe", (req, res) => {
-    res.render("user-profile/private/create-recipe")
+.route("/create-recipe")
+.get( (req, res) => {
+    res.render("user-profile/private/create-recipe")})
 
 .post(fileUploader.single('imageUrl'), (req, res) => {
-        //Get the user id from the session
+        
         const userId = req.session.currentUser._id;
     
         //Get the form data from the body
@@ -76,10 +86,11 @@ router
             })
             .catch((error) => {
                 console.log(error);
-            });
+            })
+        
 })
 
-
+/*
 // search recipe by category
 router.get("/search", (req, res) => {
     res.render("recipe/search")
@@ -87,7 +98,10 @@ router.get("/search", (req, res) => {
 
 
 //favourite recipes
-
+/*
 router.get("/favourites", (req, res) =>{
     res.render("private/liked-post")
-})
+});
+*/
+
+module.exports = router;
