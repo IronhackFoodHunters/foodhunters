@@ -7,12 +7,51 @@ const Comments = require('./../models/comments.model');
 
 const fileUploader = require('./../config/cloudinary')
 
+// Food preferences upon signing up
+
+router
+.route ("/food-preferences")
+.get((req, res) => {
+    res.render("auth/foodpreferences")
+});
+
+
 // user profile
 
 router.get("/profile", (req, res) => {
     res.render("user-profile/user-profile")
 });
 
+// edit user profile
+/*
+router
+.route("/profile/:id/edit")
+.get((req, res) => {
+    const { id } = req.params;
+
+    User.findById(id)
+    .populate("foodPreferences")
+    .then((user) =>{
+    Recipe.find()
+    .then((recipes) => {
+        res.render("user-profile/private/edit-profile", {
+            user: user,
+            recipes: {recipes}
+        })
+    })
+})
+})
+.post((req, res) => {
+const { id } = req.params;
+const { username, email, password,  description,
+    imageUrl,foodPreferences,recipesMade } = req.body;
+
+User.findByIdAndUpdate(id, { username, email, password,  description,
+    imageUrl,foodPreferences,recipesMade  })
+.then(() => res.redirect(`/profile`))
+.catch((err) => console.log(err))
+})
+*/
 
 // homepage 
 

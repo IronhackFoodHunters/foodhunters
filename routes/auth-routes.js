@@ -17,7 +17,7 @@ router
 .post((req, res, next) => {
   // console.log("The form data: ", req.body);
 
-  const { username, email, password, foodPreferences } = req.body;
+  const { username, email, password, /*foodPreferences*/ } = req.body;
 
   bcrypt
     .genSalt(saltRounds)
@@ -28,12 +28,12 @@ router
         username,
         password: hashedPassword, 
 		email,
-		foodPreferences
+		/*foodPreferences*/
       });
     })
     .then((userFromDB) => {
       // console.log("Newly created user is: ", userFromDB);
-      res.redirect("/profile");
+      res.redirect("/food-preferences");
     })
     .catch((err) => res.render("auth/signup", { errorMessage: err.message }))
     .catch((error) => next(error));
