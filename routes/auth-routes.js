@@ -8,6 +8,9 @@ const saltRounds = 5;
 
 const User = require("../models/user.model");
 const res = require("express/lib/response");
+const { estimatedDocumentCount } = require("../models/user.model");
+const { route } = require("./recipes-routes");
+
 
 // GET route ==> to display the signup form to users
 router
@@ -68,20 +71,9 @@ router
       }
     })
     .catch(err=>console.log(err))
-
   });
 
 
-  //logout from user profile
-  router.get('/logout', (req, res) => {
-	req.session.destroy((err) => {
-		if (err) {
-			res.render('error', { message: 'Something went wrong! Yikes!' });
-		} else {
-			res.redirect('/');
-		}
-	});
-});
 
 module.exports = router;
 
