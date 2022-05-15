@@ -8,6 +8,9 @@ const saltRounds = 5;
 
 const User = require("../models/user.model");
 const res = require("express/lib/response");
+const { estimatedDocumentCount } = require("../models/user.model");
+const { route } = require("./recipes-routes");
+
 
 // GET route ==> to display the signup form to users
 router
@@ -68,8 +71,8 @@ router
       }
     })
     .catch(err=>console.log(err))
-
   });
+
 
 module.exports = router;
 
