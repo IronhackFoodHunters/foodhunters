@@ -5,7 +5,7 @@ require("../db/index");
 
 const recipes = [
   {title: "Pecan Pie", 
-/*ingredients: `Pie Crust (Short Crust Pastry):
+ingredients: `Pie Crust (Short Crust Pastry):
 1 1/4 cups (175 grams) all-purpose flour
 1/2 teaspoon salt
 1 tablespoon (14 grams) granulated white sugar
@@ -19,7 +19,7 @@ Pecan Filling:
 3 large eggs
 1/4 cup (60 ml) cream
 1/4 teaspoon salt
-1 1/2 - 2 cups (150 - 200 grams) pecans, toasted and coarsely chopped`,*/
+1 1/2 - 2 cups (150 - 200 grams) pecans, toasted and coarsely chopped`,
   instructions: `Pie Crust: In a food processor, place the flour, salt, and sugar and process until combined.
   Add the butter and process until the mixture resembles coarse meal (about 15 seconds).
   Pour 1/8 cup (30 ml) water in a slow, steady stream, through the feed tube until the dough just holds together when pinched.

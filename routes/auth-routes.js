@@ -62,7 +62,7 @@ router
         if(passwordCorrect){
          req.session.currentUser = user;
 
-          res.redirect("/profile") // redirect to wherever you want
+          res.redirect(`/profile`) // redirect to wherever you want
           return
         }else{
           res.render("auth/login", { errorMessage: "Wrong credentials!"});
@@ -72,6 +72,7 @@ router
     })
     .catch(err=>console.log(err))
   });
+
 
 
 module.exports = router;
