@@ -7,6 +7,9 @@ const bcrypt = require("bcrypt");
 const saltRounds = 5;
 
 const User = require("../models/user.model");
+const Recipe = require("./../models/recipe.model");
+const Comments = require("./../models/comments.model");
+
 const res = require("express/lib/response");
 const { estimatedDocumentCount } = require("../models/user.model");
 const { route } = require("./recipes-routes");
