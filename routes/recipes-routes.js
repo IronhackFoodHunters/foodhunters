@@ -13,6 +13,7 @@ const fileUploader = require("./../config/cloudinary");
 router.get("/profile", (req, res) => {
     //const { id } = req.params;
      res.render('user-profile/user-profile', { user: req.session.currentUser })
+     
   });
   
 
@@ -119,7 +120,7 @@ router
       });
   });
 
-// edit recipe
+// edit recipe and food preferences SEARCH 
 router.get("/edit-recipe/:id", (req, res) => {
   const { id } = req.params;
   res.send(id);
@@ -186,5 +187,65 @@ router.post("/recipes/:id/delete", (req, res) => {
 router.get("/favourites", (req, res) => {
   res.render("user-profile/private/liked-post");
 });
+
+
+//research results test - 13.15 TEST TEST TEST
+
+router
+  .route("/:id/edit")
+  .get((req, res) => {
+    const id = req.params.id;
+
+    recipe.findById(id)
+      .populate("recipe")
+      .then((recipe) => {
+        if (recipe.host._id != req.session.userId)
+          res.redirect(`/recipe/${recipe._id}`);
+        else res.render("recipes/recipe-edit", recipe);
+      })
+      .catch((error) => console.log(error));
+  })
+  .post((req, res) => {
+    const { name} =
+      req.body;
+    const id = req.params.id;
+
+    recipe.findByIdAndUpdate(id, {
+      name
+    })
+      .then((recipe) => {
+        res.redirect(`/recipe/${recipe._id}`);
+      })
+      .catch((error) => {
+        res.render("recipes/recipe-edit");
+      });
+  });
+
+router.post("/foodPreferences", (req, res, next) => {
+  recipe.findById(req.params.id)
+    .then((recipe) => {
+      if (
+        recipe.attendees.includes(req.session.userId) ||
+        req.session.userId == recipe.host
+      ) {
+        res.redirect(`/recipes/${recipe._id}`);
+      } else {
+        recipe.findByIdAndUpdate(req.params.id, {
+          $push: { attendees: req.session.userId },
+        })
+          .populate("foodPreferences")
+          .then((recipe) => {
+            User.findByIdAndUpdate(req.session.userId, {
+              $push: { foodPreferences: req.params.id },
+            }).then((user) => {
+              res.redirect(`/foodPreferences`);
+            });
+          })
+          .catch((error) => console.log(error));
+      }
+    })
+    .catch((error) => console.log(error));
+});
+
 
 module.exports = router;

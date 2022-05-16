@@ -1,7 +1,30 @@
 <nav>
-
-<a href="/profile">Profile</a>
-<a href="/search">Search</a>
-<a href="/homepage">Homepage</a>
-
+    <a href="/profile">Profile</a>
+    <a href="/homepage">Homepage</a>
 </nav>
+
+<section class="filterfood" id="filterfoodPreferences">
+    <h3>Find what you need</h3>
+
+    <div id="filterEvent-form">
+        <form action="/foodPerferences" method="POST">
+            <button type="submit">Filter</button>
+            <label for="foodPreferences"> foodPreferences:
+                <select id="foodPreferences">
+                    <option label="omnivorous"> omnivorous</option>
+                    <option label="vegetarian"> vegetarian</option>
+                    <option label="vegan"> vegan</option>
+                    <option label="drinks"> drinks</option>
+                    <option label="mediterranean"> mediterranean</option>
+                    <option label="african"> african</option>
+                    <option label="no carbs"> no carbs</option>
+                    <option label="gluten free"> gluten free</option>
+                    <option label="pescatarian"> pescatarian</option>
+                    <option label="sweets"> sweets</option>
+                    <option label="latinomerican"> latinomerican</option>
+                    <option label="asian"> asian</option>
+            </label>
+        </form>
+        </section>
+
+    
