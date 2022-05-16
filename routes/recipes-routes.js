@@ -7,18 +7,23 @@ const Comments = require("./../models/comments.model");
 
 const fileUploader = require("./../config/cloudinary");
 
+
+// user profile
+
+router.get("/profile", (req, res) => {
+    //const { id } = req.params;
+     res.render('user-profile/user-profile', { user: req.session.currentUser })
+  });
+  
+
+
 // Food preferences upon signing up
 
 router.route("/food-preferences").get((req, res) => {
   res.render("auth/foodpreferences");
 });
 
-// user profile
 
-router.get("/profile", (req, res) => {
-  const { id } = req.params;
-  res.render(`user-profile/user-profile`);
-});
 
 // edit user profile
 /*
@@ -66,11 +71,13 @@ router.get("/homepage", (req, res) => {
 
 // recipe details
 
-router.get("/recipe-details", (req, res) => {
+router
+.route("/recipe-details/:id")
+.get((req, res) => {
   const { id } = req.params;
   res.send(id);
 
-  Recipe.findById(id)
+  Recipe.findById(req.params.id)
     .populate("owner")
     .populate({
       path: "comments",
@@ -84,23 +91,50 @@ router.get("/recipe-details", (req, res) => {
     .catch((error) => {
       console.log(error);
     });
+})
+.post((req, res) => {
+	//GET the values
+	const recipeId = req.params.id;
+	const { comment } = req.body;
+
+	Comments.create({
+		user: req.session.currentUser._id,
+		comment // comment: req.body.comment
+	})
+		.then((newComment) => {
+			console.log(newComment);
+
+			Recipe.findByIdAndUpdate(recipeId, {
+				$addToSet: { comments: newComment._id }
+			})
+				.then((updatedRecipe) => {
+					console.log(updatedRecipe);
+					res.redirect(`/homepage/${recipeId}`);
+				})
+				.catch((error) => {
+					console.log(error);
+				});
+		})
+		.catch((error) => {
+			console.log(error);
+		});
 });
+
 
 // create recipe
 router
-  .route("/create-recipe")
+  .route("/private/create-recipe")
   .get((req, res) => {
     res.render("user-profile/private/create-recipe");
   })
-
   .post(fileUploader.single("imageUrl"), (req, res) => {
     const userId = req.session.currentUser._id;
+    
+    const { title, ingredients, instructions, category} = req.body;
 
-    const { title, instructions, category, likes, owner } = req.body;
+   let imageUrl = req.file.path;
 
-    const imageUrl = req.file.path;
-
-    console.log(title, instructions, category, likes, owner, imageUrl);
+    console.log(title, ingredients, instructions, category, imageUrl);
 
     Recipe.create({
       title,
@@ -113,7 +147,7 @@ router
     })
       .then((createdRecipe) => {
         console.log(createdRecipe);
-        res.redirect("/recipe/recipe-details");
+        res.redirect(`/recipe/recipe-details/${id}`);
       })
       .catch((error) => {
         console.log(error);
