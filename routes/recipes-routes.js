@@ -34,7 +34,8 @@ router.get("/homepage", (req, res) => {
   Recipe.find()
     .populate("title")
     .then((recipes) => {
-      res.render("recipe/homepage", { recipes });
+      const reversed = recipes.reverse();
+      res.render("recipe/homepage", { reversed });
     })
     .catch((error) => {
       console.log(error);
