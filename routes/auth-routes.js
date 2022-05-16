@@ -15,6 +15,8 @@ const res = require("express/lib/response");
 const { estimatedDocumentCount } = require("../models/user.model");
 const { route } = require("./recipes-routes");
 
+const fileUploader = require("../config/cloudinary")
+
 
 // Sign up
 router
@@ -100,9 +102,8 @@ router
 router
 .route("/profile/edit")
 .get((req, res) => {
-    const { id } = req.params;
 
-    User.findById(id)
+    User.findById(req.session.currentUser._id)
     .populate("foodPreferences")
     .then((user) =>{
     Recipe.find()
@@ -114,15 +115,16 @@ router
     })
 })
 })
-.post((req, res) => {
-const { id } = req.params;
-const { username, email, password,  description,
-    imageUrl,foodPreferences,recipesMade } = req.body;
+.post(fileUploader.single("imageUrl"),(req, res) => {
+	const id = req.session.currentUser._id;
+	const { username, email, password,  description,foodPreferences,recipesMade } = req.body;
+	let imageUrl = undefined
+	if(req.file)imageUrl = req.file.path
 
-User.findByIdAndUpdate(id, { username, email, password,  description,
-    imageUrl,foodPreferences,recipesMade  })
-.then(() => res.redirect(`/profile`))
-.catch((err) => console.log(err))
+	User.findByIdAndUpdate(id, { username, email, password,  description,
+		imageUrl,foodPreferences,recipesMade  })
+	.then(() => res.redirect('/profile'))
+	.catch((err) => console.log(err))
 })
 
 
