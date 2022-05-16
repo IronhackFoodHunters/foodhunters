@@ -10,19 +10,36 @@
 <form action="/private/create-recipe" method="POST" enctype="multipart/form-data">
     <label>Title
         <input type="text" name="title" placeholder="Name of recipe">
-    </label><br>
+    </label>
+<br>
 
     <label>Ingredients
         <input type="text" name="ingredients" placeholder="Ingredients">
-    </label><br>
+    </label>
+<br>
 
     <label>Instructions
         <input type="text" name="instructions" placeholder="Instructions">
-    </label><br>
+    </label>
+<br>
 
-    <label>Category
-        <input type="text" name="category" placeholder="Category">
-    </label><br>
+    <label>Category <br>
+        <select name="foodPreferences" id="foodPreferences" multiple>
+            <option value="omnivorous">Omnivorous</option>
+            <option value="vegetarian">Vegetarian</option>
+            <option value="vegan">Vegan</option>
+            <option value="drinks">Drinks</option>
+            <option value="mediterranean">Mediterranean</option>
+            <option value="african">African</option>
+            <option value="no carbs">No carbs</option>
+            <option value="gluten free">Gluten free</option>
+            <option value="Pescatarian"> Pescatarian</option>
+            <option value="Sweets"> Sweets </option>
+            <option value="Latinomerican"> Latinomerican</option>
+            <option value="asian"> Asian</option>
+        </select>
+    </label>
+<br>
 
     <label>Image:
     <input type="file" name="imageUrl"/>
