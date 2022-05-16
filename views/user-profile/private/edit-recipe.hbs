@@ -1,25 +1,51 @@
+<nav>
+
+  <a href="/profile">Profile</a>
+  <a href="/search">Search</a>
+  <a href="/homepage">Homepage</a>
+
+</nav>
+
 <h2>Edit your recipe</h2>
 
-<form action="/recipe-deatils/{{recipe._id}}/edit" method="POST">
+<form action="/edit-recipe/{{_recipe.id}}edit" method="POST">
 
-    <label for="title"> Title:</label>
-    <input type="text" name="title" value="{{recipe.title}}">
+  <label for="title"> Title:</label>
+  <input type="text" name="title" value="{{recipe.title}}" />
+ 
+  <br />
+  <label for="ingredients"> Ingredients:</label>
+  <input type="text" name="ingredients" value="{{recipe.ingredients}}" />
+  <br />
+  
+  <br />
+  <label for="instructions"> Instructions:</label>
+  <input type="text" name="instructions" value="{{recipe.instructions}}" />
+  <br />
 
-    <label for="ingredients"> Ingredients:</label>
-    <input type="text" name="ingredients" value="{{recipe.ingredients}}">
+<p> Category </p>
 
-    <label for="instructions"> Instructions:</label>
-    <input type="text" name="instructions" value="{{recipe.instructions}}">
+<select id="foodPreferences" multiple>
+  <option label="omnivorous"> omnivorous</option>
+  <option label="vegetarian"> vegetarian</option>
+  <option label="vegan"> vegan</option>
+  <option label="drinks"> drinks</option>
+  <option label="mediterranean"> mediterranean</option>
+  <option label="african"> african</option>
+  <option label="no carbs"> no carbs</option>
+  <option label="gluten free"> gluten free</option>
+  <option label="pescatarian"> pescatarian</option>
+  <option label="sweets"> sweets</option>
+  <option label="latinomerican"> latinomerican</option>
+  <option label="asian"> asian</option>
+   <!--<input type="text" name="instructions" value="{{user.foodPreferences}}" />-->
 
-    <label for="category"></label>
-    <select name="category" multiple>
-        
-    {{#each celebrities.celebrities}}
-        <option value="{{_id}}">{{name}}</option>
-    {{/each}}
-    </select>
+</select> 
+  <br />
 
-    <button type="submit">Edit</button>
-    <br>
-    <a href="/movies">Go back to movies</a>
-</form>
+  <label for="image"> Image:</label>
+  <input type="file" name="imageUrl" />
+  <br />
+  <button type="submit"> <a href="/profile"> Confirm </a></button>
+  <br />
+  <a href="/profile">Go back</a>
