@@ -1,5 +1,5 @@
 <nav>
-
+ 
   <a href="/profile">Profile</a>
   <a href="/search">Search</a>
   <a href="/homepage">Homepage</a>
@@ -16,14 +16,9 @@
   <br />
   <label for="email"> Email:</label>
   <input type="text" name="instructions" value="{{user.email}}" />
-  <br />
 
   <br />
-  <label for="password"> Password:</label>
-  <input type="text" name="genre" value="{{user.password}}" />
-
-  <br />
-<p> would you like to eat? </p>
+<p> Would you like to eat? </p>
 
 <select id="foodPreferences" multiple>
   <option label="omnivorous"> omnivorous</option>
@@ -39,14 +34,9 @@
   <option label="latinomerican"> latinomerican</option>
   <option label="asian"> asian</option>
    <!--<input type="text" name="instructions" value="{{user.foodPreferences}}" />-->
-
 </select> 
-  <br />
 
-   <br />
-  <label for="recipesmade"> Your recipes:</label>
-  <input type="text" name="recipesmade" value="{{user.recipesMade}}" />
-  <br />
+<br>
 
   <label for="image"> Image:</label>
   <input type="file" name="imageUrl" />
@@ -58,10 +48,9 @@
 {{#each user.user}}
 <option value="{{_id}}"> {{username}}</option>
 <option value="{{_email}}"> {{email}}</option>
-<option value="{{_password}}"> {{password}}</option>
 <option value="{{_recipesmade}}"> {{recipesmade}}</option>
 {{/each}}
-
+<br>
 
 <button type="submit">
     <a href="/auth/logout">Log out</a>
