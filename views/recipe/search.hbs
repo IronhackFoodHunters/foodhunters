@@ -7,10 +7,10 @@
     <h3>Find what you need</h3>
 
     <div id="filterEvent-form">
-        <form action="/searchresults" method="POST">
+        <form action="/search-results" method="GET">
             <button type="submit">Filter</button>
             <label for="foodPreferences"> foodPreferences:
-                <select id="foodPreferences">
+                <select name="filter" id="foodPreferences">
                     <option label="omnivorous"> omnivorous</option>
                     <option label="vegetarian"> vegetarian</option>
                     <option label="vegan"> vegan</option>
