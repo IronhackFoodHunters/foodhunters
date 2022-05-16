@@ -6,13 +6,17 @@ const router = express.Router();
 
 
 const fileUploader = require("./../config/cloudinary");
+const { db } = require("./../models/user.model");
 
 
 // user profile
 
 router.get("/profile", (req, res) => {
     //const { id } = req.params;
-     res.render('user-profile/user-profile', { user: req.session.currentUser })
+    User.findById(req.session.currentUser._id)
+    .then((findUser)=>{res.render('user-profile/user-profile', { user: findUser })
+    
+  })
      
   });
   

@@ -5,6 +5,14 @@
 <a href="/homepage">Homepage</a>
 
 </nav>
+
+<form action="/profile/edit" method="POST">
+  <img src="{{user.imageUrl}}" alt="">
+</form>
+
+
+
+
 {{#if user}}
   <h2>{{user.username}}</h2>
   <h3>{{user.email}}</h3>
