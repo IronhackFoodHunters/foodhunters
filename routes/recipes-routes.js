@@ -27,7 +27,7 @@ router.route("/food-preferences").get((req, res) => {
 
 router.get("/homepage", (req, res) => {
   Recipe.find()
-    .populate("owner")
+    .populate("title")
     .then((recipes) => {
       res.render("recipe/homepage", { recipes });
     })
@@ -62,7 +62,7 @@ router
 	const recipeId = req.params.id;
 	const { comment } = req.body;
 
-	Comments.create({
+	Comment.create({
 		user: req.session.currentUser._id,
 		comment // comment: req.body.comment
 	})
