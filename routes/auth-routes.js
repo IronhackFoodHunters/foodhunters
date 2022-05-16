@@ -7,8 +7,8 @@ const bcrypt = require("bcrypt");
 const saltRounds = 5;
 
 const User = require("../models/user.model");
-const Recipe = require("./../models/recipe.model");
 const Comments = require("./../models/comments.model");
+//const likedPost = require('..auth/liked-post') (bjork tried to add this)
 
 
 const Recipe = require('../models/recipe.model');
@@ -89,6 +89,12 @@ router.get("/logout", (req, res) => {
   });
 });
 
+/*
+router
+.route("/auth/liked-post")
+.get((req, res) => {
+	res.render("auth/lliked-post")
+})*/
 
 
 router
@@ -108,7 +114,8 @@ router
     })
 })
 })
-.post((req, res) => {
+
+router.post((req, res) => {
 const { id } = req.params;
 const { username, email, password,  description,
     imageUrl,foodPreferences,recipesMade } = req.body;
