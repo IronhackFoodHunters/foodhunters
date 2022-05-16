@@ -1,9 +1,9 @@
+const User = require("./../models/user.model");
+const Recipe = require("./../models/recipe.model");
+const Comment = require("./../models/comments.model");
 const express = require("express");
 const router = express.Router();
 
-const User = require("./../models/user.model");
-const Recipe = require("./../models/recipe.model");
-const Comments = require("./../models/comments.model");
 
 const fileUploader = require("./../config/cloudinary");
 
@@ -23,39 +23,6 @@ router.route("/food-preferences").get((req, res) => {
   res.render("auth/foodpreferences");
 });
 
-
-
-// edit user profile
-/*
-router
-.route("/profile/:id/edit")
-.get((req, res) => {
-    const { id } = req.params;
-
-    User.findById(id)
-    .populate("foodPreferences")
-    .then((user) =>{
-    Recipe.find()
-    .then((recipes) => {
-        res.render("user-profile/private/edit-profile", {
-            user: user,
-            recipes: {recipes}
-        })
-    })
-})
-})
-.post((req, res) => {
-const { id } = req.params;
-const { username, email, password,  description,
-    imageUrl,foodPreferences,recipesMade } = req.body;
-
-User.findByIdAndUpdate(id, { username, email, password,  description,
-    imageUrl,foodPreferences,recipesMade  })
-.then(() => res.redirect(`/profile`))
-.catch((err) => console.log(err))
-})
-*/
-
 // homepage
 
 router.get("/homepage", (req, res) => {
@@ -70,7 +37,6 @@ router.get("/homepage", (req, res) => {
 });
 
 // recipe details
-
 router
 .route("/recipe-details/:id")
 .get((req, res) => {
@@ -78,23 +44,21 @@ router
   //res.send(id);
 
   Recipe.findById(id)
-    .populate("owner")
+    .populate("comments")
     /*.populate({
       path: "comments",
       populate: {
         path: "user",
       },
     })*/
-    .populate('comments')
     .then((recipe) => {
-      res.render("recipe/recipe-details", { recipe });
+      res.render("recipe/recipe-details", recipe);
     })
     .catch((error) => {
       console.log(error);
     });
 })
 .post((req, res) => {
-	//GET the values
 	const recipeId = req.params.id;
 	const { comment } = req.body;
 
@@ -133,7 +97,7 @@ router
     
     const { title, ingredients, instructions, category} = req.body;
 
-   //let imageUrl = req.file.path;
+   let imageUrl = req.file.path;
 
     console.log(title, ingredients, instructions, category);
 
@@ -142,7 +106,7 @@ router
       ingredients,
       instructions,
       category,
-      //imageUrl,
+      imageUrl,
       //likes,
       owner: userId,
     })
@@ -206,6 +170,15 @@ router
 // search recipe by category
 router.get("/search", (req, res) => {
   res.render("recipe/search");
+});
+
+// recipe delete
+router.post("/recipes/:id/delete", (req, res) => {
+  const { id } = req.params;
+
+  Recipe.findByIdAndRemove(id)
+    .then(() => res.redirect("/"))
+    .catch((err) => console.log(err));
 });
 
 //favourite recipes

@@ -7,7 +7,6 @@ const bcrypt = require("bcrypt");
 const saltRounds = 5;
 
 const User = require("../models/user.model");
-const Recipe = require("./../models/recipe.model");
 const Comments = require("./../models/comments.model");
 
 
@@ -90,7 +89,7 @@ router.get("/logout", (req, res) => {
 });
 
 
-
+// Edit profile
 router
 .route("/profile/edit")
 .get((req, res) => {
