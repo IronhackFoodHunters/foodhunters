@@ -10,6 +10,8 @@ const User = require("../models/user.model");
 const Recipe = require("./../models/recipe.model");
 const Comments = require("./../models/comments.model");
 
+
+const Recipe = require('../models/recipe.model');
 const res = require("express/lib/response");
 const { estimatedDocumentCount } = require("../models/user.model");
 const { route } = require("./recipes-routes");
@@ -86,6 +88,37 @@ router.get("/logout", (req, res) => {
     }
   });
 });
+
+
+
+router
+.route("/profile/edit")
+.get((req, res) => {
+    const { id } = req.params;
+
+    User.findById(id)
+    .populate("foodPreferences")
+    .then((user) =>{
+    Recipe.find()
+    .then((recipes) => {
+        res.render("user-profile/private/edit-profile", {
+            user: user,
+            recipes: {recipes}
+        })
+    })
+})
+})
+.post((req, res) => {
+const { id } = req.params;
+const { username, email, password,  description,
+    imageUrl,foodPreferences,recipesMade } = req.body;
+
+User.findByIdAndUpdate(id, { username, email, password,  description,
+    imageUrl,foodPreferences,recipesMade  })
+.then(() => res.redirect(`/profile`))
+.catch((err) => console.log(err))
+})
+
 
 module.exports = router;
 
