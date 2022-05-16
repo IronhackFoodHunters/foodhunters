@@ -62,7 +62,7 @@ router
 	const recipeId = req.params.id;
 	const { comment } = req.body;
 
-	Comments.create({
+	Comment.create({
 		user: req.session.currentUser._id,
 		comment // comment: req.body.comment
 	})
@@ -120,24 +120,18 @@ router
   });
 
 // edit recipe
-router.get("/edit-recipe/:id", (req, res) => {
-  const { id } = req.params;
-  res.send(id);
-  res.render("user-profile/private/edit-recipe");
-});
-
 router
   .route("/edit-recipe/:id")
   .get((req, res) => {
     const { id } = req.params;
 
-    User.findById(id)
+    Recipe.findById(id)
       .populate("foodPreferences")
       .then((user) => {
-        Recipe.find().then((recipes) => {
+        Recipe.find().then((recipe) => {
           res.render("recipe/recipe-details", {
             user: user,
-            recipes: { recipes },
+            recipes: { recipe },
           });
         });
       });
@@ -167,13 +161,43 @@ router
       .catch((err) => console.log(err));
   });
 
+  /* 
+router
+.route("/profile/edit")
+.get((req, res) => {
+    const { id } = req.params;
+
+    User.findById(id)
+    .populate("foodPreferences")
+    .then((user) =>{
+    Recipe.find()
+    .then((recipes) => {
+        res.render("user-profile/private/edit-profile", {
+            user: user,
+            recipes: {recipes}
+        })
+    })
+})
+})
+.post((req, res) => {
+const { id } = req.params;
+const { username, email, password,  description,
+    imageUrl,foodPreferences,recipesMade } = req.body;
+
+User.findByIdAndUpdate(id, { username, email, password,  description,
+    imageUrl,foodPreferences,recipesMade  })
+.then(() => res.redirect(`/profile`))
+.catch((err) => console.log(err))
+})
+  */
+
 // search recipe by category
 router.get("/search", (req, res) => {
   res.render("recipe/search");
 });
 
 // recipe delete
-router.post("/recipes/:id/delete", (req, res) => {
+router.post("/recipe-details/:id/delete", (req, res) => {
   const { id } = req.params;
 
   Recipe.findByIdAndRemove(id)

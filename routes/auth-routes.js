@@ -47,6 +47,7 @@ router
       .catch((error) => next(error));
   });
 
+  //user login
 router
   .route("/login")
   .get((req, res) => res.render("auth/login"))
@@ -114,8 +115,7 @@ router
     })
 })
 })
-
-router.post((req, res) => {
+.post((req, res) => {
 const { id } = req.params;
 const { username, email, password,  description,
     imageUrl,foodPreferences,recipesMade } = req.body;
