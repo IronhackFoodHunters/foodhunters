@@ -6,10 +6,10 @@
 
 </nav>
 
-<form action="/create-recipe/{{_id}}" method="POST" enctype="multipart/form-data">
+<form action="/private/create-recipe/{{_id}}" method="POST" enctype="multipart/form-data">
 
 
-{{#each recipes}}
+{{#each recipe}}
 
 <div class="">
 
@@ -19,13 +19,36 @@
 
 <p>Instructions: {{instructions}}</p>
 
-<p>{{categories}}</p>
+<p>{{category}}</p>
 
 <img class="recipe-img {{_id}}" src="{{imageUrl}}" alt="{{title}}" />
 
 <a href="/profile/{{_id}}">See more</a>
 </div>
 {{/each}}
+</form>
+
+<h2>Leave your comments and tips</h2>
+<form action='/recipe/recipe-details/{{recipe._id}}' method='POST'>
+
+  <textarea type='text' name='comment'></textarea>
+
+  <button type="submit">Send comment</button>
+
+</form>
+
+{{#if recipe.comments}}
+
+{{#each room.reviews}}
+
+  <h4>Author: {{this.user.username}}</h4>
+  <h5>Author: {{this.user.email}}</h5>
+  
+  <p>Comment: </p>
+  <p>{{this.comment}}</p>
+
+{{/each}}
+{{/if}}
 
 <button type="submit">
     <a href="/profile/id/edit">Edit</a>

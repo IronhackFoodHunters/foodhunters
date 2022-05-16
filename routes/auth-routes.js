@@ -12,68 +12,77 @@ const { estimatedDocumentCount } = require("../models/user.model");
 const { route } = require("./recipes-routes");
 
 
-// GET route ==> to display the signup form to users
+// Sign up
 router
-.route("/signup")
-.get((req, res) => res.render("auth/signup"))
-// POST route ==> to process form data
-.post((req, res, next) => {
-  // console.log("The form data: ", req.body);
+  .route("/signup")
+  .get((req, res) => res.render("auth/signup"))
+  // POST route ==> to process form data
+  .post((req, res, next) => {
+    // console.log("The form data: ", req.body);
 
-  const { username, email, password, /*foodPreferences*/ } = req.body;
+    const { username, email, password /*foodPreferences*/ } = req.body;
 
-  bcrypt
-    .genSalt(saltRounds)
-    .then((salt) => bcrypt.hash(password, salt))
-    .then((hashedPassword) => {
-      return User.create({
-        // username: username
-        username,
-        password: hashedPassword, 
-		email,
-		/*foodPreferences*/
-      });
-    })
-    .then((userFromDB) => {
-      // console.log("Newly created user is: ", userFromDB);
-      res.redirect("/food-preferences");
-    })
-    .catch((err) => res.render("auth/signup", { errorMessage: err.message }))
-    .catch((error) => next(error));
-});
+    bcrypt
+      .genSalt(saltRounds)
+      .then((salt) => bcrypt.hash(password, salt))
+      .then((hashedPassword) => {
+        return User.create({
+          // username: username
+          username,
+          password: hashedPassword,
+          email,
+          /*foodPreferences*/
+        });
+      })
+      .then((userFromDB) => {
+        // console.log("Newly created user is: ", userFromDB);
+        res.redirect("/food-preferences");
+      })
+      .catch((err) => res.render("auth/signup", { errorMessage: err.message }))
+      .catch((error) => next(error));
+  });
 
 router
   .route("/login")
   .get((req, res) => res.render("auth/login"))
   .post((req, res) => {
-    const {username,email, password} = req.body
+    const { username, email, password } = req.body;
 
-    User.findOne({username})
-    .then((user)=>{
-      if(!user){
+    User.findOne({ email })
+      .then((user) => {
+        if (!user) {
+          res.render("auth/login", { errorMessage: "Wrong credentials!" });
+          return;
+        } else {
+          const encryptedPassword = user.password;
+          const passwordCorrect = bcrypt.compareSync(
+            password,
+            encryptedPassword
+          );
 
-        res.render("auth/login", {errorMessage: "Wrong credentials!"})
-        return
-      } else {
+          if (passwordCorrect) {
+            req.session.currentUser = user;
 
-		const encryptedPassword = user.password;
-				const passwordCorrect = bcrypt.compareSync(password, encryptedPassword);
-
-        if(passwordCorrect){
-         req.session.currentUser = user;
-
-          res.redirect(`/profile`) // redirect to wherever you want
-          return
-        }else{
-          res.render("auth/login", { errorMessage: "Wrong credentials!"});
+            res.redirect("/profile"); // redirect to wherever you want
+            return;
+          } else {
+            res.render("/auth/login", { errorMessage: "Wrong credentials" });
+          }
         }
-
-      }
-    })
-    .catch(err=>console.log(err))
+      })
+      .catch((err) => console.log(err));
   });
 
-
+//logout from user profile
+router.get("/logout", (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      res.render("error", { message: "Something went wrong! Yikes!" });
+    } else {
+      res.redirect("/");
+    }
+  });
+});
 
 module.exports = router;
 
