@@ -199,7 +199,10 @@ User.findByIdAndUpdate(id, { username, email, password,  description,
 router.get("/search", (req, res) => {
   res.render("recipe/search");
 });
-
+router.get("/search-results", (req, res) => {
+  console.log(req.query)
+  res.render("/recipe/searchresutls");
+});
 // recipe delete
 router.post("/recipe-details/:id/delete", (req, res) => {
   const { id } = req.params;
