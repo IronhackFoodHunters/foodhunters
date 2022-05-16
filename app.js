@@ -23,7 +23,7 @@ const projectName = 'food-hunters';
 const capitalized = (string) =>
 	string[0].toUpperCase() + string.slice(1).toLowerCase();
 
-app.locals.title = `${capitalized(projectName)} created with Ironlauncher`;
+app.locals.title = `${capitalized(projectName)} created with Food hunters`;
 
 // 👇 Start handling routes here
 const isLoggedIn = require('./middleware/isLoggedIn');
