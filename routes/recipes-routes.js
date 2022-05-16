@@ -27,7 +27,7 @@ router.route("/food-preferences").get((req, res) => {
 
 router.get("/homepage", (req, res) => {
   Recipe.find()
-    .populate("owner")
+    .populate("title")
     .then((recipes) => {
       res.render("recipe/homepage", { recipes });
     })
