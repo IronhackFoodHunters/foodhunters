@@ -125,13 +125,15 @@ router
       });
   });
 
+
+  //edit recipe 
 router
   .route("/edit-recipe/:id")
   .get((req, res) => {
     const { id } = req.params;
 
     Recipe.findById(id)
-      .populate("foodPreferences")
+      .populate("category")
       .then((user) => {
         Recipe.find().then((recipe) => {
           res.render(`/recipe-details/${recipe._id}`, {
@@ -162,39 +164,9 @@ router
       likes,
       owner: userId,
     })
-      .then(() => res.redirect(`/recipe-details`))
+      .then((recipe) => res.redirect(`/recipe-details/${recipe._id}`))
       .catch((err) => console.log(err));
   });
-
-  /* 
-router
-.route("/profile/edit")
-.get((req, res) => {
-    const { id } = req.params;
-
-    User.findById(id)
-    .populate("foodPreferences")
-    .then((user) =>{
-    Recipe.find()
-    .then((recipes) => {
-        res.render("user-profile/private/edit-profile", {
-            user: user,
-            recipes: {recipes}
-        })
-    })
-})
-})
-.post((req, res) => {
-const { id } = req.params;
-const { username, email, password,  description,
-    imageUrl,foodPreferences,recipesMade } = req.body;
-
-User.findByIdAndUpdate(id, { username, email, password,  description,
-    imageUrl,foodPreferences,recipesMade  })
-.then(() => res.redirect(`/profile`))
-.catch((err) => console.log(err))
-})
-  */
 
 // search recipe by category
 router.get("/search", (req, res) => {
@@ -204,6 +176,7 @@ router.get("/search-results", (req, res) => {
   console.log(req.query)
   res.render("/recipe/searchresutls");
 });
+
 // recipe delete
 router.post("/recipe-details/:id/delete", (req, res) => {
   const { id } = req.params;
