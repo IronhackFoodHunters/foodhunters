@@ -23,8 +23,24 @@
   <input type="text" name="genre" value="{{user.password}}" />
 
   <br />
-  <label for="foodpreferences"> What you like to eat:</label>
-  <input type="text" name="instructions" value="{{user.foodPreferences}}" />
+<p> would you like to eat? </p>
+
+<select id="foodPreferences" multiple>
+  <option label="omnivorous"> omnivorous</option>
+  <option label="vegetarian"> vegetarian</option>
+  <option label="vegan"> vegan</option>
+  <option label="drinks"> drinks</option>
+  <option label="mediterranean"> mediterranean</option>
+  <option label="african"> african</option>
+  <option label="no carbs"> no carbs</option>
+  <option label="gluten free"> gluten free</option>
+  <option label="pescatarian"> pescatarian</option>
+  <option label="sweets"> sweets</option>
+  <option label="latinomerican"> latinomerican</option>
+  <option label="asian"> asian</option>
+   <!--<input type="text" name="instructions" value="{{user.foodPreferences}}" />-->
+
+</select> 
   <br />
 
    <br />
@@ -38,8 +54,17 @@
   <button type="submit"> <a href="/profile"> Confirm </a></button>
   <br />
   <a href="/profile">Go back</a>
-</form>
+
+{{#each user.user}}
+<option value="{{_id}}"> {{name}}</option>
+<option value="{{_email}}"> {{email}}</option>
+<option value="{{_password}}"> {{password}}</option>
+<option value="{{_recipesmade}}"> {{recipesmade}}</option>
+{{/each}}
+
 
 <button type="submit">
     <a href="/auth/logout">Log out</a>
 </button>
+</form>
+
