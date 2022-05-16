@@ -42,6 +42,7 @@ router
       })
       .then((userFromDB) => {
         // console.log("Newly created user is: ", userFromDB);
+		req.session.currentUser = userFromDB;
         res.redirect("/food-preferences");
       })
       .catch((err) => res.render("auth/signup", { errorMessage: err.message }))
