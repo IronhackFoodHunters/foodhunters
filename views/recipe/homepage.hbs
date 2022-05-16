@@ -5,6 +5,7 @@
 <a href="/homepage">Homepage</a>
 
 </nav>
+<button> <a href="/private/create-recipe"> CREATE A RECIPE </a> </button>
 
 <form action="/homepage" method="GET" enctype="multipart/form-data">
 
@@ -12,20 +13,17 @@
 
 {{#each recipes}}
 
-<h4>{{title}}</h4>
+<h3>{{title}}</h3>
 
 <p>Instructions: {{instructions}}</p>
 
-<img class="room-img {{_id}}" src="{{imageUrl}}" alt="{{name}}" />
+<a href="/recipe/details/{{_id}}"> 
+    <img src="{{imageUrl}}" alt="{{name}}" /> 
+</a>
 
 <h4>Made by: {{user._id}}</h4>
 
-<a href="/recipe/details/{{_id}}">See more</a>
-
-
+<button>LIKE</button>
 {{/each}}
-
-
-<button> <a href="/private/create-recipe"> create </a> </button>
 
 </form>
