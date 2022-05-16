@@ -96,7 +96,7 @@ router
 	res.render("auth/lliked-post")
 })*/
 
-
+// Edit profile
 router
 .route("/profile/edit")
 .get((req, res) => {

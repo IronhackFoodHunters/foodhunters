@@ -19,7 +19,7 @@ const recipeSchema = new Schema({
 		type: String,
 		enum: ["omnivorous", "vegetarian", "vegan", "no carbs", "gluten free", "pescatarian", "sweets",
 			"drinks", "mediterranean", "asian", "african", "latinomerican", null],
-		required: true,
+		//required: true,
 		description: "needs to be at least one of the values and is required"
 	},
 	imageUrl: {

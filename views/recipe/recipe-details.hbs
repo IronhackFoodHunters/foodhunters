@@ -6,11 +6,6 @@
 
 </nav>
 
-<form action="/private/create-recipe/{{_id}}" method="POST" enctype="multipart/form-data">
-
-
-{{#each recipe}}
-
 <div class="">
 
 <h2>{{title}}</h2>
@@ -25,8 +20,7 @@
 
 <a href="/profile/{{_id}}">See more</a>
 </div>
-{{/each}}
-</form>
+
 
 <h2>Leave your comments and tips</h2>
 <form action='/recipe/recipe-details/{{recipe._id}}' method='POST'>
@@ -42,7 +36,7 @@
 {{#each recipe.comments}}
 
   <h4>Author: {{this.user.username}}</h4>
-  <h5>Author: {{this.user.email}}</h5>
+  <h5>Author's email: {{this.user.email}}</h5>
   
   <p>Comment: </p>
   <p>{{this.comment}}</p>
@@ -50,10 +44,10 @@
 {{/each}}
 {{/if}}
 
-<button type="submit">
-    <a href="/profile/id/edit">Edit</a>
-</button>
+<!--<button type="submit">
+    <a href="/edit-recipe">Edit</a>
+</button> -->
 
-<button type="submit">
-    <a href="/delete-recipe">Delete</a>
-</button>
+<form action="/recipes/{{recipes._id}}/delete" method="POST">
+  <button type="submit">Delete</button>
+</form>
