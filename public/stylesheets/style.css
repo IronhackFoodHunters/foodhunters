@@ -74,11 +74,11 @@ section {
 
 /* SLIDE FRAMES PHOTOS LANDING*/
 @keyframes slide{
-    20%{background: url("foto6.avif") no-repeat center center/cover;}
-    40%{background: url("/foto3.avif")  no-repeat center center/cover ;}
-    60%{background: url("/foto4.avif") no-repeat center center/cover; }
-    80%{ background: url("/foto10.avif") no-repeat center center/cover ;}
-    100%{ background: url("/foto1.avif") no-repeat center center/cover ;}}
+    20%{background: url("/public/images/foto6.avif") no-repeat center center/cover;}
+    40%{background: url("/public/images/foto3.avif")  no-repeat center center/cover ;}
+    60%{background: url("/public/images/foto4.avif") no-repeat center center/cover; }
+    80%{ background: url("/public/images/foto10.avif") no-repeat center center/cover ;}
+    100%{ background: url("/public/images/foto1.avif") no-repeat center center/cover ;}}
 
 
 #text .part-one {
@@ -99,7 +99,7 @@ section {
     overflow: hidden; 
     position: relative; 
     width: 100%; 
-    background-image: url("/foto12.avif"); 
+    background-image: url("/public/images/foto12.avif") ;
     background-attachment: fixed; 
     background-size: cover; 
     -moz-background-size: cover;
@@ -114,7 +114,7 @@ section {
     overflow: hidden; 
     position: relative; 
     width: 100%; 
-    background-image: url("/drinks1.avif"); 
+    background-image: url("/public/images/drinks1.avif");
     background-attachment: fixed; 
     background-size: cover; 
     -moz-background-size: cover; 
