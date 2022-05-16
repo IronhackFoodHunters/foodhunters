@@ -75,16 +75,17 @@ router
 .route("/recipe-details/:id")
 .get((req, res) => {
   const { id } = req.params;
-  res.send(id);
+  //res.send(id);
 
-  Recipe.findById(req.params.id)
+  Recipe.findById(id)
     .populate("owner")
-    .populate({
+    /*.populate({
       path: "comments",
       populate: {
         path: "user",
       },
-    })
+    })*/
+    .populate('comments')
     .then((recipe) => {
       res.render("recipe/recipe-details", { recipe });
     })
@@ -132,22 +133,22 @@ router
     
     const { title, ingredients, instructions, category} = req.body;
 
-   let imageUrl = req.file.path;
+   //let imageUrl = req.file.path;
 
-    console.log(title, ingredients, instructions, category, imageUrl);
+    console.log(title, ingredients, instructions, category);
 
     Recipe.create({
       title,
       ingredients,
       instructions,
       category,
-      imageUrl,
-      likes,
+      //imageUrl,
+      //likes,
       owner: userId,
     })
       .then((createdRecipe) => {
-        console.log(createdRecipe);
-        res.redirect(`/recipe/recipe-details/${id}`);
+        console.log('CREATED RECIPE: ',createdRecipe);
+        res.redirect(`/recipe-details/${createdRecipe._id}`);
       })
       .catch((error) => {
         console.log(error);
