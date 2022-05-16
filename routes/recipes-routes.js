@@ -51,12 +51,12 @@ router
 
   Recipe.findById(id)
     .populate("comments")
-    /*.populate({
+    .populate({
       path: "comments",
       populate: {
         path: "user",
       },
-    })*/
+    })  
     .then((recipe) => {
       res.render("recipe/recipe-details", recipe);
     })
@@ -134,7 +134,7 @@ router
       .populate("foodPreferences")
       .then((user) => {
         Recipe.find().then((recipe) => {
-          res.render("recipe/recipe-details", {
+          res.render(`/recipe-details/${recipe._id}`, {
             user: user,
             recipes: { recipe },
           });
