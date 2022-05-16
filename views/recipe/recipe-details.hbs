@@ -23,7 +23,7 @@
 
 
 <h2>Leave your comments and tips</h2>
-<form action='/recipe/recipe-details/{{recipe._id}}' method='POST'>
+<form action='/recipe/recipe-details/{{_id}}' method='POST'>
 
   <textarea type='text' name='comment'></textarea>
 
@@ -31,9 +31,7 @@
 
 </form>
 
-{{#if recipe.comments}}
-
-{{#each recipe.comments}}
+{{#each comments}}
 
   <h4>Author: {{this.user.username}}</h4>
   <h5>Author's email: {{this.user.email}}</h5>
@@ -42,12 +40,12 @@
   <p>{{this.comment}}</p>
 
 {{/each}}
-{{/if}}
 
 <button type="submit">
     <a href="/edit-recipe">Edit</a>
 </button>
 
-<form action="/recipe-details/{{recipe._id}}/delete" method="POST">
+<form action="/recipe-details/{{_id}}/delete" method="POST">
+  <p>Recipe id {{_id}}</p>
   <button type="submit">Delete</button>
 </for

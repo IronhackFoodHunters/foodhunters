@@ -49,15 +49,17 @@ router
   const { id } = req.params;
   //res.send(id);
 
+  
   Recipe.findById(id)
-    .populate("comments")
-    .populate({
-      path: "comments",
-      populate: {
-        path: "user",
-      },
-    })  
-    .then((recipe) => {
+  .populate("comments")
+  .populate({
+    path: "comments",
+    populate: {
+      path: "user",
+    },
+  })  
+  .then((recipe) => {
+      console.log("recipe", recipe)
       res.render("recipe/recipe-details", recipe);
     })
     .catch((error) => {
@@ -205,12 +207,14 @@ router.get("/search-results", (req, res) => {
   res.render("/recipe/searchresutls");
 });
 // recipe delete
-router.post("/recipe-details/:id/delete", (req, res) => {
+router
+.route("/recipe-details/:id/delete")
+.post((req, res) => {
   const { id } = req.params;
 
-  Recipe.findByIdAndRemove(id)
-    .then(() => res.redirect("/"))
-    .catch((err) => console.log(err));
+  Recipe.findByIdAndDelete(id)
+    .then(() => res.redirect("/profile"))
+    .catch((err)=> console.log(err));
 });
 
 //favourite recipes
