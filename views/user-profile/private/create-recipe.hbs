@@ -8,27 +8,25 @@
 
 <h2>New recipe</h2>
 <form action="/private/create-recipe" method="POST" enctype="multipart/form-data">
+    <label>Title
+        <input type="text" name="title" placeholder="Name of recipe">
+    </label><br>
 
-<label>Title
-    <input type="text" name="title" placeholder="Name of recipe">
-</label><br>
+    <label>Ingredients
+        <input type="text" name="ingredients" placeholder="Ingredients">
+    </label><br>
 
-<label>Ingredients
-    <input type="text" name="ingredients" placeholder="Ingredients">
-</label><br>
+    <label>Instructions
+        <input type="text" name="instructions" placeholder="Instructions">
+    </label><br>
 
-<label>Instructions
-    <input type="text" name="instructions" placeholder="Instructions">
-</label><br>
+    <label>Category
+        <input type="text" name="category" placeholder="Category">
+    </label><br>
 
-<label>Category
-    <input type="text" name="category" placeholder="Category">
-</label><br>
+    <label>Image:
+    <input type="file" name="imageUrl"/>
+    </label>
 
-  <label>Image:
-  <input type="file" name="imageUrl"/>
-  </label>
-
-<button type="submit">
-    <a href="/recipe-details">Create</a>
-</button>
+    <button type="submit">Create</button>
+</form>
