@@ -24,9 +24,22 @@ router.get("/profile", (req, res) => {
 
 // Food preferences upon signing up
 
-router.route("/food-preferences").get((req, res) => {
+router.route("/foodpreferences")
+.get((req, res) => {
   res.render("auth/foodpreferences");
-});
+})
+.post((req, res) => {
+  //console.log('REQUEST BODY BABY: ',req.body)
+  //res.json(req.body)
+  const checkboxArr = Object.keys(req.body);
+  console.log(checkboxArr)
+
+  User.findByIdAndUpdate(req.session.currentUser._id, {
+   $push : {foodPreferences : checkboxArr}
+  })
+  .then((updatedUser) => res.redirect('/profile'))
+  .catch(err => console.log(err));
+})
 
 // homepage
 
@@ -229,8 +242,8 @@ router
       });
   });
 
-router.post("/foodPreferences", (req, res, next) => {
-  recipe.findById(req.params.id)
+/*router.post("/foodPreferences", (req, res, next) => {
+  Recipe.findById(req.params.id)
     .then((recipe) => {
       if (
         recipe.attendees.includes(req.session.userId) ||
@@ -253,7 +266,7 @@ router.post("/foodPreferences", (req, res, next) => {
       }
     })
     .catch((error) => console.log(error));
-});
+});*/
 
 
 module.exports = router;
