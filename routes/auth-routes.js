@@ -15,7 +15,7 @@ const res = require("express/lib/response");
 const { estimatedDocumentCount } = require("../models/user.model");
 const { route } = require("./recipes-routes");
 
-const fileUploader = require("../config/cloudinary")
+const fileUploader = require("../config/cloudinary");
 
 
 // Sign up
@@ -121,7 +121,7 @@ router
 	const id = req.session.currentUser._id;
 	const { username, email, password,  description,foodPreferences,recipesMade } = req.body;
 	let imageUrl = undefined
-	if(req.file)imageUrl = req.file.path
+	if(req.file) imageUrl = req.file.path
 
 	User.findByIdAndUpdate(id, { username, email, password,  description,
 		imageUrl,foodPreferences,recipesMade  })

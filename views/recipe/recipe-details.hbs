@@ -18,15 +18,40 @@
 
 <a href="/profile/{{_id}}">Go to the chefs profile</a>
 
-<h2>Leave your comments and tips</h2>
 
+  <h2>Want to leave a comment?</h2>
 <form action='/recipe-details/{{_id}}' method='POST'>
 
-  <textarea type='text' name='comment'></textarea>
+  <textarea type='text' name='message'></textarea>
 
+  <button type="submit">Send comment</button>
 
+</form>
+
+<h2>Comments and tips</h2>
+
+{{#each comments}}
+
+  <h4>Author: {{this.user.username}}</h4>
+  <h5>Author's email: {{this.user.email}}</h5>
+  
+  <p>Comment: </p>
+  <p>{{this.message}}</p>
+
+{{/each}}
 
 
 <form action="/recipe-details/{{_id}}/delete" method="POST">
   <button type="submit">Delete</button>
 </form>
+
+
+
+<button type="submit">
+    <a href="/edit-recipe">Edit</a>
+</button>
+
+<form action="/recipe-details/{{_id}}/delete" method="POST">
+  <p>Recipe id {{_id}}</p>
+  <button type="submit">Delete</button>
+</for
