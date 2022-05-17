@@ -1,3 +1,11 @@
+@import url('components/form.css');
+@import url('components/header.css');
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
 /* Text */
 #text h1 {
     font-family:'Staatliches';
@@ -138,75 +146,4 @@ section {
 }
 @media screen and (max-width: 479px) {
   #text .block { width:100%;}
-}
-
-/* buttons */
-
-.headerLogin {
-    width: 100%;
-    padding: 20px 60px;
-    border-radius: 2px;
-    font-family: 'Staatliches';
-    border: #019992;
-  
-}
-
-.headerLogin:hover {
-    background-color: #FFB001;
-    color: white;
-    font-family: 'Staatliches';
-    
-}
-
-.headerSignUp:hover {
-    background-color: #FFB001;
-    color: white;
-    font-family: 'Staatliches';
-    
-}
-.headerSignUp  {
-    width: 100%;
-    padding: 20px 60px;
-    border-radius: 2px;
-    font-family: 'Staatliches';
-    border: #019992;
-  
-}
-
-.headerbuttons {
-    align-items: center;
- 
-
-}
-
-.headerSearch {
-    margin-top: 20px;
-    margin-bottom: 20px ;
-    width: 100%;
-    padding: 20px 60px;
-    border-radius: 2px;
-    font-family: 'Staatliches';
-    border: #019992;
-    text-decoration: none;
-    color: black ;
-}
-
-.headerSearch:hover {
-    margin-top: 20px;
-    margin-bottom: 20px ;
-        background-color: #FFB001;
-        color: white;
-        font-family: 'Staatliches';
-        text-decoration: none;
-}
-
-/*logo footer */
-
-.headerimagelogo {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: flex-end;
-	align-items: flex-end;
-	align-content: flex-end;
 }
