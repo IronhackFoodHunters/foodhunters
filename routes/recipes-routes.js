@@ -27,10 +27,41 @@ router.get("/profile/:id", (req, res) => {
 router.get("/profile", (req, res) => {
     //const { id } = req.params;
     User.findById(req.session.currentUser._id)
+    .populate("recipesMade")
     .then((findUser)=>{res.render('user-profile/user-profile', { user: findUser })
     
   })
   });
+
+  /*
+  router.get("/favourites", (req, res) => {
+  User.findById(req.session.currentUser._id)
+  .populate("recipesLiked")
+  .then((user) => {
+    const reversedLikes = user.recipesLiked.reverse();
+   res.render("user-profile/liked-post", { user, reversedLikes });
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+});
+
+router.post("/favourites/:id", (req, res) => {
+  const {id} = req.params;
+  Recipe.findByIdAndUpdate(id, {
+    $push: { likes: req.session.currentUser._id }
+  })
+    .then((updatedRecipe) => {
+      User.findByIdAndUpdate(req.session.currentUser._id, {
+        $push: { recipesLiked: updatedRecipe._id }
+      })
+    .then(() => res.redirect(`/favourites`))
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}) 
+  */
   
 
 
@@ -162,13 +193,8 @@ router
 
     Recipe.findById(id)
       .populate("category")
-      .then((owner) => {
-        Recipe.find().then((recipe) => {
-          res.render(`/recipe-details/${recipe_id}`, {
-            owner: owner,
-            recipes: { recipe },
-          });
-        });
+      .then((recipe) => {
+        res.render("user-profile/private/edit-recipe", recipe)
       });
   })
   .post((req, res) => {
@@ -179,8 +205,7 @@ router
       instructions,
       category,
       imageUrl,
-      likes,
-      owner: userId,
+      likes
     } = req.body;
 
     Recipe.findByIdAndUpdate(id, {
@@ -189,10 +214,9 @@ router
       instructions,
       category,
       imageUrl,
-      likes,
-      owner: userId,
+      likes
     })
-      .then((recipe) => res.redirect(`/recipe-details/${recipe_id}`))
+      .then((recipe) => res.redirect(`/homepage`))
       .catch((err) => console.log(err));
   });
 
@@ -245,6 +269,9 @@ router.post("/favourites/:id", (req, res) => {
       console.log(error);
     });
 }) 
+
+//created recipes
+
 
 
 //research results test - 13.15 TEST TEST TEST

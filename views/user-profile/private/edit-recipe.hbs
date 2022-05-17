@@ -8,19 +8,19 @@
 
 <h2>Edit your recipe</h2>
 
-<form action="/edit-recipe/{{_recipe.id}}" method="POST">
+<form action="/edit-recipe/{{_id}}" method="POST">
 
   <label for="title"> Title:</label>
-  <input type="text" name="title" value="{{recipe.title}}" />
+  <input type="text" name="title" value="{{title}}" />
  
   <br />
   <label for="ingredients"> Ingredients:</label>
-  <input type="text" name="ingredients" value="{{recipe.ingredients}}" />
+  <input type="text" name="ingredients" value="{{ingredients}}" />
   <br />
   
   <br />
   <label for="instructions"> Instructions:</label>
-  <input type="text" name="instructions" value="{{recipe.instructions}}" />
+  <input type="text" name="instructions" value="{{instructions}}" />
   <br />
 
 <p> Category </p>
@@ -40,13 +40,14 @@
   <option label="asian"> asian</option>
    <!--<input type="text" name="instructions" value="{{user.foodPreferences}}" />-->
 
-</select> 
+  </select> 
   <br />
 
   <label for="image"> Image:</label>
   <input type="file" name="imageUrl" />
   <br />
-  <button type="submit">Confirm </a></button>
+
+  <button type="submit">Confirm</button>
   <br />
 
   </form>
