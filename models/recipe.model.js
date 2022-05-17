@@ -25,7 +25,7 @@ const recipeSchema = new Schema({
 	imageUrl: {
 		type: String,
 		default:
-			'https://images.unsplash.com/photo-1513694203232-719a280e022f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=749&q=80'
+			'https://easterntradelinks.com/front/images/default.png'
 	},
 	comments: [{type: Schema.Types.ObjectId, ref: 'Comment', default: []}],
 	likes: [{ type: Schema.Types.ObjectId, ref: 'User' }],

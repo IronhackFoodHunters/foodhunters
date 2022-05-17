@@ -5,7 +5,7 @@
 <a href="/homepage">Homepage</a>
 
 </nav>
-
+62837120b63235a4a20364f8
 <h2>{{title}}</h2>
 
 <p>Ingredients: {{ingredients}}</p>
@@ -32,18 +32,18 @@
 
 {{#each comments}}
 
-  <h4>Author: {{this.user.username}}</h4>
-  <h5>Author's email: {{this.user.email}}</h5>
+  <h4>Author: {{owner.username}}</h4>
+  <h5>Author's email: {{owner.email}}</h5>
   
   <p>Comment: </p>
-  <p>{{this.message}}</p>
+  <p>{{message}}</p>
 
 {{/each}}
 
-
+<!--
 <form action="/recipe-details/{{_id}}/delete" method="POST">
   <button type="submit">Delete</button>
-</form>
+</form> -->
 
 
 
