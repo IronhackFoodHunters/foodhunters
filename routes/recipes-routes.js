@@ -24,48 +24,35 @@ router.get("/profile/:id", (req, res) => {
   });
 })
 
-
-
-router.get("/profile", (req, res) => {
-    //const { id } = req.params;
-    User.findById(req.session.currentUser._id)
-    .populate("recipesMade")
-    .then((findUser)=>{res.render('user-profile/user-profile', { user: findUser })
-    
-  })
-  });
-
-  /*
-  router.get("/favourites", (req, res) => {
-  User.findById(req.session.currentUser._id)
-  .populate("recipesLiked")
-  .then((user) => {
-    const reversedLikes = user.recipesLiked.reverse();
-   res.render("user-profile/liked-post", { user, reversedLikes });
+  
+router
+.route("/profile")
+.get((req, res) => {
+User.findById(req.session.currentUser._id)
+.populate("recipesMade")
+.then((user) => {
+  const reversedCreated = user.recipesMade.reverse();
+ res.render("user-profile/user-profile", { user, reversedCreated });
+})
+.catch((error) => {
+  console.log(error);
+});
+})
+.post((req, res) => {
+const {id} = req.params;
+Recipe.findByIdAndUpdate(id, {
+  $push: { created: req.session.currentUser._id }
+})
+  .then((updatedRecipe) => {
+    User.findByIdAndUpdate(req.session.currentUser._id, {
+      $push: { recipesMade: updatedRecipe._id }
+    })
+  .then(() => res.redirect(`/profile`))
   })
   .catch((error) => {
     console.log(error);
   });
-});
-
-router.post("/favourites/:id", (req, res) => {
-  const {id} = req.params;
-  Recipe.findByIdAndUpdate(id, {
-    $push: { likes: req.session.currentUser._id }
-  })
-    .then((updatedRecipe) => {
-      User.findByIdAndUpdate(req.session.currentUser._id, {
-        $push: { recipesLiked: updatedRecipe._id }
-      })
-    .then(() => res.redirect(`/favourites`))
-    })
-    .catch((error) => {
-      console.log(error);
-    });
 }) 
-  */
-  
-
 
 
 // Food preferences upon signing up
