@@ -54,11 +54,11 @@ router
     path: "comments",
     populate: {
       path: "user",
-    },*/
-  })  
+    },
+  })  */
   .then((recipe) => {
       console.log("recipe", recipe)
-      res.render("/recipe/recipe-details", recipe);
+      res.render("recipe/recipe-details", recipe);
     })
     .catch((error) => {
       console.log(error);
@@ -66,21 +66,21 @@ router
 })
 .post((req, res) => {
 	const recipeId = req.params.id;
-	const { comment } = req.body;
+	const { message } = req.body;
 
 	Comment.create({
 		user: req.session.currentUser._id,
-		comment // comment: req.body.comment
+		message // comment: req.body.comment
 	})
 		.then((newComment) => {
 			console.log(newComment);
 
 			Recipe.findByIdAndUpdate(recipeId, {
-				$addToSet: { comments: newComment._id }
+				$push: { comments: newComment._id }
 			})
 				.then((updatedRecipe) => {
-					console.log(updatedRecipe);
-					res.redirect(`/homepage/${recipeId}`);
+					console.log('UPDATES RECIPE', updatedRecipe);
+					res.redirect(`/recipe-details/${recipeId}`);
 				})
 				.catch((error) => {
 					console.log(error);
