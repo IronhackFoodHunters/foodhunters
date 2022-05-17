@@ -22,7 +22,9 @@
 <h4>{{recipe.owner.username}}</h4>
 <a href="/profile/{{recipe.owner.username}}">
 
+<form action="/favourites/{{id}}" method="POST">
 <button>LIKE</button> <!--when this is pushed it need to push the recipe in to recipesLiked-->
+</form>
 {{/each}}
 
 </form>

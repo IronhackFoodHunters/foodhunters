@@ -16,7 +16,8 @@
 
 <p>{{category}}</p>
 
-<a href="/profile/{{recipe.owner.username}}">Go to the chefs profile</a>
+
+<a href="/profile/{{owner._id}}">Go to the chefs profile</a>
 
   <h2>Comments and tips</h2>
 <form action='/recipe-details/{{_id}}' method='POST'>

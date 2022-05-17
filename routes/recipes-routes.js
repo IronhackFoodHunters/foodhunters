@@ -11,15 +11,28 @@ const { db } = require("./../models/user.model");
 
 // user profile
 
+router.get("/profile/:id", (req, res) => {
+  const { id } = req.params;
+  let isOwner = false;
+  if (id === req.session.currentUser._id) isOwner = true;
+
+  User.findById(id)
+  .then((user) => {
+    res.render('user-profile/user-profile', {user, isOwner})
+  });
+})
+
+
+
 router.get("/profile", (req, res) => {
     //const { id } = req.params;
     User.findById(req.session.currentUser._id)
     .then((findUser)=>{res.render('user-profile/user-profile', { user: findUser })
     
   })
-     
   });
   
+
 
 
 // Food preferences upon signing up
@@ -206,16 +219,32 @@ router
 //favourite recipes
 
 router.get("/favourites", (req, res) => {
-  Recipe.find()
-  .populate("title")
-  .then((recipes) => {
-    const reversed = recipes.reverse();
-    res.render("user-profile/liked-post", { reversed });
+  User.findById(req.session.currentUser._id)
+  .populate("recipesLiked")
+  .then((user) => {
+    const reversedLikes = user.recipesLiked.reverse();
+   res.render("user-profile/liked-post", { user, reversedLikes });
   })
   .catch((error) => {
     console.log(error);
   });
 });
+
+router.post("/favourites/:id", (req, res) => {
+  const {id} = req.params;
+  Recipe.findByIdAndUpdate(id, {
+    $push: { likes: req.session.currentUser._id }
+  })
+    .then((updatedRecipe) => {
+      User.findByIdAndUpdate(req.session.currentUser._id, {
+        $push: { recipesLiked: updatedRecipe._id }
+      })
+    .then(() => res.redirect(`/favourites`))
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}) 
 
 
 //research results test - 13.15 TEST TEST TEST
