@@ -19,8 +19,8 @@
     <img src="{{imageUrl}}" alt="{{title}}" /> 
 </a>
 
-
-<h4>Made by: {{owner._Id}}</h4>
+<h4>{{recipe.owner.username}}</h4>
+<a href="/profile/{{recipe.owner.username}}">
 
 <button>LIKE</button> <!--when this is pushed it need to push the recipe in to recipesLiked-->
 {{/each}}

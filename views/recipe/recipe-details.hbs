@@ -5,7 +5,7 @@
 <a href="/homepage">Homepage</a>
 
 </nav>
-62837120b63235a4a20364f8
+
 <h2>{{title}}</h2>
 
 <p>Ingredients: {{ingredients}}</p>
@@ -16,10 +16,9 @@
 
 <p>{{category}}</p>
 
-<a href="/profile/{{_id}}">Go to the chefs profile</a>
+<a href="/profile/{{recipe.owner.username}}">Go to the chefs profile</a>
 
-
-  <h2>Want to leave a comment?</h2>
+  <h2>Comments and tips</h2>
 <form action='/recipe-details/{{_id}}' method='POST'>
 
   <textarea type='text' name='message'></textarea>
@@ -28,14 +27,10 @@
 
 </form>
 
-<h2>Comments and tips</h2>
-
 {{#each comments}}
 
   <h4>Author: {{owner.username}}</h4>
-  <h5>Author's email: {{owner.email}}</h5>
   
-  <p>Comment: </p>
   <p>{{message}}</p>
 
 {{/each}}
@@ -53,6 +48,5 @@
 
 
 <form action="/recipe-details/{{_id}}/delete" method="POST">
-  <p>Recipe id {{_id}}</p>
   <button type="submit">Delete</button>
 </for
