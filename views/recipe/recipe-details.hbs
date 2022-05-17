@@ -6,46 +6,23 @@
 
 </nav>
 
-<div class="">
-
 <h2>{{title}}</h2>
 
 <p>Ingredients: {{ingredients}}</p>
 
 <p>Instructions: {{instructions}}</p>
 
-<p>{{category}}</p>
-
 <img class="recipe-img {{_id}}" src="{{imageUrl}}" alt="{{title}}" />
 
-<a href="/profile/{{_id}}">See more</a>
-</div>
+<p>{{category}}</p>
 
+<a href="/profile/{{_id}}">Go to the chefs profile</a>
 
 <h2>Leave your comments and tips</h2>
 <form action='/recipe-details/{{_id}}' method='POST'>
 
-  <textarea type='text' name='comment'></textarea>
 
-  <button type="submit">Send comment</button>
-
-</form>
-
-{{#each comments}}
-
-  <h4>Author: {{this.user.username}}</h4>
-  <h5>Author's email: {{this.user.email}}</h5>
-  
-  <p>Comment: </p>
-  <p>{{this.comment}}</p>
-
-{{/each}}
-
-<button type="submit">
-    <a href="/edit-recipe">Edit</a>
-</button>
 
 <form action="/recipe-details/{{_id}}/delete" method="POST">
-  <p>Recipe id {{_id}}</p>
   <button type="submit">Delete</button>
-</for
+</form>
