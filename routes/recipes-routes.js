@@ -49,13 +49,14 @@ router
   const { id } = req.params;
   
   Recipe.findById(id)
+  .populate("owner")
   .populate("comments")
-  /*.populate({
+  .populate({
     path: "comments",
     populate: {
-      path: "user",
+      path: "owner",
     },
-  })  */
+  })  
   .then((recipe) => {
       console.log("recipe", recipe)
       res.render("recipe/recipe-details", recipe);
