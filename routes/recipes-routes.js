@@ -59,6 +59,7 @@ router.route("/foodpreferences")
 router.get("/homepage", (req, res) => {
   Recipe.find()
     .populate("title")
+    .populate("owner")
     .then((recipes) => {
       const reversed = recipes.reverse();
       res.render("recipe/homepage", { reversed });
@@ -96,7 +97,7 @@ router
 	const { message } = req.body;
 
 	Comment.create({
-		user: req.session.currentUser._id,
+		owner: req.session.currentUser._id,
 		message // comment: req.body.comment
 	})
 		.then((newComment) => {
@@ -127,7 +128,7 @@ router
   })
   .post(fileUploader.single("imageUrl"), (req, res) => {
     const userId = req.session.currentUser._id;
-    
+    console.log("current user", req.session.currentUser)
     const { title, ingredients, instructions, category} = req.body;
 
    let imageUrl = req.file.path;
@@ -161,10 +162,10 @@ router
 
     Recipe.findById(id)
       .populate("category")
-      .then((user) => {
+      .then((owner) => {
         Recipe.find().then((recipe) => {
-          res.render(`/recipe-details/${recipe._id}`, {
-            user: user,
+          res.render(`/recipe-details/${recipe_id}`, {
+            owner: owner,
             recipes: { recipe },
           });
         });
@@ -191,7 +192,7 @@ router
       likes,
       owner: userId,
     })
-      .then((recipe) => res.redirect(`/recipe-details/${recipe._id}`))
+      .then((recipe) => res.redirect(`/recipe-details/${recipe_id}`))
       .catch((err) => console.log(err));
   });
 
