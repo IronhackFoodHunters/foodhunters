@@ -46,6 +46,7 @@ router.route("/foodpreferences")
 router.get("/homepage", (req, res) => {
   Recipe.find()
     .populate("title")
+    .populate("owner")
     .then((recipes) => {
       const reversed = recipes.reverse();
       res.render("recipe/homepage", { reversed });
@@ -148,10 +149,10 @@ router
 
     Recipe.findById(id)
       .populate("category")
-      .then((user) => {
+      .then((owner) => {
         Recipe.find().then((recipe) => {
-          res.render(`/recipe-details/${recipe._id}`, {
-            user: user,
+          res.render(`/recipe-details/${recipe_id}`, {
+            owner: owner,
             recipes: { recipe },
           });
         });
@@ -178,7 +179,7 @@ router
       likes,
       owner: userId,
     })
-      .then((recipe) => res.redirect(`/recipe-details/${recipe._id}`))
+      .then((recipe) => res.redirect(`/recipe-details/${recipe_id}`))
       .catch((err) => console.log(err));
   });
 
