@@ -6,22 +6,15 @@
 
 </nav>
 
-<form action="/homepage" method="GET" enctype="multipart/form-data">
-
 <h2>This is your liked posts</h2>
 
-{{#each reversed}} <!--this is  only going to show your liked recipies-->
+{{#each reversedLikes}} <!--this is  only going to show your liked recipies-->
 
 <h3>{{title}}</h3>
 
-<a href="/recipe-details/{{id}}"> 
+<a href="/recipe-details/{{_id}}"> 
     <img src="{{imageUrl}}" alt="{{title}}" /> 
 </a>
 
-
-<h4>Made by: {{user._id}}</h4>
-
-<button>LIKE</button>
 {{/each}}
 
-</form>
