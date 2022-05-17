@@ -19,8 +19,13 @@ router.get("/profile/:id", (req, res) => {
   if (id === req.session.currentUser._id) isOwner = true;
 
   User.findById(id)
+  .populate("recipesMade")
   .then((user) => {
-    res.render('user-profile/user-profile', {user, isOwner})
+    const reversedCreated = user.recipesMade.reverse();
+  res.render("user-profile/user-profile", { user, isOwner, reversedCreated });
+  })
+  .catch((error) => {
+    console.log(error);
   });
 })
 
