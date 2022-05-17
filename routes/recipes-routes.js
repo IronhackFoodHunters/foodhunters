@@ -153,19 +153,6 @@ router
 });
 
 
-/*router 
-.route("/recipe-details/:id")
-.get((req,res) => {
-  res.render("/edit-recipe/")
-  .post((req, res) => {
-  const {title,name,ingredients,instructions,category,imageUrl} = req.body
-
-  User.findByIdAndUpdate(id, {title,name,ingredients,instructions,category,imageUrl})
-  .then(()=> res.redirect('/edit-recipe'))
-  .catch((err) => console.log(err))
-})
-})*/
-
 // create recipe
 router
   .route("/private/create-recipe")
@@ -192,7 +179,8 @@ router
     })
       .then((createdRecipe) => {
         console.log('CREATED RECIPE: ',createdRecipe);
-        res.redirect(`/recipe-details/${createdRecipe._id}`);
+        User.findByIdAndUpdate(userId, {$push:{ recipesMade: createdRecipe._id}})
+        .then(()=>res.redirect(`/recipe-details/${createdRecipe._id}`));
       })
       .catch((error) => {
         console.log(error);
@@ -320,32 +308,6 @@ router
         res.render("recipes/recipe-edit");
       });
   });
-
-/*router.post("/foodPreferences", (req, res, next) => {
-  Recipe.findById(req.params.id)
-    .then((recipe) => {
-      if (
-        recipe.attendees.includes(req.session.userId) ||
-        req.session.userId == recipe.host
-      ) {
-        res.redirect(`/recipes/${recipe._id}`);
-      } else {
-        recipe.findByIdAndUpdate(req.params.id, {
-          $push: { attendees: req.session.userId },
-        })
-          .populate("foodPreferences")
-          .then((recipe) => {
-            User.findByIdAndUpdate(req.session.userId, {
-              $push: { foodPreferences: req.params.id },
-            }).then((user) => {
-              res.redirect(`/foodPreferences`);
-            });
-          })
-          .catch((error) => console.log(error));
-      }
-    })
-    .catch((error) => console.log(error));
-});*/
 
 
 module.exports = router;
