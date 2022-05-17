@@ -48,7 +48,7 @@ router
       .catch((err) => res.render("auth/signup", { errorMessage: err.message }))
       .catch((error) => next(error));
   });
-
+3
   //user login
 router
   .route("/login")
