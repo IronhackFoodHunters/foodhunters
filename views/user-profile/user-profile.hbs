@@ -6,14 +6,17 @@
 
 </nav>
 
+<!---
 <form action="/profile/edit" method="POST">
   <img src="{{user.imageUrl}}" alt="">
 </form>
+--->
 
 
 
 
 {{#if user}}
+  <img src="{{user.imageUrl}}" alt="hi">
   <h2>{{user.username}}</h2>
   <h3>{{user.email}}</h3>
   <!---<p>{{user.description:}}</p>--->

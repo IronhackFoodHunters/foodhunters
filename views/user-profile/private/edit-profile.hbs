@@ -8,7 +8,7 @@
 
 <h2>Edit your profile</h2>
 
-<form action="/auth/profile/edit" method="POST">
+<form action="/auth/profile/edit" method="POST" enctype="multipart/form-data">
 
   <label for="username"> Username:</label>
   <input type="text" name="username" value="{{user.username}}" />
@@ -41,8 +41,9 @@
 
 <br>
 
-  <label for="imageUrl"> Image:</label>
-  <input type="file" name="imageUrl" />
+  <label for="imageUrl"> Image:
+    <input type="file" name="imageUrl" />
+  </label>
   <br />
   <button type="submit"> Confirm</button>
 </form>
