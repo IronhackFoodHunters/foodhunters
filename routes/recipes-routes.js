@@ -7,6 +7,8 @@ const router = express.Router();
 
 const fileUploader = require("./../config/cloudinary");
 const { db } = require("./../models/user.model");
+const { get } = require("express/lib/response");
+const { route } = require("express/lib/application");
 
 
 // user profile
@@ -105,6 +107,19 @@ router
 		});
 });
 
+
+/*router 
+.route("/recipe-details/:id")
+.get((req,res) => {
+  res.render("/edit-recipe/")
+  .post((req, res) => {
+  const {title,name,ingredients,instructions,category,imageUrl} = req.body
+
+  User.findByIdAndUpdate(id, {title,name,ingredients,instructions,category,imageUrl})
+  .then(()=> res.redirect('/edit-recipe'))
+  .catch((err) => console.log(err))
+})
+})*/
 
 // create recipe
 router
