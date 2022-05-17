@@ -70,7 +70,7 @@ router
 	const { message } = req.body;
 
 	Comment.create({
-		user: req.session.currentUser._id,
+		owner: req.session.currentUser._id,
 		message // comment: req.body.comment
 	})
 		.then((newComment) => {
@@ -101,7 +101,7 @@ router
   })
   .post(fileUploader.single("imageUrl"), (req, res) => {
     const userId = req.session.currentUser._id;
-    
+    console.log("current user", req.session.currentUser)
     const { title, ingredients, instructions, category} = req.body;
 
    let imageUrl = req.file.path;
