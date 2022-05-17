@@ -1,45 +1,67 @@
-<fieldset action="/profile" mulitple>
-      <input type="checkbox" id="omnivorous" name="omnivorous">
+<form action="/foodpreferences" type="text" method="POST" multiple>
+      <input type="checkbox" class="checkbox" id="omnivorous" name="omnivorous" value="omnivorous">
       <label for="omnivorous">omnivorous</label>
  
-      <input type="checkbox" id="vegatarian" name="vegatarian">
+      <input type="checkbox"  class="checkbox" id="vegatarian" name="vegatarian" value="vegatarian">
       <label for="vegatarian">vegatarian</label>
   
-      <input type="checkbox" id="vegan" name="vegan">
+      <input type="checkbox" class="checkbox" id="vegan" name="vegan" value="vegan">
       <label for="vegan">vegan</label>
      
-      <input type="checkbox" id="no carbs" name="no carbs">
+      <input type="checkbox" class="checkbox" id="no carbs" name="no carbs" value="no carbs">
       <label for="no carbs">no carbs</label>
    
-      <input type="checkbox" id="gluten free" name="gluten free">
+      <input type="checkbox" class="checkbox" id="gluten free" name="gluten free" value="gluten free">
       <label for="gluten free">gluten free</label>
   
  
-      <input type="checkbox" id="pescatarian" name="pescatarian">
+      <input type="checkbox" class="checkbox" id="pescatarian" name="pescatarian" value="pescatarian">
       <label for="pescatarian">pescatarian</label>
   
-      <input type="checkbox" id="sweets" name="sweets">
+      <input type="checkbox" class="checkbox" id="sweets" name="sweets" value="sweets">
       <label for="sweets"> sweets</label>
     
-      <input type="checkbox" id="drinks" name="drinks">
+      <input type="checkbox" class="checkbox" id="drinks" name="drinks" value="drinks">
       <label for="drinks">drinks</label>
  
-      <input type="checkbox" id="mediterranean" name="mediterranean">
+      <input type="checkbox" class="checkbox" id="mediterranean" name="mediterranean" value="mediterranean">
       <label for="mediterranean">mediterranean</label>
   
-      <input type="checkbox" id="asian" name="asian">
+      <input type="checkbox" class="checkbox" id="asian" name="asian" value="asian">
       <label for="asian">asian</label>
-      <input type="checkbox" id="african" name="african">
+  
+      <input type="checkbox" id="african" name="african" value="african">
       <label for="african">african</label>
    
-      <input type="checkbox" id="latinomerican" name="latinomerican">
+      <input type="checkbox" class="checkbox" id="latinomerican" name="latinomerican" value="latinomerican">
       <label for="latinomerican">latinomerican</label>
-</fieldset>
-<button type="submit">
-    <a href='/profile'>Next</a>
-</button>
 
+    <div class="print-value"> 
+        <p id="valueList"> This are you're favorites</p>
+    </div>
 
-<button type="submit">
-    <a href='/profile'>Next</a>
-</button>
+    <button type="submit">Next</button>
+</form>
+<!--
+<script>
+    let valueList = document.getElementById('valueList')
+    let text = '<span> you have selected: </span>'
+    let listArray = [];
+
+    let checkboxes = document.querySelectorAll('.checkbox');
+
+    for(let checkbox of checkboxes) {
+        checkbox.addEventListener('click', function (){
+            if(this.checked == true){
+                listArray.push(this.value)
+                valueList.innerHTML = text + listArray.join('/')
+                console.log(listArray)
+            } else {
+                listArray = listArray.filter(e => e !== this.value);
+                valueLlist.innerHTML = text + listArray.join('/')
+                console.log("this is checked", checkboxes)
+            }
+        })
+    }
+</script>
+-->

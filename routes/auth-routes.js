@@ -43,7 +43,7 @@ router
       .then((userFromDB) => {
         // console.log("Newly created user is: ", userFromDB);
 		req.session.currentUser = userFromDB;
-        res.redirect("/food-preferences");
+        res.redirect("/foodpreferences");
       })
       .catch((err) => res.render("auth/signup", { errorMessage: err.message }))
       .catch((error) => next(error));
@@ -55,6 +55,9 @@ router
   .get((req, res) => res.render("auth/login"))
   .post((req, res) => {
     const { username, email, password } = req.body;
+	res.render('login', {
+		style: 'login.css'
+	})
 
     User.findOne({ email })
       .then((user) => {
