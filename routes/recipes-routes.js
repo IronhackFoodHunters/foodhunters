@@ -47,20 +47,18 @@ router
 .route("/recipe-details/:id")
 .get((req, res) => {
   const { id } = req.params;
-  //res.send(id);
-
   
   Recipe.findById(id)
   .populate("comments")
-  .populate({
+  /*.populate({
     path: "comments",
     populate: {
       path: "user",
-    },
+    },*/
   })  
   .then((recipe) => {
       console.log("recipe", recipe)
-      res.render("recipe/recipe-details", recipe);
+      res.render("/recipe/recipe-details", recipe);
     })
     .catch((error) => {
       console.log(error);
