@@ -26,7 +26,7 @@
   <p>Still no logged in user, sorry!</p>
 {{/if}}
 
-{{#if isOwner}}
+{{#if user}}
 <button type="submit">
     <a href="/auth/profile/{{_user.id}}edit">Edit Profile</a>
 </button>
@@ -39,4 +39,10 @@
     <a href="/private/create-recipe">Create recipe</a>
 </button>
 {{/if}}
+
+<!--add created reciped here-->
+
+{{#each reversedCreated}}
+<h3>{{title}}</h3>
+{{/each}}
 
