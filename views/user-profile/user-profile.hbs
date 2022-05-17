@@ -38,11 +38,17 @@
 <button type="submit">
     <a href="/private/create-recipe">Create recipe</a>
 </button>
+
 {{/if}}
 
 <!--add created reciped here-->
 
 {{#each reversedCreated}}
 <h3>{{title}}</h3>
+
+<a href="/recipe-details/{{_id}}"> 
+    <img src="{{imageUrl}}" alt="{{title}}" /> 
+</a>
+
 {{/each}}
 
