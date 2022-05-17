@@ -284,7 +284,7 @@ router
   .get((req, res) => {
     const id = req.params.id;
 
-    recipe.findById(id)
+    Recipe.findById(id)
       .populate("recipe")
       .then((recipe) => {
         if (recipe.host._id != req.session.userId)
@@ -298,7 +298,7 @@ router
       req.body;
     const id = req.params.id;
 
-    recipe.findByIdAndUpdate(id, {
+    Recipe.findByIdAndUpdate(id, {
       name
     })
       .then((recipe) => {
