@@ -205,7 +205,15 @@ router
 //favourite recipes
 
 router.get("/favourites", (req, res) => {
-  res.render("user-profile/private/liked-post");
+  Recipe.find()
+  .populate("title")
+  .then((recipes) => {
+    const reversed = recipes.reverse();
+    res.render("user-profile/liked-post", { reversed });
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 });
 
 
