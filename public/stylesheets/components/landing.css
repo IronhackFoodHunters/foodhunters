@@ -1,0 +1,220 @@
+#text h1 {
+    font-family:'Staatliches';
+     font-size:24px; 
+     font-weight:400;
+      text-transform: uppercase; 
+      color:black; 
+      padding:0; 
+      margin:0;
+    }
+
+
+#text h2 {
+    font-family:'Staatliches';
+    font-size:70px; 
+    letter-spacing:10px; 
+    text-align:center; 
+    color:white; 
+    font-weight:200; 
+    text-transform:uppercase; 
+    z-index:10;
+     opacity:.9;
+     
+    }
+
+
+#text h3 {
+    font-family:'Sorts Mill Goudy';
+    font-size:14px; 
+    line-height:0; 
+    font-weight:200; 
+    letter-spacing:8px; 
+    text-transform: uppercase; 
+    color:black;
+    
+    
+}
+    
+
+#text p {
+    font-family:'Sorts Mill Goudy';
+    font-weight:400; 
+    font-size:14px;
+     line-height:24px;
+     
+    }
+
+.first-character {
+    font-weight:400; 
+    float: left; 
+    font-size: 84px; 
+    line-height: 64px; 
+    padding-top: 4px; 
+    padding-right: 8px; 
+    padding-left: 3px; 
+    font-family: 'Source Sans Pro', sans-serif;
+    
+}
+
+
+/* Section - header*/
+#text .header{background-color:  #019992; }
+
+.headerLogin {
+    
+    padding: 20px 60px;
+    border-radius: 2px;
+    font-family: 'Staatliches';
+    border: #019992;
+  
+}
+
+.headerLogin:hover {
+    background-color: #FFB001;
+    color: white;
+    font-family: 'Staatliches';
+    
+    
+}
+
+.headerSignUp:hover {
+    background-color: #FFB001;
+    color: white;
+    font-family: 'Staatliches';
+    
+    
+}
+.headerSignUp  {
+    padding: 20px 60px;
+    border-radius: 2px;
+    font-family: 'Staatliches';
+    border: #019992;
+    
+  
+}
+
+.headerbuttons {
+    align-items: center;
+    
+
+}
+
+.headerSearch {
+    margin-top: 20px;
+    margin-bottom: 20px ;
+    padding: 20px 60px;
+    border-radius: 2px;
+    font-family: 'Staatliches';
+    border: #019992;
+    text-decoration: none;
+    color: black ;
+    
+}
+
+.headerSearch:hover {
+    margin-top: 20px;
+    margin-bottom: 20px ;
+        background-color: #FFB001;
+        color: white;
+        font-family: 'Staatliches';
+        text-decoration: none;
+        
+}
+
+.headerimagelogo {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	align-items: flex-end;
+	align-content: flex-end;
+    
+}
+
+section {
+    background-color: #019992;
+    
+}
+
+/* Section - Block */
+#text .block {background-color:  #019992; padding: 60px;  text-align:center; align-items: center ;}
+#text .block-gray {background-color:  #019992; padding: 60px; }
+#text .section-overlay-mask {position: absolute; top: 0; left: 0;  height: 100%; background-color: black; opacity: 0.70;}
+
+
+/* LANDING SLIDES*/
+.slider{
+    height: 60vh;
+    background: url("../../images/foto8.avif") no-repeat center center/cover  ;
+    animation: slide 60s 5;
+    animation-iteration-count: infinite;
+    
+}
+
+/* SLIDE FRAMES PHOTOS LANDING*/
+@keyframes slide{
+    20%{background: url("../../images/foto6.avif") no-repeat center center/cover;}
+    40%{background: url("../../images/foto3.avif")  no-repeat center center/cover ;}
+    60%{background: url("../../images/foto4.avif") no-repeat center center/cover; }
+    80%{ background: url("../../images/foto10.avif") no-repeat center center/cover ;}
+    100%{ background: url("../../images/foto1.avif") no-repeat center center/cover ;}}
+
+
+#text .part-one {
+    overflow: hidden; 
+    position: relative; 
+     background-attachment: fixed;
+      background-size:cover; 
+      -moz-background-size: cover; 
+      -webkit-background-size: cover;
+       background-repeat: no-repeat; 
+       background-position: top center;
+       
+    }
+
+#text .part-two{
+    padding-top: 200px; 
+    padding-bottom: 200px;
+    overflow: hidden; 
+    position: relative;  
+    background-image: url("../../images/foto12.avif") ;
+    background-attachment: fixed; 
+    background-size: cover; 
+    -moz-background-size: cover;
+     -webkit-background-size: 
+     cover; background-repeat: 
+     no-repeat; 
+     background-position: center center;
+     }
+
+#text .part-three{
+    padding-top: 200px; 
+    padding-bottom: 200px; 
+    overflow: hidden; 
+    position: relative; 
+    background-image: url("../../images/drinks1.avif");
+    background-attachment: fixed; 
+    background-size: cover; 
+    -moz-background-size: cover; 
+    -webkit-background-size: cover; 
+    background-repeat: 
+    no-repeat; 
+    background-position: center center;
+     }
+
+
+#text .line-break {border-bottom:1px solid black;  margin:0 auto;}
+
+/* Media Queries */
+@media screen and (max-width: 959px) and (min-width: 768px) {
+  #text .block {  align-items: center;}
+}
+@media screen and (max-width: 767px) {
+  #text .block {   align-items: center}
+  #text h2 {font-size:30px;}
+  /*#text .block {}*/
+  #text .part-one #text .part-two #text .part-three{padding-top:100px; padding-bottom:100px;}
+}
+@media screen and (max-width: 479px) {
+ /* #text .block { }*/
+}
