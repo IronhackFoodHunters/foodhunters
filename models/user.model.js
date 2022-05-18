@@ -26,7 +26,7 @@ const userSchema = new Schema({
 	foodPreferences:{
 		type: [String],
 		enum: [ "omnivorous", "vegetarian", "vegan", "no carbs", "gluten free", "pescatarian", "sweets", 
-		"drinks", "mediterranean", "asian", "african", "latinomerican", null ],
+		"drinks", "mediterranean", "asian", "african", "latinoamerican", null ],
 		description: "needs to be at least one of the values and is required",
 		required: true
 	 },

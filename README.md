@@ -86,7 +86,7 @@ username: {
 	foodPreferences:{
 		type: String,
 		enum: [ "omnivorous", "vegetarian", "vegan", "no carbs", "gluten free", "pescatarian", "sweets", 
-		"drinks", "mediterranean", "asian", "african", "latinomerican", null ],
+		"drinks", "mediterranean", "asian", "african", "latinoamerican", null ],
 		description: "needs to be at least one of the values and is required",
 		required: true
 	 },
@@ -112,7 +112,7 @@ title: {
 	category: {
 		type: String,
 		enum: [ "omnivorous", "vegetarian", "vegan", "no carbs", "gluten free", "pescatarian", "sweets", 
-		"drinks", "mediterranean", "asian", "african", "latinomerican", null],
+		"drinks", "mediterranean", "asian", "african", "latinoamerican", null],
 		required: true,
 		description: "needs to be at least one of the values and is required"
 	 },
