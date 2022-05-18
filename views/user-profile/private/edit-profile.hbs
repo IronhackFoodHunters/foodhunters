@@ -1,16 +1,14 @@
-
-
 <h2>Edit your profile</h2>
 
 <form action="/auth/profile/edit" method="POST" enctype="multipart/form-data">
 
   <label for="username"> Username:</label>
   <input type="text" name="username" value="{{user.username}}" />
- 
+
   <br />
   <label for="email"> Email:</label>
   <input type="text" name="email" value="{{user.email}}" />
-  <br/>
+  <br />
 
   <br />
   <p> would you like to eat? </p>
@@ -30,10 +28,10 @@
     <option label="asian"> asian</option>
     <!--<input type="text" name="instructions" value="{{user.foodPreferences}}" />-->
 
-  </select> 
+  </select>
   <br />
 
-<br>
+  <br>
 
   <label for="imageUrl"> Image:
     <input type="file" name="imageUrl" />
@@ -47,5 +45,5 @@
 
 
 <button type="submit">
-    <a href="/auth/logout">Log out</a>
+  <a href="/auth/logout">Log out</a>
 </button>
