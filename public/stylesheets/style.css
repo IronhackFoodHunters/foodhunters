@@ -326,8 +326,8 @@ footer {
     text-decoration: none;
 }
 
-.singupbutton 
-{ padding: 10px 60px;
+.singupbutton {
+    padding: 10px 60px;
     border-radius: 2px;
     text-decoration: none;
     border-radius: 2px;
@@ -335,15 +335,98 @@ footer {
     border: none;
     color: black;
 }
-.signbutton:hover
-{
+
+.signbutton:hover {
     background-color: #FFB001;
     color: white;
     font-family: 'Staatliches';
     text-decoration: none;
 }
 
+.loginbutton {
+    padding: 10px 60px;
+    border-radius: 2px;
+    text-decoration: none;
+    border-radius: 2px;
+    font-family: 'Staatliches';
+    border: none;
+    color: black;
+}
 
+.loginbutton:hover {
+    background-color: #FFB001;
+    color: white;
+    font-family: 'Staatliches';
+    text-decoration: none;
+}
+
+.signupbutton {
+    padding: 10px 60px;
+    border-radius: 2px;
+    text-decoration: none;
+    border-radius: 2px;
+    font-family: 'Staatliches';
+    border: none;
+    color: black;
+}
+
+.signupbutton:hover {
+    background-color: #FFB001;
+    color: white;
+    font-family: 'Staatliches';
+    text-decoration: none;
+}
+
+.confirmbutton {
+    padding: 10px 60px;
+    border-radius: 2px;
+    text-decoration: none;
+    border-radius: 2px;
+    font-family: 'Staatliches';
+    border: none;
+    color: black;
+}
+
+.confirmbutton:hover {
+    background-color: #FFB001;
+    color: white;
+    font-family: 'Staatliches';
+    text-decoration: none;
+}
+   
+.filterbutton {
+    padding: 10px 60px;
+    border-radius: 2px;
+    text-decoration: none;
+    border-radius: 2px;
+    font-family: 'Staatliches';
+    border: none;
+    color: black;
+}
+
+.filterbutton:hover{
+    background-color: #FFB001;
+    color: white;
+    font-family: 'Staatliches';
+    text-decoration: none;
+}
+
+.likebutton {
+    padding: 10px 60px;
+    border-radius: 2px;
+    text-decoration: none;
+    border-radius: 2px;
+    font-family: 'Staatliches';
+    border: none;
+    color: black;
+}
+
+.likebutton:hover {
+    background-color: #FFB001;
+    color: white;
+    font-family: 'Staatliches';
+    text-decoration: none;
+}
 
 /*HOMEPAGE*/
 /*TEXT*/
