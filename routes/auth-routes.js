@@ -52,7 +52,7 @@ router
   //user login
 router
   .route("/login")
-  .get((req, res) => res.render("auth/login", { section: "user" }))
+  .get((req, res) => res.render("auth/login"))
   .post((req, res) => {
     const { username, email, password } = req.body;
 	res.render('login');
