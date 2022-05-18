@@ -1,4 +1,4 @@
-<h2>{{title}}</h2>
+<h2 class="h2">{{title}}</h2>
 
 <p>Ingredients: {{ingredients}}</p>
 
@@ -16,7 +16,7 @@
 
   <textarea type='text' name='message'></textarea>
 
-  <button type="submit">Send comment</button>
+  <button class="submitButton" type="submit">Send comment</button>
 
 </form>
 
@@ -29,13 +29,12 @@
 {{/each}}
 
 <a href="/edit-recipe/{{_id}}"></a>
-  <button>
-    Edit
-  </button>
+  <button class="editButton">
+    Edit </button>
 </a>
 
 
 
 <form action="/recipe-details/{{_id}}/delete" method="POST">
-  <button type="submit">Delete</button>
+  <button class="deleteButton" type="submit">Delete</button>
   </for
