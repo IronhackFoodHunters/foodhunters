@@ -52,7 +52,7 @@ router
   //user login
 router
   .route("/login")
-  .get((req, res) => res.render("auth/login"))
+  .get((req, res) => res.render("auth/login", { section: "user" }))
   .post((req, res) => {
     const { username, email, password } = req.body;
 	//res.render('login');
@@ -94,6 +94,7 @@ router.get("/logout", (req, res) => {
 });
 
 
+
 // Edit profile
 
 router
@@ -113,14 +114,13 @@ router
 })
 })
 .post(fileUploader.single("imageUrl"),(req, res) => {
-	const { id } = req.params;
-  const userId = req.session.currentUser._id;
-  const { username, email, description, foodPreferences} = req.body;
+	const id = req.session.currentUser._id;
+	const { username, email, password,  description,foodPreferences,recipesMade } = req.body;
 	let imageUrl = undefined
 	if(req.file) imageUrl = req.file.path
 
-	User.findByIdAndUpdate(id, { username, email, description,
-		imageUrl,foodPreferences })
+	User.findByIdAndUpdate(id, { username, email, password,  description,
+		imageUrl,foodPreferences,recipesMade  })
 	.then(() => res.redirect('/profile'))
 	.catch((err) => console.log(err))
 })

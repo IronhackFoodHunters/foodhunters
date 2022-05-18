@@ -28,9 +28,12 @@
 
 {{/each}}
 
-<button type="submit">
-  <a href="/edit-recipe/{{_id}}">Edit</a>
-</button>
+<a href="/edit-recipe/{{_id}}"></a>
+  <button>
+    Edit
+  </button>
+</a>
+
 
 
 <form action="/recipe-details/{{_id}}/delete" method="POST">
