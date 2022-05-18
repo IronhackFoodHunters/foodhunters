@@ -6,13 +6,92 @@ body {
     padding: 0;
 }
 
-/* Text */
 
-h1 {
+
+/* Text headers*/
+h1 {font-family: 'Staatliches';}
+h2 {font-family:'Staatliches'}
+h3 {font-family:'Staatliches'}
+h4 {font-family:'Staatliches'}
+
+p {font-family: 'Sorts Mill Goudy';}
+
+/*headerlayout*/
+.headerlayout{
+    background-color: #019992;
+    height: 70px;
+    margin-bottom: 20px;
+
+}
+
+
+
+
+/*footer*/
+
+footer {
+    background-color: #019992;
+    height: 100px;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	align-items: stretch;
+	align-content: stretch;
+}
+
+.footerimagelogo {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	align-items: baseline;
+	align-content: flex-end;
+    position:fixed;
+    right: 20px;
+
+}
+
+
+.footerSearch { 
+    display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+    padding: 10px 60px;
+    border-radius: 2px;
     font-family: 'Staatliches';
+    border: none;
+    text-decoration: none;
+    position: fixed;
+    margin-right:-215px; 
+    margin-top: -130px;
+
 }
 
-p {
-        font-family: 'Sorts Mill Goudy';    
+.footerSearch:hover {
+    background-color: #FFB001;
+    color: white;
+    font-family: 'Staatliches';
+
 }
 
+
+.footerProfile1 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+
+    padding: 10px 60px;
+    border-radius: 2px;
+    text-decoration: none;
+    border-radius: 2px;
+    font-family: 'Staatliches';
+    border: none; 
+
+}

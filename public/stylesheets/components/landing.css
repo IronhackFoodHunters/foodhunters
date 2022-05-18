@@ -65,7 +65,7 @@
     padding: 20px 60px;
     border-radius: 2px;
     font-family: 'Staatliches';
-    border: #019992;
+    border: none;
   
 }
 
@@ -88,8 +88,7 @@
     padding: 20px 60px;
     border-radius: 2px;
     font-family: 'Staatliches';
-    border: #019992;
-    
+    border: none;
   
 }
 
@@ -99,42 +98,6 @@
 
 }
 
-.headerSearch {
-    margin-top: 20px;
-    margin-bottom: 20px ;
-    padding: 20px 60px;
-    border-radius: 2px;
-    font-family: 'Staatliches';
-    border: #019992;
-    text-decoration: none;
-    color: black ;
-    
-}
-
-.headerSearch:hover {
-    margin-top: 20px;
-    margin-bottom: 20px ;
-        background-color: #FFB001;
-        color: white;
-        font-family: 'Staatliches';
-        text-decoration: none;
-        
-}
-
-.headerimagelogo {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: flex-end;
-	align-items: flex-end;
-	align-content: flex-end;
-    
-}
-
-section {
-    background-color: #019992;
-    
-}
 
 /* Section - Block */
 #text .block {background-color:  #019992; padding: 60px;  text-align:center; align-items: center ;}
