@@ -93,12 +93,6 @@ router.get("/logout", (req, res) => {
   });
 });
 
-/*
-router
-.route("/auth/liked-post")
-.get((req, res) => {
-	res.render("auth/lliked-post")
-})*/
 
 // Edit profile
 
@@ -119,13 +113,14 @@ router
 })
 })
 .post(fileUploader.single("imageUrl"),(req, res) => {
-	const id = req.session.currentUser._id;
-	const { username, email, password,  description,foodPreferences,recipesMade } = req.body;
+	const { id } = req.params;
+  const userId = req.session.currentUser._id;
+  const { username, email, description, foodPreferences} = req.body;
 	let imageUrl = undefined
 	if(req.file) imageUrl = req.file.path
 
-	User.findByIdAndUpdate(id, { username, email, password,  description,
-		imageUrl,foodPreferences,recipesMade  })
+	User.findByIdAndUpdate(id, { username, email, description,
+		imageUrl,foodPreferences })
 	.then(() => res.redirect('/profile'))
 	.catch((err) => console.log(err))
 })
