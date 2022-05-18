@@ -4,6 +4,9 @@ const Comment = require("./../models/comments.model");
 const express = require("express");
 const router = express.Router();
 
+const isLoggedIn = require("../middleware/isLoggedIn");
+const isNotLoggedIn = require("../middleware/isNotLoggedin");
+
 const fileUploader = require("./../config/cloudinary");
 const { db } = require("./../models/user.model");
 const { get } = require("express/lib/response");
@@ -46,6 +49,7 @@ router
 })
 .post((req, res) => {
   const { id } = req.params;
+
     Recipe.findByIdAndUpdate(id, {
       $push: { created: req.session.currentUser._id },
     })
@@ -217,10 +221,14 @@ router.get("/search", (req, res) => {
 });
 router.get("/search-results", (req, res) => {
   console.log(req.query);
-  Recipe.find({ category: { $in: [req.query.filter] } }).then((recipes) =>
+  Recipe.find({ category: { $in: [req.query.filter] } })
+  .populate("owner")
+  .then((recipes) =>
     res.render("recipe/searchresults", { recipes })
+    
   );
 
+  
   //res.render("/recipe/searchresutls");
 });
 
