@@ -1,6 +1,3 @@
-
-<form action="/search" method="GET" enctype="multipart/form-data">
-
 {{#each recipes}}
 
 <h3>{{title}}</h3>
@@ -19,7 +16,6 @@
 
 <form action="/favourites/{{id}}" method="POST">
 <button>LIKE</button> <!--when this is pushed it need to push the recipe in to recipesLiked-->
+</form>
 
 {{/each}}
-
-</form>

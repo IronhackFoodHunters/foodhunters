@@ -1,14 +1,12 @@
 <button> <a href="/private/create-recipe"> CREATE A RECIPE </a> </button>
 
-<form action="/homepage" method="GET" enctype="multipart/form-data">
-
     <h2>FEED</h2>
 
     {{#each reversed}}
 
     <h3>{{title}}</h3>
 
-    <a href="/recipe-details/{{id}}">
+    <a href="/recipe-details/{{_id}}">
         <img src="{{imageUrl}}" width="200" height="200" alt="{{title}}" />
     </a>
 
@@ -21,10 +19,8 @@
 
 
 
-    <form action="/favourites/{{id}}" method="POST">
+    <form action="/favourites/{{_id}}" method="POST">
         <button>LIKE</button>
         <!--when this is pushed it need to push the recipe in to recipesLiked-->
     </form>
     {{/each}}
-
-</form>
