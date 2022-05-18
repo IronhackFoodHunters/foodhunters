@@ -55,7 +55,7 @@ router
   .get((req, res) => res.render("auth/login", { section: "user" }))
   .post((req, res) => {
     const { username, email, password } = req.body;
-	res.render('login');
+	//res.render('login');
 
     User.findOne({ email })
       .then((user) => {
