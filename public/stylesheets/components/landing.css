@@ -12,21 +12,7 @@
      
     }
 
-
-#text h3 {
-    font-family:'Sorts Mill Goudy';
-    font-size:14px; 
-    line-height:0; 
-    font-weight:200; 
-    letter-spacing:8px; 
-    text-transform: uppercase; 
-    color:black;
-    
-    
-}
-    
-
-#text p {
+.textP {
     font-family:'Sorts Mill Goudy';
     font-weight:400; 
     font-size:14px;
