@@ -326,6 +326,22 @@ footer {
     text-decoration: none;
 }
 
+.singupbutton 
+{ padding: 10px 60px;
+    border-radius: 2px;
+    text-decoration: none;
+    border-radius: 2px;
+    font-family: 'Staatliches';
+    border: none;
+    color: black;
+}
+.signbutton:hover
+{
+    background-color: #FFB001;
+    color: white;
+    font-family: 'Staatliches';
+    text-decoration: none;
+}
 
 
 
