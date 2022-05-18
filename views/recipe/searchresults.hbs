@@ -10,12 +10,12 @@
 
 <!-- <a href="/profile/{{owner.username}}"> -->
 
-<img src= "{{owner.imageUrl}}" width="100" height="100" alt ="{{recipe.owner.username}}">
-<h4> {{recipe.owner.username}}</h4>
+<img src= "{{owner.imageUrl}}" width="100" height="100" alt ="{{owner.username}}">
+<h4> {{owner.username}}</h4>
 
 
 <form action="/favourites/{{id}}" method="POST">
-<button>LIKE</button> <!--when this is pushed it need to push the recipe in to recipesLiked-->
+<button class="likebutton">LIKE</button> <!--when this is pushed it need to push the recipe in to recipesLiked-->
 </form>
 
 {{/each}}
