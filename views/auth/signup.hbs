@@ -1,22 +1,22 @@
-    <div id="form">
+<div id="form">
   <h2>Signup</h2>
   <form action="/auth/signup" method="POST">
-<br>
+    <br>
     <label> Username
       <input type="text" name="username" placeholder="username" />
     </label>
-<br>
+    <br>
     <label> Email
       <input type="email" name="email" placeholder="my email adress" />
     </label>
-<br>
+    <br>
     <label> Password
       <input type="password" name="password" placeholder="********" />
     </label>
-<br>
+    <br>
 
 
-<!---
+    <!---
 <select name="foodPreferences" id="foodPreferences" multiple>
   <option value="omnivorous">omnivorous</option>
   <option value="vegetarian">vegetarian</option>
@@ -84,8 +84,8 @@
 
   </form>
 
-      {{#if errorMessage}}
-    <p>There was a problem: {{errorMessage}}</p>
-    {{/if}}
+  {{#if errorMessage}}
+  <p>There was a problem: {{errorMessage}}</p>
+  {{/if}}
 
 </div>

@@ -1,5 +1,3 @@
-
-
 <h2>{{title}}</h2>
 
 <p>Ingredients: {{ingredients}}</p>
@@ -13,7 +11,7 @@
 
 <a href="/profile/{{owner._id}}">Go to the chefs profile</a>
 
-  <h2>Comments and tips</h2>
+<h2>Comments and tips</h2>
 <form action='/recipe-details/{{_id}}' method='POST'>
 
   <textarea type='text' name='message'></textarea>
@@ -24,17 +22,17 @@
 
 {{#each comments}}
 
-  <h4>Author: {{owner.username}}</h4>
-  
-  <p>{{message}}</p>
+<h4>Author: {{owner.username}}</h4>
+
+<p>{{message}}</p>
 
 {{/each}}
 
 <button type="submit">
-    <a href="/edit-recipe/{{_id}}">Edit</a>
+  <a href="/edit-recipe/{{_id}}">Edit</a>
 </button>
 
 
 <form action="/recipe-details/{{_id}}/delete" method="POST">
   <button type="submit">Delete</button>
-</for
+  </for

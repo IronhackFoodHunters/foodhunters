@@ -1,26 +1,25 @@
-
 {{#if user}}
-  <img src="{{user.imageUrl}}" alt="hi">
-  <h2>{{user.username}}</h2>
-  <h3>{{user.email}}</h3>
-  <!---<p>{{user.description:}}</p>--->
-  <p>{{user.foodPreferences}}</p>
-  <img class="user-img {{_id}}" src="{{imageUrl}}" alt="{{username}}" /> 
+<img src="{{user.imageUrl}}" alt="hi">
+<h2>{{user.username}}</h2>
+<h3>{{user.email}}</h3>
+<!---<p>{{user.description:}}</p>--->
+<p>{{user.foodPreferences}}</p>
+<img class="user-img {{_id}}" src="{{imageUrl}}" alt="{{username}}" />
 {{else}}
-  <p>Still no logged in user, sorry!</p>
+<p>Still no logged in user, sorry!</p>
 {{/if}}
 
 {{#if user}}
 <button type="submit">
-    <a href="/auth/profile/{{_user.id}}edit">Edit Profile</a>
+  <a href="/auth/profile/{{_user.id}}edit">Edit Profile</a>
 </button>
 
 <button type="submit">
-    <a href="/favourites">Favourites</a>
+  <a href="/favourites">Favourites</a>
 </button>
 
 <button type="submit">
-    <a href="/private/create-recipe">Create recipe</a>
+  <a href="/private/create-recipe">Create recipe</a>
 </button>
 
 {{/if}}
@@ -30,9 +29,8 @@
 {{#each reversedCreated}}
 <h3>{{title}}</h3>
 
-<a href="/recipe-details/{{_id}}"> 
-    <img src="{{imageUrl}}" width="200" height="200" alt="{{title}}" /> 
+<a href="/recipe-details/{{_id}}">
+  <img src="{{imageUrl}}" width="200" height="200" alt="{{title}}" />
 </a>
 
 {{/each}}
-

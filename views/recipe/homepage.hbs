@@ -1,30 +1,30 @@
-
 <button> <a href="/private/create-recipe"> CREATE A RECIPE </a> </button>
 
 <form action="/homepage" method="GET" enctype="multipart/form-data">
 
-<h2>FEED</h2>
+    <h2>FEED</h2>
 
-{{#each reversed}}
+    {{#each reversed}}
 
-<h3>{{title}}</h3>
+    <h3>{{title}}</h3>
 
-<a href="/recipe-details/{{id}}"> 
-    <img src="{{imageUrl}}" width="200" height="200" alt="{{title}}" /> 
-</a>
+    <a href="/recipe-details/{{id}}">
+        <img src="{{imageUrl}}" width="200" height="200" alt="{{title}}" />
+    </a>
 
-<h4>{{owner.username}}</h4>
+    <h4>{{owner.username}}</h4>
 
-<!-- <a href="/profile/{{owner.username}}"> -->
+    <!-- <a href="/profile/{{owner.username}}"> -->
 
-<img src= "{{owner.imageUrl}}" width="100" height="100" alt ="{{recipe.owner.username}}">
-<h4> {{recipe.owner.username}}</h4>
+    <img src="{{owner.imageUrl}}" width="100" height="100" alt="{{recipe.owner.username}}">
+    <h4> {{recipe.owner.username}}</h4>
 
 
 
-<form action="/favourites/{{id}}" method="POST">
-<button>LIKE</button> <!--when this is pushed it need to push the recipe in to recipesLiked-->
-</form>
-{{/each}}
+    <form action="/favourites/{{id}}" method="POST">
+        <button>LIKE</button>
+        <!--when this is pushed it need to push the recipe in to recipesLiked-->
+    </form>
+    {{/each}}
 
 </form>
