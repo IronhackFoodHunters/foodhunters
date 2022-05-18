@@ -46,6 +46,7 @@ a {
 footer {
     background-color: #019992;
     height: 100px;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -55,31 +56,29 @@ footer {
 }
 
 .footerimagelogo {
-    display: flex;
+    /*display: flex;*/
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-end;
     align-items: baseline;
     align-content: flex-end;
-    position: fixed;
     right: 20px;
 
 }
 
 
 .footerSearch {
-    display: flex;
+    /*display: flex;*/
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     align-content: stretch;
-    padding: 10px 60px;
+    /*padding: 10px 60px;*/
     border-radius: 2px;
     font-family: 'Staatliches';
     border: none;
     text-decoration: none;
-    position: fixed;
 
 
 }
@@ -93,12 +92,12 @@ footer {
 
 
 .footerProfile1 {
-    display: flex;
+    /*display: flex;*/
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 10px 60px;
+    /*padding: 10px 60px;*/
     border-radius: 2px;
     text-decoration: none;
     border-radius: 2px;
