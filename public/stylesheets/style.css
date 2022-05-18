@@ -1,26 +1,41 @@
 @import url('components/form.css');
 @import url('components/header.css');
 @import url('components/landing.css');
+
 body {
     margin: 0;
     padding: 0;
 }
 
 /* Text headers*/
-h1 {font-family: 'Staatliches';
-    color: black ;}
-.h2 {font-family:'Staatliches';
-    color: black; }
-h3 {font-family:'Staatliches';
-color: black;  }
-h4 {font-family:'Staatliches';
-color: black; }
+h1 {
+    font-family: 'Staatliches';
+    color: black;
+}
 
-p {font-family: 'Sorts Mill Goudy';
-    color: black;}
+.h2 {
+    font-family: 'Staatliches';
+    color: black;
+}
+
+
+h4 {
+    font-family: 'Staatliches';
+    color: black;
+}
+
+p {
+    font-family: 'Sorts Mill Goudy';
+    color: black;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
 
 /*headerlayout*/
-.headerlayout{
+.headerlayout {
     background-color: #019992;
     height: 70px;
     margin-bottom: 20px;
@@ -35,40 +50,40 @@ footer {
     background-color: #019992;
     height: 100px;
     display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: flex-end;
-	align-items: stretch;
-	align-content: stretch;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: stretch;
+    align-content: stretch;
 }
 
 .footerimagelogo {
     display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: flex-end;
-	align-items: baseline;
-	align-content: flex-end;
-    position:fixed;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: baseline;
+    align-content: flex-end;
+    position: fixed;
     right: 20px;
 
 }
 
 
-.footerSearch { 
+.footerSearch {
     display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	align-content: stretch;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
     padding: 10px 60px;
     border-radius: 2px;
     font-family: 'Staatliches';
     border: none;
     text-decoration: none;
     position: fixed;
-    
+
 
 }
 
@@ -91,7 +106,7 @@ footer {
     text-decoration: none;
     border-radius: 2px;
     font-family: 'Staatliches';
-    border: none; 
+    border: none;
 
 }
 
@@ -103,7 +118,14 @@ footer {
     text-decoration: none;
     border-radius: 2px;
     font-family: 'Staatliches';
-    border: none; 
+    border: none;
+}
+
+.deleteButton:hover {
+    background-color: #FFB001;
+    color: white;
+    font-family: 'Staatliches';
+
 }
 
 .editButton {
@@ -112,7 +134,14 @@ footer {
     text-decoration: none;
     border-radius: 2px;
     font-family: 'Staatliches';
-    border: none; 
+    border: none;
+}
+
+.editButton:hover {
+    background-color: #FFB001;
+    color: white;
+    font-family: 'Staatliches';
+
 }
 
 .submitButton {
@@ -121,7 +150,14 @@ footer {
     text-decoration: none;
     border-radius: 2px;
     font-family: 'Staatliches';
-    border: none; 
+    border: none;
+}
+
+.submitButton:hover {
+    background-color: #FFB001;
+    color: white;
+    font-family: 'Staatliches';
+
 }
 
 .likeButton {
@@ -130,5 +166,195 @@ footer {
     text-decoration: none;
     border-radius: 2px;
     font-family: 'Staatliches';
-    border: none; 
+    border: none;
+}
+
+.likeButton:hover {
+    background-color: #FFB001;
+    color: white;
+    font-family: 'Staatliches';
+
+}
+
+/* homepage */
+
+.createbuttonhomepage {
+    padding: 10px 60px;
+    border-radius: 2px;
+    text-decoration: none;
+    border-radius: 2px;
+    font-family: 'Staatliches';
+    border: none;
+    color: black;
+}
+
+.createbuttonhomepage:hover {
+    background-color: #FFB001;
+    color: white;
+    font-family: 'Staatliches';
+    text-decoration: none;
+}
+
+.choosefileButton {
+    padding: 10px 60px;
+    border-radius: 2px;
+    text-decoration: none;
+    border-radius: 2px;
+    font-family: 'Staatliches';
+    border: none;
+    color: black;
+}
+
+.createbuttonrecipe {
+    padding: 10px 60px;
+    border-radius: 2px;
+    text-decoration: none;
+    border-radius: 2px;
+    font-family: 'Staatliches';
+    border: none;
+    color: black;
+}
+
+.createbuttonrecipe:hover {
+    background-color: #FFB001;
+    color: white;
+    font-family: 'Staatliches';
+    text-decoration: none;
+
+}
+
+.nextbuttonfoodpreferences {
+    padding: 10px 60px;
+    border-radius: 2px;
+    text-decoration: none;
+    border-radius: 2px;
+    font-family: 'Staatliches';
+    border: none;
+    color: black;
+}
+
+.nextbuttonfoodpreferences:hover {
+    background-color: #FFB001;
+    color: white;
+    font-family: 'Staatliches';
+    text-decoration: none;
+}
+
+.favouritesbuttonprofile {
+    padding: 10px 60px;
+    border-radius: 2px;
+    text-decoration: none;
+    border-radius: 2px;
+    font-family: 'Staatliches';
+    border: none;
+    color: black;
+}
+
+.favouritesbuttonprofile:hover {
+    background-color: #FFB001;
+    color: white;
+    font-family: 'Staatliches';
+    text-decoration: none;
+}
+
+
+.editprofilebuttonprofile {
+    padding: 10px 60px;
+    border-radius: 2px;
+    text-decoration: none;
+    border-radius: 2px;
+    font-family: 'Staatliches';
+    border: none;
+    color: black;
+}
+
+.editprofilebuttonprofile:hover {
+    background-color: #FFB001;
+    color: white;
+    font-family: 'Staatliches';
+    text-decoration: none;
+}
+
+.createrecipeprofile {
+    padding: 10px 60px;
+    border-radius: 2px;
+    text-decoration: none;
+    border-radius: 2px;
+    font-family: 'Staatliches';
+    border: none;
+    color: black;
+}
+
+.createrecipeprofile:hover {
+    background-color: #FFB001;
+    color: white;
+    font-family: 'Staatliches';
+    text-decoration: none;
+}
+
+.logoutbuttonedit {
+    padding: 10px 60px;
+    border-radius: 2px;
+    text-decoration: none;
+    border-radius: 2px;
+    font-family: 'Staatliches';
+    border: none;
+    color: black;
+}
+
+.logoutbuttonedit:hover {
+    background-color: #FFB001;
+    color: white;
+    font-family: 'Staatliches';
+    text-decoration: none;
+}
+
+.confirmbuttonedit {
+    padding: 10px 60px;
+    border-radius: 2px;
+    text-decoration: none;
+    border-radius: 2px;
+    font-family: 'Staatliches';
+    border: none;
+    color: black;
+}
+
+.confirmbuttonedit:hover {
+    background-color: #FFB001;
+    color: white;
+    font-family: 'Staatliches';
+    text-decoration: none;
+}
+
+
+
+
+/*HOMEPAGE*/
+/*TEXT*/
+
+.homepagetexth4 {
+    font-family: 'Sorts Mill Goudy';
+    font-size: 18px;
+
+}
+
+/*create recipe*/
+/*TEXT*/
+.createRecipetext {
+    font-family: 'Staatliches';
+}
+
+/*userprofile*/
+/*TEXT*/
+
+.userprofiletextP {
+    font-family: 'Sort Mill Goudy';
+}
+
+.userprofiletexth2 {
+    font-family: 'Staatliches';
+}
+
+.emailprofile {
+    font-family: 'Staatliches';
 }
