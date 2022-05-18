@@ -1,0 +1,28 @@
+/*form foodprefences*/
+.formfoodpreferences{
+    margin: 50px;
+    padding: 20px;
+    background-color: #FFB001;
+
+}
+
+.textlabel {
+    font-family: 'Sorts Mill Goudy';
+}
+
+.textPlabel {
+    font-family: 'Staatliches';
+}
+.sectionfoodpreferences{
+    background-image: url("/../../foto12.avif") ;
+}
+
+/*login*/
+.loginform1 {
+    margin: 50px;
+    padding: 20px;
+    background-color: #FFB001;
+    top: 0.3em;
+    right: 0.3em;
+}
+

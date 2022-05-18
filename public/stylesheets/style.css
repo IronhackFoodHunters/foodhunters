@@ -5,6 +5,7 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: #019992;
 }
 
 /* Text headers*/
@@ -24,10 +25,6 @@ h4 {
     color: black;
 }
 
-p {
-    font-family: 'Sorts Mill Goudy';
-    color: black;
-}
 
 a {
     text-decoration: none;
@@ -234,7 +231,7 @@ footer {
 }
 
 .nextbuttonfoodpreferences:hover {
-    background-color: #FFB001;
+    background-color: #019992;
     color: white;
     font-family: 'Staatliches';
     text-decoration: none;
@@ -456,4 +453,11 @@ footer {
 
 .emailprofile {
     font-family: 'Staatliches';
+}
+
+/*TEXT*/
+/*recipedetails*/
+
+.textrecipedetails {
+    font-family:'Staatliches';
 }
