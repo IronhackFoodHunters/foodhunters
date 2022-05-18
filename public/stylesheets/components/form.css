@@ -19,10 +19,31 @@
 
 /*login*/
 .loginform1 {
-    margin: 50px;
-    padding: 20px;
+    padding: 20px; 
     background-color: #FFB001;
-    top: 0.3em;
-    right: 0.3em;
+    opacity: 0.9;
+   
 }
 
+.backgroundlogin {
+    background-image: url("../../images/foto10.avif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px; 
+}
+
+/*signup*/
+
+.loginform1 {
+    padding: 20px; 
+    background-color: #FFB001;
+    opacity: 0.9;
+   
+}
+
+.backgroundlogin1 {
+    background-image: url("../../images/foto2.avif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px; 
+}
