@@ -6,22 +6,24 @@ body {
     padding: 0;
 }
 
-
-
 /* Text headers*/
-h1 {font-family: 'Staatliches';}
-h2 {font-family:'Staatliches'}
-h3 {font-family:'Staatliches'}
-h4 {font-family:'Staatliches'}
+h1 {font-family: 'Staatliches';
+    color: black ;}
+h2 {font-family:'Staatliches';
+    color: black; }
+h3 {font-family:'Staatliches';
+color: black;  }
+h4 {font-family:'Staatliches';
+color: black; }
 
-p {font-family: 'Sorts Mill Goudy';}
+p {font-family: 'Sorts Mill Goudy';
+    color: black;}
 
 /*headerlayout*/
 .headerlayout{
     background-color: #019992;
     height: 70px;
     margin-bottom: 20px;
-
 }
 
 
@@ -66,8 +68,7 @@ footer {
     border: none;
     text-decoration: none;
     position: fixed;
-    margin-right:-215px; 
-    margin-top: -130px;
+    
 
 }
 
@@ -85,8 +86,6 @@ footer {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
-
     padding: 10px 60px;
     border-radius: 2px;
     text-decoration: none;
