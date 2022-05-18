@@ -1,6 +1,4 @@
-<button> <a href="/private/create-recipe"> CREATE A RECIPE </a> </button>
-
-    <h2>FEED</h2>
+  <h2>FEED</h2>
 
     {{#each reversed}}
 
@@ -16,14 +14,6 @@
 
     <img src="{{owner.imageUrl}}" width="100" height="100" alt="{{recipe.owner.username}}">
     <h4> {{recipe.owner.username}}</h4>
-
-
-
-    <form action="/favourites/{{_id}}" method="POST">
-        <button>LIKE</button>
-        <!--when this is pushed it need to push the recipe in to recipesLiked-->
-    </form>
-    {{/each}}
 
 
 
