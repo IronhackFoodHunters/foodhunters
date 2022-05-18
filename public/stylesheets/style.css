@@ -9,7 +9,7 @@ body {
 /* Text headers*/
 h1 {font-family: 'Staatliches';
     color: black ;}
-h2 {font-family:'Staatliches';
+.h2 {font-family:'Staatliches';
     color: black; }
 h3 {font-family:'Staatliches';
 color: black;  }
@@ -93,4 +93,33 @@ footer {
     font-family: 'Staatliches';
     border: none; 
 
+}
+
+/*button profile*/
+/* edit recipe hbs*/
+.deleteButton {
+    padding: 10px 60px;
+    border-radius: 2px;
+    text-decoration: none;
+    border-radius: 2px;
+    font-family: 'Staatliches';
+    border: none; 
+}
+
+.editButton {
+    padding: 10px 60px;
+    border-radius: 2px;
+    text-decoration: none;
+    border-radius: 2px;
+    font-family: 'Staatliches';
+    border: none; 
+}
+
+.submitButton {
+    padding: 10px 60px;
+    border-radius: 2px;
+    text-decoration: none;
+    border-radius: 2px;
+    font-family: 'Staatliches';
+    border: none; 
 }
