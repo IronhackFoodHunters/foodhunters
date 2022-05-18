@@ -18,38 +18,38 @@ router.get("/profile/:id", (req, res) => {
   const { id } = req.params;
   let isOwner = false;
   if (id === req.session.currentUser._id) isOwner = true;
-
   User.findById(id)
-    .populate("recipesMade")
-    .then((user) => {
-      const reversedCreated = user.recipesMade.reverse();
-      res.render("user-profile/user-profile", {
-        user,
-        isOwner,
-        reversedCreated,
-      });
-    })
-    .catch((error) => {
-      console.log(error);
+  .populate("recipesMade")
+  .then((user) => {
+    const reversedCreated = user.recipesMade.reverse();
+    res.render("user-profile/user-profile", {
+      user,
+      isOwner,
+      reversedCreated,
     });
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 });
 
 // //created recipes
 router
-  .route("/profile")
-  .get( isLoggedIn, (req, res) => {
-    User.findById(req.session.currentUser._id)
-      .populate("recipesMade")
-      .then((user) => {
-        const reversedCreated = user.recipesMade.reverse();
-        res.render("user-profile/user-profile", { user, reversedCreated });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+.route("/profile")
+.get((req, res) => {
+  User.findById(req.session.currentUser._id)
+  .populate("recipesMade")
+  .then((user) => {
+    const reversedCreated = user.recipesMade.reverse();
+    res.render("user-profile/user-profile", { user, reversedCreated , isOwner: true});
   })
-  .post( isLoggedIn, (req, res) => {
-    const { id } = req.params;
+  .catch((error) => {
+    console.log(error);
+  });
+})
+.post((req, res) => {
+  const { id } = req.params;
+
     Recipe.findByIdAndUpdate(id, {
       $push: { created: req.session.currentUser._id },
     })
@@ -103,19 +103,20 @@ router
   .route("/recipe-details/:id")
   .get((req, res) => {
     const { id } = req.params;
-
     Recipe.findById(id)
-      .populate("owner")
-      .populate("comments")
-      .populate({
-        path: "comments",
-        populate: {
-          path: "owner",
-        },
-      })
-      .then((recipe) => {
-        console.log("recipe", recipe);
-        res.render("recipe/recipe-details", recipe);
+    .populate("owner")
+    .populate("comments")
+    .populate({
+      path: "comments",
+      populate: {
+        path: "owner",
+      },
+    })
+    .then((recipe) => {
+      let isOwner = false;
+      if (recipe.owner._id == req.session.currentUser._id) isOwner = true;
+      console.log("inside profile/:id", isOwner, req.session.currentUser._id, recipe.owner._id)
+        res.render("recipe/recipe-details",{ recipe, isOwner });
       })
       .catch((error) => {
         console.log(error);

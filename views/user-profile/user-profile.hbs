@@ -9,7 +9,7 @@
 <p class="userprofiletextP">Still no logged in user, sorry!</p>
 {{/if}}
 
-{{#if user}}
+{{#if isOwner}}
 <button class="editprofilebuttonprofile"  type="submit">
   <a href="/auth/profile/{{_user.id}}edit">Edit Profile</a>
 </button>
