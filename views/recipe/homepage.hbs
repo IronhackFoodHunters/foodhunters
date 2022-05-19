@@ -1,24 +1,39 @@
-  <h2>FEED</h2>
+
+
+
+<button class="createbuttonhomepage"> <a class="createbuttonhomepage" href="/private/create-recipe"> CREATE A RECIPE </a> </button>
+<br>
+<br>
 
     {{#each reversed}}
 
-    <h3>{{title}}</h3>
+<section class="sectionborder">
+
+    <div class="sectionrecipehomepage">
+    <h4 class="homepagetexth4">{{title}}</h4>
+
 
     <a href="/recipe-details/{{_id}}">
-        <img src="{{imageUrl}}" width="200" height="200" alt="{{title}}" />
+        <img class="imagerecipe" src="{{imageUrl}}" width="200" height="200" alt="{{title}}" />
     </a>
+    </div>
 
-    <h4>{{owner.username}}</h4>
+
+ <div class="sectiontitleownerhomepage">
+    <h3 class="homepagetexth3">{{owner.username}}</h3>
 
     <!-- <a href="/profile/{{owner.username}}"> -->
 
-    <img src="{{owner.imageUrl}}" width="100" height="100" alt="{{recipe.owner.username}}">
-    <h4> {{recipe.owner.username}}</h4>
+    <img class="imagesProfile" src="{{owner.imageUrl}}" width="100" height="100" alt="{{recipe.owner.username}}">
+    <h4 class="homepagetexth4"> {{recipe.owner.username}}</h4>
+</div>
 
-
-
-    <form action="/favourites/{{_id}}" method="POST">
-        <button>LIKE</button>
+    <form  class="likebuttonprofile" action="/favourites/{{_id}}" method="POST">
+        <button class="likeButton">LIKE</button>
         <!--when this is pushed it need to push the recipe in to recipesLiked-->
     </form>
+    </section>
+    <br>
+    <hr class="breaklinehomepage">
     {{/each}}
+   

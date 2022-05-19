@@ -1,10 +1,11 @@
+<section class="recipedetails">
 <h2 class="h2">{{recipe.title}}</h2>
 
-<p>Ingredients: {{recipe.ingredients}}</p>
+<p> <h3 class="userprofiletexth3">Ingredients</h3> {{recipe.ingredients}}</p>
 
-<p>Instructions: {{recipe.instructions}}</p>
+<p> <h3 class="userprofiletexth3">Instructions </h3> {{recipe.instructions}}</p>
 
-<img class="recipe-img {{_id}}" src="{{recipe.imageUrl}}" alt="{{recipe.title}}" />
+<img class="imagerecipe" class="recipe-img {{_id}}" src="{{recipe.imageUrl}}" width="200" height="200" alt="{{recipe.title}}" />
 
 <p>{{recipe.category}}</p>
 
@@ -16,7 +17,13 @@
 
   <textarea type='text' name='message'></textarea>
 
+  <br>
+  <br>
+
   <button class="submitButton" type="submit">Send comment</button>
+
+<br>
+<br>
 
 </form>
 
@@ -34,8 +41,13 @@
     Edit </button>
 </a>
 
-<form action="/recipe-details/{{_id}}/delete" method="POST">
+<br>
+<br>
+
+<form class="formrecipedetails" action="/recipe-details/{{_id}}/delete" method="POST">
   <button class="deleteButton" type="submit">Delete</button>
-  </for
+  </form>
+  </section>
 
   {{/if}}
+  

@@ -1,10 +1,5 @@
-/*form foodprefences*/
-.formfoodpreferences{
-    margin: 50px;
-    padding: 20px;
-    background-color: #FFB001;
 
-}
+/*text foodpreferences*/
 
 .textlabel {
     font-family: 'Sorts Mill Goudy';
@@ -29,21 +24,97 @@
     background-image: url("../../images/foto10.avif");
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 100px; 
+    padding: 100px;
+    height: 450px; 
 }
+
+.backgroundlogin1 {
+    background-image: url("../../images/foto10.avif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px;
+    height: 450px; 
+}
+
 
 /*signup*/
 
-.loginform1 {
+
+.loginform6 {
+    margin-top: 50px;
+    padding-right: 5px; 
+    padding-left: 15px;
+    background-color: #FFB001;
+    opacity: 0.9;
+    align-items: center;
+    align-content: center;
+  
+     
+}
+.backgroundlogin {
+    background-image: url("../../images/foto2.avif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px; 
+    height: 450px;
+}
+
+
+/*foodpreferences*/
+.formfoodpreferences {
     padding: 20px; 
     background-color: #FFB001;
     opacity: 0.9;
    
 }
 
-.backgroundlogin1 {
-    background-image: url("../../images/foto2.avif");
+.backgroundfoodpreferences {
+    background-image: url("../../images/foto1.avif");
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 100px; 
+    padding: 100px 60px;  
+   
+} 
+
+/*userprofile*/
+
+.userprofileform {
+    padding-top: 100px;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+.buttonsprofile {
+    display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+.recipeuserprofile {
+    display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+    padding-bottom: 200px;
+
+}
+
+.recipedetails {
+    display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+    padding-bottom: 200px;
+
 }
