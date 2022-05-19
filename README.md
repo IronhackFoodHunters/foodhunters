@@ -40,27 +40,34 @@ GET      |/login |Renders login form view.|
 POST| /login | Sends Login form data to the server.|{email, password}|
 GET | /signup | Renders signup form view/ Create user's profile| |
 POST | /signup | Sends Sign Up info to the server and creates user in the DB. | { username, email, password, [foodpreferences], [img]} |
+GET | /foodpreferences | Requests the list of food preferences that each user has in termn  of recipes they might be interested
+POST | /foodpreferences | Updates the food preferences of the user logged in in the data base |
 GET	| /logout | Logges user out 
 FEED
-GET	|/homepage |	Renders all the recipe pictures uploaded by users| |
-GET	| /recipedetails |	Renders the recipe details on the page | { title, instructions, [category], [img]} |
-POST | /recipedetailes | It updates the recipe likes and the users likes | |
-GET	| /search-results |	Renders the view to search per category | |
-POST |	/search-results | Renders the results of the search | |
+GET	|/homepage |	Renders all the recipe pictures uploaded by users. Including the user owner of the recipe and the likes buttons| |
+GET	| /recipe-details/:id |	Renders the recipe details on the page. Here the user owner of the recipe can edit and also the comments section | { title, ingresdients, instructions, [category], [img]} |
+POST | /recipe-details/:id | If the recipe is liked, or edited or comments are added this will be sent to the data base| |
+GET	| /search |	Renders the view to search per category | |
+GET |	/search-results | Renders the results of the search | |
 USER PROFILE
 GET	| /userprofile/:id | Renders the recipes posted/edit profile btn/ User's likes btn/recipe's details/createrecipe btn	|	{username, [img], description, [foodprefences]}
 {title, [img/videos]} |
-GET	| /private/edit-profile	| Private route. Renders edit-profile form view. | {username, [img], description, [foodprefences]}, {title, [img/videos]|
-POST | /private/edit-profile | Sends the changes made to the profile to the server and updates the DB | { email, password, [firstName], [lastName], [imageUrl] }
-GET	| /recipes-liked | Renders the recipes the user liked| |
-GET | /private/recipecreate | Renders the recipe create from view | |
-POST | /recipecreate | Sends the new recipe to the server and it's created in the DB | {Title, instructions, images, (videos), category}
+GET	| /profile/edit| Private route. Renders edit-profile form view. | {username, [img], description, [foodprefences]}, {title, [img/videos]|
+POST | /profile/edit | Sends the changes made to the profile to the server and updates the DB | { email, password, [firstName], [lastName], [imageUrl] }
+GET	| /favourites | Renders the recipes the user liked| |
+POST | /favourites/:id | Updates the recipe in the data base adding the like of the user who made it and send the like recipe to the user profle favourites section| |
+GET | /private/create-recipe | Renders the option to create a from view | |
+POST | /private/create-recipe | Sends the new recipe to the server and it's created in the database | {Title, instructions, images, (videos), category}
+GET | /edit-recipe/:id /Request from the server the form to edit an existing recipe. Only the owner of the recipe has access to this option
+POST | /edit-recipe/:id | Updates the recipe in the data base with whatever changes the users make to their own recipes |
+GET | /recipe-details/:id/delete | The user owner can delete a recipe they have created | |
+
 
 MODELS
 
 USER MODEL
 ````` javascript
-username: {
+	username: {
 		type: String,
 		required: true,
 		unique: true,
@@ -75,16 +82,15 @@ username: {
 	},
     description: { 
         type: String,
-        required: true,
         maxlength: 280,
     },
     imageUrl: {
 		type: String,
 		default:
-			'https://images.unsplash.com/photo-1513694203232-719a280e022f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=749&q=80'
+			'https://easterntradelinks.com/front/images/default.png'
 	},
 	foodPreferences:{
-		type: String,
+		type: [String],
 		enum: [ "omnivorous", "vegetarian", "vegan", "no carbs", "gluten free", "pescatarian", "sweets", 
 		"drinks", "mediterranean", "asian", "african", "latinoamerican", null ],
 		description: "needs to be at least one of the values and is required",
@@ -101,36 +107,49 @@ username: {
 RECIPE MODEL
 
 ````` javascript
-title: {
+	title: {
 		type: String,
 		required: true,
 	},
+
+	ingredients: { 
+		type: String,
+		required: true
+	},
+
 	instructions: {
 		type: String,
 		required: true
 	},
-	category: {
+	category: [{
 		type: String,
-		enum: [ "omnivorous", "vegetarian", "vegan", "no carbs", "gluten free", "pescatarian", "sweets", 
-		"drinks", "mediterranean", "asian", "african", "latinoamerican", null],
-		required: true,
+		enum: ["omnivorous", "vegetarian", "vegan", "no carbs", "gluten free", "pescatarian", "sweets",
+			"drinks", "mediterranean", "asian", "african", "latinoamerican", null],
+		//required: true,
 		description: "needs to be at least one of the values and is required"
-	 },
-    imageUrl: {
+	}],
+	imageUrl: {
 		type: String,
 		default:
-			'https://images.unsplash.com/photo-1513694203232-719a280e022f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=749&q=80'
+			'https://easterntradelinks.com/front/images/default.png'
 	},
-	likes: [{type: Schema.Types.ObjectId, ref: 'User'}],
-    owner: {type: Schema.Types.ObjectId, ref: 'User'}
+	comments: [{type: Schema.Types.ObjectId, ref: 'Comment', default: []}],
+	likes: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+	owner: { type: Schema.Types.ObjectId, ref: 'User' },
+
 
 `````
 COMMENTS MODEL
 
 ````` javascript
-owner: { type: Schema.Types.ObjectId, ref: 'User' },
-	comment: { type: String, required: true, maxlength: 280 }
+	owner: { type: Schema.Types.ObjectId, ref: 'User' },
+	message: { type: String, required: true, maxlength: 280 }
+
 `````
 
-Bon Appetite!!
+For more information don't hesitate and visit our awesome presentation:
+
+https://docs.google.com/presentation/d/1vpxiEZyIrjRlL_643H9PKdsojkwSHB0eBZ6PTIXN4wI/edit?usp=sharing
+
+Let the hunt begin and Bon Appetite!!
 
