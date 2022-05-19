@@ -1,21 +1,21 @@
 {{#each recipes}}
-
+<div class="likedpostform">
 <h3>{{title}}</h3>
 
 <a href="/recipe-details/{{id}}"> 
-    <img src="{{imageUrl}}" width="200" height="200" alt="{{title}}" /> 
+    <img class="imagerecipe" src="{{imageUrl}}" width="200" height="200" alt="{{title}}" /> 
 </a>
 
 <h4>{{owner.username}}</h4>
 
 <!-- <a href="/profile/{{owner.username}}"> -->
 
-<img src= "{{owner.imageUrl}}" width="100" height="100" alt ="{{owner.username}}">
+<img class="imagesProfile" src= "{{owner.imageUrl}}" width="100" height="100" alt ="{{owner.username}}">
 <h4> {{owner.username}}</h4>
 
 
 <form action="/favourites/{{id}}" method="POST">
 <button class="likebutton">LIKE</button> <!--when this is pushed it need to push the recipe in to recipesLiked-->
 </form>
-
+</div>
 {{/each}}
