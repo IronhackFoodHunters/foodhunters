@@ -14,7 +14,7 @@
 <a href="/profile/{{recipe.owner._id}}">Go to the chefs profile</a>
 
 <h4 class="textrecipedetails">Comments and tips</h4>
-<form action='/recipe-details/{{_id}}' method='POST'>
+<form action='/recipe-details/{{recipe._id}}' method='POST'>
 
   <textarea type='text' col="10" name='message'></textarea>
 
@@ -37,7 +37,7 @@
 {{/each}}
 
 {{#if isOwner}}
-<a href="/edit-recipe/{{_id}}">
+<a href="/edit-recipe/{{recipe._id}}">
   <button class="editButton">
     Edit </button>
 </a>
