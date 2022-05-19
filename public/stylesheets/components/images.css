@@ -69,5 +69,16 @@ hr.breaklinehomepage:after {
     padding: 0 0.25em;
 }
 
-/*images recipe details*/
+/*liked photos*/
+
+.likedpostform {
+    background-color: #019992;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+
+}
 
