@@ -36,7 +36,7 @@ router.get("/profile/:id", (req, res) => {
 // //created recipes
 router
 .route("/profile")
-.get((req, res) => {
+.get(isLoggedIn, (req, res) => {
   User.findById(req.session.currentUser._id)
   .populate("recipesMade")
   .then((user) => {
@@ -47,7 +47,7 @@ router
     console.log(error);
   });
 })
-.post((req, res) => {
+.post(isLoggedIn,(req, res) => {
   const { id } = req.params;
 
     Recipe.findByIdAndUpdate(id, {
@@ -216,10 +216,10 @@ router
   });
 
 // search recipe by category
-router.get("/search", (req, res) => {
+router.get("/search", isLoggedIn, (req, res) => {
   res.render("recipe/search");
 });
-router.get("/search-results", (req, res) => {
+router.get("/search-results", isLoggedIn, (req, res) => {
   console.log(req.query);
   Recipe.find({ category: { $in: [req.query.filter] } })
   .populate("owner")
