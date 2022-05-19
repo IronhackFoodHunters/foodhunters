@@ -1,12 +1,12 @@
 
+<section class="backgroundlogin">
+<form class="loginform1" action="/auth/profile/edit" method="POST" enctype="multipart/form-data">
 
-<form class="loginform6" action="/auth/profile/edit" method="POST" enctype="multipart/form-data">
-
-  <label class="textlabel" for="username"> Username:</label>
+  <label class="textlabel" for="username"> </label>
   <input class="textlabel" type="text" name="username" value="{{user.username}}" />
-
+<br>
   <br />
-  <label class="textlabel" for="email"> Email:</label>
+  <label class="textlabel" for="email"> </label>
   <input class="textlabel" type="text" name="email" value="{{user.email}}" />
   <br />
 
@@ -41,8 +41,17 @@
 
 
   <button class="confirmbuttonedit" type="submit"> Confirm</button>
-</form>
 
+  <br />
+<a href="/profile">Go back</a>
+
+<br>
+<button class="logoutbuttonedit" type="submit">
+  <a href="/auth/logout">Log out</a>
+</button>
+
+</form>
+</section>
 <br />
 <a href="/profile">Go back</a>
 

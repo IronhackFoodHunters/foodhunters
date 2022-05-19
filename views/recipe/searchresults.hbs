@@ -1,3 +1,4 @@
+<div class="bottomdivlikedpost" style="height: 150px"> </div>
 {{#each recipes}}
 <div class="likedpostform">
 <h3>{{title}}</h3>
@@ -6,12 +7,16 @@
     <img class="imagerecipe" src="{{imageUrl}}" width="200" height="200" alt="{{title}}" /> 
 </a>
 
+<a href="/profile/{{owner._id}}">
 <h4>{{owner.username}}</h4>
+</a>
 
 <!-- <a href="/profile/{{owner.username}}"> -->
-
+<a href="/profile/{{owner._id}}">
 <img class="imagesProfile" src= "{{owner.imageUrl}}" width="100" height="100" alt ="{{owner.username}}">
-<h4> {{owner.username}}</h4>
+</a>
+<br>
+<br>
 
 
 <form action="/favourites/{{id}}" method="POST">
@@ -19,3 +24,4 @@
 </form>
 </div>
 {{/each}}
+<div class="bottomdivlikedpost" style="height: 150px"> </div>
