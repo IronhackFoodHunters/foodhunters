@@ -4,7 +4,7 @@
 
   <div class="userprofileform">
   {{#if user}}
-  <img class="imagesProfile" src="{{user.imageUrl}}" width="200" height="200" alt="hi">
+  <img class="imagesProfile1" src="{{user.imageUrl}}" width="180" height="180" alt="hi">
   <h2 class="userprofiletexth2">{{user.username}}</h2>
   <h3 class="emailprofile">{{user.email}}</h3>
 
@@ -38,16 +38,16 @@
   {{/if}}
 
   <!--add created reciped here-->
-
+ <div class="sectiontitleownerhomepage">
   {{#each reversedCreated}}
   <h3 class="userprofiletexth3">{{title}}</h3>
 
   <a href="/recipe-details/{{_id}}">
-    <img class="imagerecipe" src="{{imageUrl}}" width="200" height="200" alt="{{title}}" />
+    <img class="imagerecipe" src="{{imageUrl}}" width="300" height="300" alt="{{title}}" />
   </a>
  
   {{/each}}
 
 </div>
-  
+  </div>
 <div class="bottomdivlikedpost" style="height: 150px"> </div>
