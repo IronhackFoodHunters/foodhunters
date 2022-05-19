@@ -1,31 +1,31 @@
-<h2>Edit your profile</h2>
 
-<form action="/auth/profile/edit" method="POST" enctype="multipart/form-data">
 
-  <label for="username"> Username:</label>
-  <input type="text" name="username" value="{{user.username}}" />
+<form class="loginform6" action="/auth/profile/edit" method="POST" enctype="multipart/form-data">
+
+  <label class="textlabel" for="username"> Username:</label>
+  <input class="textlabel" type="text" name="username" value="{{user.username}}" />
 
   <br />
-  <label for="email"> Email:</label>
-  <input type="text" name="email" value="{{user.email}}" />
+  <label class="textlabel" for="email"> Email:</label>
+  <input class="textlabel" type="text" name="email" value="{{user.email}}" />
   <br />
 
   <br />
   <p> would you like to eat? </p>
 
   <select id="foodPreferences" multiple>
-    <option label="omnivorous"> omnivorous</option>
-    <option label="vegetarian"> vegetarian</option>
-    <option label="vegan"> vegan</option>
-    <option label="drinks"> drinks</option>
-    <option label="mediterranean"> mediterranean</option>
-    <option label="african"> african</option>
-    <option label="no carbs"> no carbs</option>
-    <option label="gluten free"> gluten free</option>
-    <option label="pescatarian"> pescatarian</option>
-    <option label="sweets"> sweets</option>
-    <option label="latinoamerican"> latinoamerican</option>
-    <option label="asian"> asian</option>
+    <option class="textlabel" label="omnivorous"> omnivorous</option>
+    <option class="textlabel" label="vegetarian"> vegetarian</option>
+    <option class="textlabel" label="vegan"> vegan</option>
+    <option class="textlabel" label="drinks"> drinks</option>
+    <option class="textlabel" label="mediterranean"> mediterranean</option>
+    <option class="textlabel" label="african"> african</option>
+    <option class="textlabel" label="no carbs"> no carbs</option>
+    <option class="textlabel" label="gluten free"> gluten free</option>
+    <option class="textlabel" label="pescatarian"> pescatarian</option>
+    <option class="textlabel" label="sweets"> sweets</option>
+    <option class="textlabel" label="latinoamerican"> latinoamerican</option>
+    <option class="textlabel" label="asian"> asian</option>
     <!--<input type="text" name="instructions" value="{{user.foodPreferences}}" />-->
 
   </select>
@@ -38,6 +38,8 @@
   </label>
   <br />
 <br>
+
+
   <button class="confirmbuttonedit" type="submit"> Confirm</button>
 </form>
 

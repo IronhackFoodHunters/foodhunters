@@ -1,45 +1,47 @@
-<h2>Edit your recipe</h2>
 
-<form action="/edit-recipe/{{_id}}" method="POST" enctype="multipart/form-data">
+<section class="backgroundlogin">
+<form class="loginform6" action="/edit-recipe/{{_id}}" method="POST" enctype="multipart/form-data">
 
   <label for="title"> Title:</label>
-  <input type="text" name="title" value="{{title}}" />
-
+  <input class="textlabel" type="text" name="title" value="{{title}}" />
+ <br>
   <br />
-  <label for="ingredients"> Ingredients:</label>
-  <input type="text" name="ingredients" value="{{ingredients}}" />
-  <br />
-
-  <br />
-  <label for="instructions"> Instructions:</label>
-  <input type="text" name="instructions" value="{{instructions}}" />
+  <label class="textlabel" for="ingredients"> Ingredients:</label>
+  <input class="textlabel" type="text" name="ingredients" value="{{ingredients}}" />
   <br />
 
-  <p> Category </p>
+  <br />
+  <label class="textlabel" for="instructions"> Instructions:</label>
+  <input class="textlabel" type="text" name="instructions" value="{{instructions}}" />
+  <br />
+
+  <p class="textlabel"> Category </p>
 
   <select id="category" name="category" multiple>
-    <option label="omnivorous"> omnivorous</option>
-    <option label="vegetarian"> vegetarian</option>
-    <option label="vegan"> vegan</option>
-    <option label="drinks"> drinks</option>
-    <option label="mediterranean"> mediterranean</option>
-    <option label="african"> african</option>
-    <option label="no carbs"> no carbs</option>
-    <option label="gluten free"> gluten free</option>
-    <option label="pescatarian"> pescatarian</option>
-    <option label="sweets"> sweets</option>
-    <option label="latinoamerican"> latinoamerican</option>
-    <option label="asian"> asian</option>
+    <option class="textlabel" label="omnivorous"> omnivorous</option class="textlabel">
+    <option class="textlabel" label="vegetarian"> vegetarian</option class="textlabel">
+    <option class="textlabel" label="vegan"> vegan</option class="textlabel">
+    <option class="textlabel" label="drinks"> drinks</option class="textlabel">
+    <option class="textlabel" label="mediterranean"> mediterranean</option class="textlabel">
+    <option class="textlabel" label="african"> african</option class="textlabel">
+    <option class="textlabel" label="no carbs"> no carbs</option class="textlabel">
+    <option class="textlabel" label="gluten free"> gluten free</option class="textlabel">
+    <option class="textlabel" label="pescatarian"> pescatarian</option class="textlabel">
+    <option class="textlabel" label="sweets"> sweets</option class="textlabel">
+    <option class="textlabel" label="latinoamerican"> latinoamerican</option class="textlabel">
+    <option class="textlabel" label="asian"> asian</option class="textlabel">
     <!--<input type="text" name="instructions" value="{{user.foodPreferences}}" />-->
 
   </select>
+  <br>
   <br />
 
   <label for="image"> Image:<input type="file" name="imageUrl" /></label>
   <br />
+  <br>
 
   <button class="confirmbutton" type="submit">Confirm</button>
   <br />
-
-</form>
 <a href="/profile">Go back</a>
+</form>
+</section>

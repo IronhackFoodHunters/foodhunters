@@ -1,11 +1,13 @@
 @import url('components/form.css');
-@import url('components/header.css');
+@import url('components/images.css');
 @import url('components/landing.css');
 
 body {
     margin: 0;
     padding: 0;
     background-color: #019992;
+  
+   
 }
 
 /* Text headers*/
@@ -35,50 +37,40 @@ a {
 .headerlayout {
     background-color: #019992;
     height: 70px;
-    margin-bottom: 20px;
+    position: fixed;
+    width: 100%;
+    top:0px;
 }
-
-
-
 
 /*footer*/
 
 footer {
     background-color: #019992;
-    height: 100px;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    align-items: stretch;
-    align-content: stretch;
+    position: fixed;
+    bottom: 0px; 
+    height: 110px; 
+    width: 100%;
+   
+    
 }
 
 .footerimagelogo {
-    /*display: flex;*/
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    align-items: baseline;
-    align-content: flex-end;
-    right: 20px;
-
+    position: fixed;
+    bottom: 0px;
+    right: 0px;  
 }
 
 
 .footerSearch {
-    /*display: flex;*/
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    align-content: stretch;
-    /*padding: 10px 60px;*/
+
+    padding: 10px 60px;
     border-radius: 2px;
     font-family: 'Staatliches';
     border: none;
     text-decoration: none;
+    position: fixed;
+    bottom: 10px;
+    right: 120px;
 
 
 }
@@ -87,17 +79,18 @@ footer {
     background-color: #FFB001;
     color: white;
     font-family: 'Staatliches';
+    position: fixed;
+    bottom: 10px;
+    right: 120px;
 
 }
 
 
 .footerProfile1 {
-    /*display: flex;*/
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    /*padding: 10px 60px;*/
+    position: fixed;
+    bottom: 60px;
+    right: 120px;
+    padding: 10px 60px;
     border-radius: 2px;
     text-decoration: none;
     border-radius: 2px;
@@ -163,6 +156,7 @@ footer {
     border-radius: 2px;
     font-family: 'Staatliches';
     border: none;
+    
 }
 
 .likeButton:hover {
@@ -174,6 +168,8 @@ footer {
 
 /* homepage */
 
+
+
 .createbuttonhomepage {
     padding: 10px 60px;
     border-radius: 2px;
@@ -182,6 +178,10 @@ footer {
     font-family: 'Staatliches';
     border: none;
     color: black;
+    display: flex;
+    align-content: center;
+    margin-left: 20px;
+
 }
 
 .createbuttonhomepage:hover {
@@ -389,7 +389,7 @@ footer {
     font-family: 'Staatliches';
     text-decoration: none;
 }
-   
+
 .filterbutton {
     padding: 10px 60px;
     border-radius: 2px;
@@ -400,7 +400,7 @@ footer {
     color: black;
 }
 
-.filterbutton:hover{
+.filterbutton:hover {
     background-color: #FFB001;
     color: white;
     font-family: 'Staatliches';
@@ -428,9 +428,14 @@ footer {
 /*TEXT*/
 
 .homepagetexth4 {
-    font-family: 'Sorts Mill Goudy';
+    font-family: 'Staatliches';
     font-size: 18px;
 
+}
+
+.homepagetexth3 {
+    font-family: 'Sorts Mill Goudy';
+    font-size: 15px;
 }
 
 /*create recipe*/
@@ -444,6 +449,7 @@ footer {
 
 .userprofiletextP {
     font-family: 'Sort Mill Goudy';
+    
 }
 
 .userprofiletexth2 {
@@ -458,5 +464,16 @@ footer {
 /*recipedetails*/
 
 .textrecipedetails {
-    font-family:'Staatliches';
+    font-family: 'Staatliches';
+}
+
+/*TEXT*/
+/*userprofile*/
+
+.userprofiletexth2 {
+    font-family: 'Staatliches';
+}
+
+.userprofiletexth3 {
+    font-family:'Staatliches' ;
 }

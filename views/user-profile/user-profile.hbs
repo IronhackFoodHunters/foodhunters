@@ -1,5 +1,6 @@
+<div class="userprofileform">
 {{#if user}}
-<img src="{{user.imageUrl}}" width="200" height="200" alt="hi">
+<img class="imagesProfile" src="{{user.imageUrl}}" width="200" height="200" alt="hi">
 <h2 class="userprofiletexth2">{{user.username}}</h2>
 <h3 class="emailprofile">{{user.email}}</h3>
 <!---<p>{{user.description:}}</p>--->
@@ -8,29 +9,32 @@
 {{else}}
 <p class="userprofiletextP">Still no logged in user, sorry!</p>
 {{/if}}
+</div>
 
+<div class="buttonsprofile">
 {{#if user}}
 <button class="editprofilebuttonprofile"  type="submit">
   <a href="/auth/profile/{{_user.id}}edit">Edit Profile</a>
 </button>
-
+<br>
 <button class="favouritesbuttonprofile" type="submit">
   <a href="/favourites">Favourites</a>
 </button>
-
+<br>
 <button class="createrecipeprofile" type="submit">
   <a href="/private/create-recipe">Create recipe</a>
 </button>
+</div>
 
 {{/if}}
 
 <!--add created reciped here-->
-
+<div class="recipeuserprofile">
 {{#each reversedCreated}}
 <h3 class="userprofiletexth3">{{title}}</h3>
 
 <a href="/recipe-details/{{_id}}">
-  <img src="{{imageUrl}}" width="200" height="200" alt="{{title}}" />
+  <img class="imagerecipe" src="{{imageUrl}}" width="200" height="200" alt="{{title}}" />
 </a>
-
+</div>
 {{/each}}
