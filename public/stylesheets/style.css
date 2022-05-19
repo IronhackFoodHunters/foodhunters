@@ -6,6 +6,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #019992;
+
   
    
 }
@@ -31,7 +32,7 @@ h4 {
 
 a {
     text-decoration: none;
-    color: white;
+    color: black; 
 }
 
 /*headerlayout*/
@@ -63,7 +64,6 @@ footer {
 
 
 .footerSearch {
-
     padding: 10px 60px;
     border-radius: 2px;
     font-family: 'Staatliches';
@@ -161,6 +161,7 @@ footer {
     font-family: 'Staatliches';
     border: none;
     color: black ;
+    background-color: #FB475E;
 }
 
 .likeButton:hover {
@@ -412,6 +413,7 @@ footer {
 }
 
 .likebutton {
+    color: #FB475E;
     padding: 10px 60px;
     border-radius: 2px;
     text-decoration: none;
@@ -457,8 +459,11 @@ footer {
 .userprofiletextP {
     font-family: 'Sort Mill Goudy';
     color: white;
-    
+    overflow-wrap: break-word; 
+    inline-size: 250px; 
+
 }
+
 
 .userprofiletexth2 {
     font-family: 'Staatliches';
@@ -467,8 +472,13 @@ footer {
 
 .emailprofile {
     font-family: 'Staatliches';
+    font-size: 15px;
+    color: #FB475E;
 }
 
+.emailhrline {
+    width: 20vh;
+}
 /*TEXT*/
 /*recipedetails*/
 

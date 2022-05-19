@@ -13,26 +13,46 @@
 
 /*login*/
 .loginform1 {
-  padding: 20px;
-  background-color: #ffb001;
-  opacity: 0.9;
+
+    padding: 20px; 
+    background-color: #FFB001;
+    opacity: 0.9;
+}
+/*create recipe*/
+.backgroundlogin3 {
+    background-image: url("../../images/foto11.avif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px; 
+    height: 450px;
+    padding-top:180px ;
+    display: flex;
+    align-items: center;
+    align-content: center;
+
+}
+
+.loginform3 {
+    background-color: #FFB001;
+    opacity: 0.9;
+    padding:20px; 
+
+   
 }
 
 .backgroundlogin {
-  background-image: url("../../images/foto10.avif");
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 100px;
-  height: 450px;
+    background-image: url("../../images/foto12.avif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px; 
+    height: 450px;
+    padding-top:180px ;
+    display: flex;
+    align-items: center;
+    align-content: center;
+
 }
 
-.backgroundlogin1 {
-  background-image: url("../../images/foto10.avif");
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 100px;
-  height: 450px;
-}
 
 /*signup*/
 
@@ -45,27 +65,43 @@
   align-items: center;
   align-content: center;
 }
-.backgroundlogin {
-  background-image: url("../../images/foto2.avif");
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 100px;
-  height: 450px;
-}
+
+.backgroundlogin1 {
+    background-image: url("../../images/foto10.avif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px; 
+    height: 450px;
+    padding-top:180px ;
+    display: flex;
+    align-items: center;
+    align-content: center;
+
 
 /*foodpreferences*/
 .formfoodpreferences {
-  padding: 20px;
-  background-color: #ffb001;
-  opacity: 0.9;
-}
 
-.backgroundfoodpreferences {
-  background-image: url("../../images/foto1.avif");
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 100px 60px;
+    background-color: #FFB001;
+    opacity: 0.9;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+    padding-top: 20px; 
+    
 }
+.backgroundfoodpreferences {
+
+    background-image: url("../../images/foto1.avif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px; 
+    padding-top:180px ;
+    display: flex;
+    align-items: center;
+    align-content: center;
+   
+} 
+
 
 /*userprofile*/
 

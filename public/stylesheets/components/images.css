@@ -1,9 +1,9 @@
 .imagesProfile {
     border-radius: 50%;
-    border: 2px solid black;
-    -moz-box-shadow: 0px 6px 5px #191919;
-    -webkit-box-shadow: 0px 6px 5px #191919;
-    box-shadow: 0px 6px 5px #191919;;
+    border: 2px solid white ;
+    -moz-box-shadow: 0px 6px 5px white;
+    -webkit-box-shadow: 0px 6px 5px white;
+    box-shadow: 0px 6px 5px white;
     -moz-border-radius:190px;
     -webkit-border-radius:190px;
     
@@ -11,11 +11,11 @@
 
 
 .imagerecipe {
-    border-radius: 2px;
-    border: 2px solid black;
-    -moz-box-shadow: 0px 6px 5px #191919;
-    -webkit-box-shadow: 0px 6px 5px #191919;
-    box-shadow: 0px 6px 5px #191919;  
+    border-radius: 2px white ;
+    border: 2px solid white;
+    -moz-box-shadow: 0px 6px 5px white;
+    -webkit-box-shadow: 0px 6px 5px white;
+    box-shadow: 0px 6px 5px white ;
 }
 
 .sectionrecipehomepage{
@@ -45,6 +45,7 @@
 	justify-content: center;
 	align-items: center;
 	align-content: center;
+
 }
 
 .sectionborder {
