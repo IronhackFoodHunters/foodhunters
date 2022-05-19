@@ -20,6 +20,8 @@ h1 {
 h2 {
     font-family: 'Staatliches';
     color: white;
+    text-shadow: 2px 2px 8px black  ;
+    
     
 }
 
@@ -137,7 +139,7 @@ footer {
 }
 
 .submitButton {
-    padding: 10px 60px;
+    padding: 10px 30px;
     border-radius: 2px;
     text-decoration: none;
     border-radius: 2px;
@@ -154,18 +156,18 @@ footer {
 }
 
 .likeButton {
-    padding: 10px 60px;
-    border-radius: 2px;
+    padding: 10px 30px;
+    border-radius:  2px; 
     text-decoration: none;
     border-radius: 2px;
     font-family: 'Staatliches';
     border: none;
     color: black ;
-    background-color: #FB475E;
+  
 }
 
 .likeButton:hover {
-    background-color: #FFB001;
+   background-color: #FB475E;
     color: white;
     font-family: 'Staatliches';
 
@@ -413,18 +415,18 @@ footer {
 }
 
 .likebutton {
-    color: #FB475E;
     padding: 10px 60px;
-    border-radius: 2px;
+
     text-decoration: none;
     border-radius: 2px;
     font-family: 'Staatliches';
     border: none;
     color: black;
+    border-radius: 50%;
 }
 
 .likebutton:hover {
-    background-color: #FFB001;
+    background-color: #FB475E;
     color: white;
     font-family: 'Staatliches';
     text-decoration: none;
@@ -461,10 +463,6 @@ footer {
     color: white;
     overflow-wrap: break-word; 
     inline-size: 250px; 
-    display: flex;
-    align-items: center;
-    align-content: center;
-
 }
 
 
@@ -490,6 +488,12 @@ footer {
     color: white;
 }
 
+.textrecipedetails1 {
+    font-family: 'Staatliches';
+    color: white;
+    font-size: 25px; 
+    text-shadow: 2px 2px 8px black  
+}
 /*TEXT*/
 /*userprofile*/
 
@@ -501,7 +505,8 @@ footer {
 .userprofiletexth3 {
     font-family:'Staatliches' ;
     color: white;
-    
+   text-shadow: 2px 2px 8px black  ;
+   font-size: 25px;
 }
 
 .likepostform {
@@ -511,3 +516,31 @@ footer {
 .searchtextlabel{
     font-family: 25px;
 }
+
+.hrline {
+    color: black ;
+}
+
+.differentcolor { 
+    background-color: #30908b ;
+    padding-left: 10px;
+  
+}
+
+.buttonseditdelete {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap-reverse;
+	justify-content: space-evenly;
+	align-items: center;
+	align-content: space-between;
+}
+
+.formrecipedetails {
+    margin-left: 10px;
+}
+
+textarea {
+    width: 300px;
+    height: 100px;
+  }

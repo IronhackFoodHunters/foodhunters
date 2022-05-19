@@ -6,9 +6,20 @@
     box-shadow: 0px 6px 5px white;
     -moz-border-radius:190px;
     -webkit-border-radius:190px;
+    object-fit: cover;
     
 }
 
+.imagesProfile1 {
+    border-radius: 50%;
+    border: 2px solid white ;
+    -moz-box-shadow: 0px 6px 5px white;
+    -webkit-box-shadow: 0px 6px 5px white;
+    box-shadow: 0px 6px 5px white;
+    -moz-border-radius:190px;
+    -webkit-border-radius:190px;
+    object-fit: cover;   
+}
 
 .imagerecipe {
     border-radius: 2px white ;
@@ -16,7 +27,9 @@
     -moz-box-shadow: 0px 6px 5px white;
     -webkit-box-shadow: 0px 6px 5px white;
     box-shadow: 0px 6px 5px white ;
+    object-fit: cover;
 }
+
 
 .sectionrecipehomepage{
     display: flex;

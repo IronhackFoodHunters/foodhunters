@@ -1,5 +1,14 @@
+<div class="bottomdivlikedpost" style="height: 120px"> </div>
 <section class="recipedetails">
 <h2>{{recipe.title}}</h2>
+
+<img class="imagerecipe" class="recipe-img {{_id}}" src="{{recipe.imageUrl}}" width="300" height="300" alt="{{recipe.title}}" />
+<p class="userprofiletextP">{{recipe.category}}</p>
+
+
+ <button class="submitButton" type="submit"><a href="/profile/{{recipe.owner._id}}">Go to the chefs profile</a></button>
+<br>
+<br>
 
 <h3 class="userprofiletexth3">Ingredients</h3> 
 <p class="recipedetailsingredients"> {{recipe.ingredients}}</p>
@@ -7,13 +16,13 @@
 <h3 class="userprofiletexth3">Instructions </h3>
 <p  class="recipedetailsingredients">{{recipe.instructions}}</p>
 
-<img class="imagerecipe" class="recipe-img {{_id}}" src="{{recipe.imageUrl}}" width="200" height="200" alt="{{recipe.title}}" />
-<p class="userprofiletextP">{{recipe.category}}</p>
+<div class="differentcolor">
+
+<br>
+<br>
 
 
-<a href="/profile/{{recipe.owner._id}}">Go to the chefs profile</a>
-
-<h4 class="textrecipedetails">Comments and tips</h4>
+<h4 class="textrecipedetails1">Comments and tips</h4>
 <form action='/recipe-details/{{recipe._id}}' method='POST'>
 
   <textarea type='text' col="10" name='message'></textarea>
@@ -21,7 +30,7 @@
   <br>
   <br>
 
-  <button class="submitButton" type="submit">Send comment</button>
+  <button class="submitButton" type="submit">Send</button>
 
 <br>
 <br>
@@ -32,18 +41,25 @@
 
 <h4>Author: {{owner.username}}</h4>
 
-<p>{{message}}</p>
+<p class="recipedetailsingredients">{{message}}</p>
 
 {{/each}}
 
 {{#if isOwner}}
+
+</div>
+<br>
+<br>
+<br>
+
+<div class="buttonseditdelete">
 <a href="/edit-recipe/{{recipe._id}}">
   <button class="editButton">
     Edit </button>
 </a>
 
 <br>
-<br>
+
 
 <form class="formrecipedetails" action="/recipe-details/{{_id}}/delete" method="POST">
   <button class="deleteButton" type="submit">Delete</button>
@@ -51,4 +67,5 @@
   </section>
 
   {{/if}}
-  
+
+  </div>
