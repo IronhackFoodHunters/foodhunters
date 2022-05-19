@@ -1,12 +1,13 @@
 <section class="recipedetails">
 <h2 class="h2">{{recipe.title}}</h2>
 
-<p> <h3 class="userprofiletexth3">Ingredients</h3> {{recipe.ingredients}}</p>
+<h3 class="userprofiletexth3">Ingredients</h3> 
+<p class="recipedetailsingredients"> {{recipe.ingredients}}</p>
 
-<p> <h3 class="userprofiletexth3">Instructions </h3> {{recipe.instructions}}</p>
+<h3 class="userprofiletexth3">Instructions </h3>
+<p  class="recipedetailsingredients">{{recipe.instructions}}</p>
 
 <img class="imagerecipe" class="recipe-img {{_id}}" src="{{recipe.imageUrl}}" width="200" height="200" alt="{{recipe.title}}" />
-
 <p>{{recipe.category}}</p>
 
 
