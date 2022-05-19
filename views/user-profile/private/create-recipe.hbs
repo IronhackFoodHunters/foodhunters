@@ -1,24 +1,23 @@
-<h2 class="userprofiletexth2" class="createRecipetext">New recipe</h2>
 
-<section class="backgroundlogin">
-      <div class="loginForm">
-<form class="loginform1" action="/private/create-recipe" method="POST" enctype="multipart/form-data">
-      <label class="textlabel">Title
+<section class="backgroundlogin3">
+<form class="loginform3" action="/private/create-recipe" method="POST" enctype="multipart/form-data">
+      <label class="textlabel">
             <input  class="textlabel" type="text" name="title" placeholder="Name of recipe">
       </label>
       <br>
+      <br>
 
-      <label class="textlabel">Ingredients
+      <label class="textlabel">
             <textarea class="textlabel" type="text" rows="5" name="ingredients" placeholder="Ingredients"></textarea>
       </label>
       <br>
    
-      <label>Instructions
+      <label>
             <textarea class="textlabel" type="text" rows="5" name="instructions" placeholder="Instructions"></textarea>
       </label>
 
-
-      <label for="category">Category <br>
+<br>
+      <label class="textlabel"   for="category">Category <br>
             <select name="category" id="foodPreferences" multiple>
                   <option class="textlabel" value="omnivorous">Omnivorous</option class="textlabel">
                   <option class="textlabel" value="vegetarian">Vegetarian</option class="textlabel">
@@ -35,12 +34,14 @@
             </select>
       </label>
       <br>
+      <br>
 
-      <label>Image:
+      <label>
             <input type="file" name="imageUrl" />
       </label>
+      <br>
+      <br>
 
       <button class="createbuttonrecipe" type="submit">Create</button>
 </form>
-</div>
 </section>
