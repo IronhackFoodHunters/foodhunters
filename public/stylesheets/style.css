@@ -461,6 +461,9 @@ footer {
     color: white;
     overflow-wrap: break-word; 
     inline-size: 250px; 
+    display: flex;
+    align-items: center;
+    align-content: center;
 
 }
 
@@ -498,6 +501,7 @@ footer {
 .userprofiletexth3 {
     font-family:'Staatliches' ;
     color: white;
+    
 }
 
 .likepostform {
