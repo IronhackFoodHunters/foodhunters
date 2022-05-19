@@ -415,14 +415,13 @@ footer {
 }
 
 .likebutton {
-    padding: 10px 60px;
-
+    padding: 10px 30px;
     text-decoration: none;
     border-radius: 2px;
     font-family: 'Staatliches';
     border: none;
     color: black;
-    border-radius: 50%;
+
 }
 
 .likebutton:hover {
@@ -437,8 +436,9 @@ footer {
 
 .homepagetexth4 {
     font-family: 'Staatliches';
-    font-size: 18px;
+    font-size: 25px;
     color: white;
+    text-shadow: 2px 2px 8px black  ;
 
 }
 
@@ -474,7 +474,8 @@ footer {
 .emailprofile {
     font-family: 'Staatliches';
     font-size: 15px;
-    color: #FB475E;
+    color: black;
+   
 }
 
 .emailhrline {
