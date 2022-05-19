@@ -10,8 +10,10 @@
 <section class="sectionborder">
 
     <div class="sectionrecipehomepage">
-    <h4 class="homepagetexth4">{{title}}</h4>
 
+<a href="/recipe-details/{{_id}}">
+    <h4 class="homepagetexth4">{{title}}</h4>
+</a>
 
     <a href="/recipe-details/{{_id}}">
         <img class="imagerecipe" src="{{imageUrl}}" width="200" height="200" alt="{{title}}" />
@@ -20,12 +22,18 @@
 
 
  <div class="sectiontitleownerhomepage">
+
+<a href="/profile/{{owner._id}}">
     <h3 class="homepagetexth3">{{owner.username}}</h3>
+</a>
 
     <!-- <a href="/profile/{{owner.username}}"> -->
-
+<a href="/profile/{{owner._id}}">
     <img class="imagesProfile" src="{{owner.imageUrl}}" width="100" height="100" alt="{{recipe.owner.username}}">
+</a>
+
     <h4 class="homepagetexth4"> {{recipe.owner.username}}</h4>
+
 </div>
 
     <form  class="likebuttonprofile" action="/favourites/{{_id}}" method="POST">
