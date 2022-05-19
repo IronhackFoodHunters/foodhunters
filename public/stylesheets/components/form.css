@@ -1,19 +1,19 @@
-
 /*text foodpreferences*/
 
 .textlabel {
-    font-family: 'Sorts Mill Goudy';
+  font-family: "Sorts Mill Goudy";
 }
 
 .textPlabel {
-    font-family: 'Staatliches';
+  font-family: "Staatliches";
 }
-.sectionfoodpreferences{
-    background-image: url("/../../foto12.avif") ;
+.sectionfoodpreferences {
+  background-image: url("/../../foto12.avif");
 }
 
 /*login*/
 .loginform1 {
+
     padding: 20px; 
     background-color: #FFB001;
     opacity: 0.9;
@@ -53,20 +53,19 @@
 
 }
 
+
 /*signup*/
 
-
 .loginform6 {
-    margin-top: 50px;
-    padding-right: 5px; 
-    padding-left: 15px;
-    background-color: #FFB001;
-    opacity: 0.9;
-    align-items: center;
-    align-content: center;
-  
-     
+  margin-top: 50px;
+  padding-right: 5px;
+  padding-left: 15px;
+  background-color: #ffb001;
+  opacity: 0.9;
+  align-items: center;
+  align-content: center;
 }
+
 .backgroundlogin1 {
     background-image: url("../../images/foto10.avif");
     background-repeat: no-repeat;
@@ -77,11 +76,11 @@
     display: flex;
     align-items: center;
     align-content: center;
-}
 
 
 /*foodpreferences*/
 .formfoodpreferences {
+
     background-color: #FFB001;
     opacity: 0.9;
     padding-left: 40px;
@@ -89,9 +88,9 @@
     padding-bottom: 20px;
     padding-top: 20px; 
     
-   
 }
 .backgroundfoodpreferences {
+
     background-image: url("../../images/foto1.avif");
     background-repeat: no-repeat;
     background-size: cover;
@@ -103,60 +102,58 @@
    
 } 
 
+
 /*userprofile*/
 
 .userprofileform {
-    padding-top: 100px;
-    display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
 .buttonsprofile {
-    display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
 .recipeuserprofile {
-    display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
-    padding-bottom: 200px;
-
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding-bottom: 200px;
 }
 
 .recipedetails {
-    display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
-    padding-bottom: 200px;
-
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding-bottom: 200px;
 }
 
 /* recipe details */
 .recipedetailsingredients {
-    display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	text-align: justify;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
   text-justify: inter-word;
-    margin-left: 30px;
-    margin-right: 30px;
-    color: white;
-    
+  margin-left: 30px;
+  margin-right: 30px;
+  color: white;
 }

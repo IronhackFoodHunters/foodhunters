@@ -116,14 +116,14 @@ router
       let isOwner = false;
       if (recipe.owner._id == req.session.currentUser._id) isOwner = true;
       console.log("inside profile/:id", isOwner, req.session.currentUser._id, recipe.owner._id)
-        res.render("recipe/recipe-details",{ recipe, isOwner });
+        res.render(`recipe/recipe-details`,{ recipe, isOwner});
       })
       .catch((error) => {
         console.log(error);
       });
   })
   .post((req, res) => {
-    const recipeId = req.params.id;
+    const {id} = req.params;
     const { message } = req.body;
 
     Comment.create({
@@ -133,12 +133,12 @@ router
       .then((newComment) => {
         console.log(newComment);
 
-        Recipe.findByIdAndUpdate(recipeId, {
+        Recipe.findByIdAndUpdate(id, {
           $push: { comments: newComment._id },
         })
           .then((updatedRecipe) => {
-            console.log("UPDATES RECIPE", updatedRecipe);
-            res.redirect(`/recipe-details/${recipeId}`);
+            console.log("UPDATED RECIPE", updatedRecipe);
+            res.redirect(`/recipe-details/${id}`);
           })
           .catch((error) => {
             console.log(error);
@@ -271,8 +271,6 @@ router.post("/favourites/:id", (req, res) => {
 });
 
 
-
-//research results test - 13.15 TEST TEST TEST
 
 router
   .route("/:id/edit")
