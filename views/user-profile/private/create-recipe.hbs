@@ -1,41 +1,41 @@
-<h2 class="createRecipetext">New recipe</h2>
+<h2 class="userprofiletexth2" class="createRecipetext">New recipe</h2>
 <form action="/private/create-recipe" method="POST" enctype="multipart/form-data">
-    <label>Title
-        <input type="text" name="title" placeholder="Name of recipe">
-    </label>
-    <br>
+      <label class="textlabel">Title
+            <input  class="textlabel" type="text" name="title" placeholder="Name of recipe">
+      </label>
+      <br>
 
-    <label>Ingredients
-        <textarea type="text" rows="5" name="ingredients" placeholder="Ingredients"></textarea>
-    </label>
-    <br>
-  
-    <label>Instructions
-        <textarea type="text" rows="5" name="instructions" placeholder="Instructions"></textarea>
-    </label>
+      <label class="textlabel">Ingredients
+            <textarea class="textlabel" type="text" rows="5" name="ingredients" placeholder="Ingredients"></textarea>
+      </label>
+      <br>
+   
+      <label>Instructions
+            <textarea class="textlabel" type="text" rows="5" name="instructions" placeholder="Instructions"></textarea>
+      </label>
 
 
-    <label for="category">Category <br>
-        <select name="category" id="foodPreferences" multiple>
-            <option value="omnivorous">Omnivorous</option>
-            <option value="vegetarian">Vegetarian</option>
-            <option value="vegan">Vegan</option>
-            <option value="drinks">Drinks</option>
-            <option value="mediterranean">Mediterranean</option>
-            <option value="african">African</option>
-            <option value="no carbs">No carbs</option>
-            <option value="gluten free">Gluten free</option>
-            <option value="pescatarian"> Pescatarian</option>
-            <option value="sweets"> Sweets </option>
-            <option value="latinoamerican"> latinoamerican</option>
-            <option value="asian"> Asian</option>
-        </select>
-    </label>
-    <br>
+      <label for="category">Category <br>
+            <select name="category" id="foodPreferences" multiple>
+                  <option class="textlabel" value="omnivorous">Omnivorous</option class="textlabel">
+                  <option class="textlabel" value="vegetarian">Vegetarian</option class="textlabel">
+                  <option class="textlabel" value="vegan">Vegan</option class="textlabel">
+                  <option class="textlabel" value="drinks">Drinks</option class="textlabel">
+                  <option class="textlabel" value="mediterranean">Mediterranean</option class="textlabel">
+                  <option class="textlabel" value="african">African</option class="textlabel">
+                  <option class="textlabel" value="no carbs">No carbs</option class="textlabel">
+                  <option class="textlabel" value="gluten free">Gluten free</option class="textlabel">
+                  <option class="textlabel" value="pescatarian"> Pescatarian</option class="textlabel">
+                  <option class="textlabel" value="sweets"> Sweets </option class="textlabel">
+                  <option class="textlabel" value="latinoamerican"> latinoamerican</option class="textlabel">
+                  <option class="textlabel" value="asian"> Asian</option class="textlabel">
+            </select>
+      </label>
+      <br>
 
-    <label>Image:
-        <input type="file" name="imageUrl" />
-    </label>
+      <label>Image:
+            <input type="file" name="imageUrl" />
+      </label>
 
-    <button class="createbuttonrecipe" type="submit">Create</button>
+      <button class="createbuttonrecipe" type="submit">Create</button>
 </form>

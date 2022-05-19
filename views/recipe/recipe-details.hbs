@@ -1,5 +1,5 @@
 <section class="recipedetails">
-<h2 class="h2">{{recipe.title}}</h2>
+<h2>{{recipe.title}}</h2>
 
 <p> <h3 class="userprofiletexth3">Ingredients</h3> {{recipe.ingredients}}</p>
 
@@ -15,7 +15,7 @@
 <h4 class="textrecipedetails">Comments and tips</h4>
 <form action='/recipe-details/{{_id}}' method='POST'>
 
-  <textarea type='text' name='message'></textarea>
+  <textarea type='text' col="10" name='message'></textarea>
 
   <br>
   <br>

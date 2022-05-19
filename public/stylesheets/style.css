@@ -13,24 +13,25 @@ body {
 /* Text headers*/
 h1 {
     font-family: 'Staatliches';
-    color: black;
+    color: white;
 }
 
-.h2 {
+h2 {
     font-family: 'Staatliches';
-    color: black;
+    color: white;
+    
 }
 
 
 h4 {
     font-family: 'Staatliches';
-    color: black;
+    color: white;
 }
 
 
 a {
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 /*headerlayout*/
@@ -108,6 +109,7 @@ footer {
     border-radius: 2px;
     font-family: 'Staatliches';
     border: none;
+    color:black;
 }
 
 .deleteButton:hover {
@@ -124,6 +126,7 @@ footer {
     border-radius: 2px;
     font-family: 'Staatliches';
     border: none;
+    color: black ;
 }
 
 .editButton:hover {
@@ -140,6 +143,7 @@ footer {
     border-radius: 2px;
     font-family: 'Staatliches';
     border: none;
+    color: black ;
 }
 
 .submitButton:hover {
@@ -156,7 +160,7 @@ footer {
     border-radius: 2px;
     font-family: 'Staatliches';
     border: none;
-    
+    color: black ;
 }
 
 .likeButton:hover {
@@ -261,7 +265,7 @@ footer {
     border-radius: 2px;
     font-family: 'Staatliches';
     border: none;
-    color: black;
+    color: black ;
 }
 
 .editprofilebuttonprofile:hover {
@@ -278,7 +282,7 @@ footer {
     border-radius: 2px;
     font-family: 'Staatliches';
     border: none;
-    color: black;
+    color: black ;
 }
 
 .createrecipeprofile:hover {
@@ -295,7 +299,7 @@ footer {
     border-radius: 2px;
     font-family: 'Staatliches';
     border: none;
-    color: black;
+    color: black ;
 }
 
 .logoutbuttonedit:hover {
@@ -312,7 +316,7 @@ footer {
     border-radius: 2px;
     font-family: 'Staatliches';
     border: none;
-    color: black;
+    color: black; 
 }
 
 .confirmbuttonedit:hover {
@@ -329,7 +333,7 @@ footer {
     border-radius: 2px;
     font-family: 'Staatliches';
     border: none;
-    color: black;
+    color: black; 
 }
 
 .signbutton:hover {
@@ -430,18 +434,21 @@ footer {
 .homepagetexth4 {
     font-family: 'Staatliches';
     font-size: 18px;
+    color: white;
 
 }
 
 .homepagetexth3 {
     font-family: 'Sorts Mill Goudy';
     font-size: 15px;
+    color: white;
 }
 
 /*create recipe*/
 /*TEXT*/
 .createRecipetext {
     font-family: 'Staatliches';
+    color: white;
 }
 
 /*userprofile*/
@@ -449,11 +456,13 @@ footer {
 
 .userprofiletextP {
     font-family: 'Sort Mill Goudy';
+    color: white;
     
 }
 
 .userprofiletexth2 {
     font-family: 'Staatliches';
+    color: white;
 }
 
 .emailprofile {
@@ -465,6 +474,7 @@ footer {
 
 .textrecipedetails {
     font-family: 'Staatliches';
+    color: white;
 }
 
 /*TEXT*/
@@ -472,8 +482,14 @@ footer {
 
 .userprofiletexth2 {
     font-family: 'Staatliches';
+    color: white;
 }
 
 .userprofiletexth3 {
     font-family:'Staatliches' ;
+    color: white;
+}
+
+.likepostform {
+    margin-top: 200px; 
 }
