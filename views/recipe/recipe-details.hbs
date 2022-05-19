@@ -1,16 +1,16 @@
 <section class="recipedetails">
-<h2 class="h2">{{title}}</h2>
+<h2 class="h2">{{recipe.title}}</h2>
 
-<p> <h3 class="userprofiletexth3">Ingredients</h3> {{ingredients}}</p>
+<p> <h3 class="userprofiletexth3">Ingredients</h3> {{recipe.ingredients}}</p>
 
-<p> <h3 class="userprofiletexth3">Instructions </h3> {{instructions}}</p>
+<p> <h3 class="userprofiletexth3">Instructions </h3> {{recipe.instructions}}</p>
 
-<img class="imagerecipe" class="recipe-img {{_id}}" src="{{imageUrl}}" width="200" height="200" alt="{{title}}" />
+<img class="imagerecipe" class="recipe-img {{_id}}" src="{{recipe.imageUrl}}" width="200" height="200" alt="{{recipe.title}}" />
 
-<p>{{category}}</p>
+<p>{{recipe.category}}</p>
 
 
-<a href="/profile/{{owner._id}}">Go to the chefs profile</a>
+<a href="/profile/{{recipe.owner._id}}">Go to the chefs profile</a>
 
 <h4 class="textrecipedetails">Comments and tips</h4>
 <form action='/recipe-details/{{_id}}' method='POST'>
@@ -27,7 +27,7 @@
 
 </form>
 
-{{#each comments}}
+{{#each recipe.comments}}
 
 <h4>Author: {{owner.username}}</h4>
 
@@ -35,6 +35,7 @@
 
 {{/each}}
 
+{{#if isOwner}}
 <a href="/edit-recipe/{{_id}}">
   <button class="editButton">
     Edit </button>
@@ -47,3 +48,6 @@
   <button class="deleteButton" type="submit">Delete</button>
   </form>
   </section>
+
+  {{/if}}
+  

@@ -12,7 +12,8 @@
 </div>
 
 <div class="buttonsprofile">
-{{#if user}}
+{{#if isOwner}}
+
 <button class="editprofilebuttonprofile"  type="submit">
   <a href="/auth/profile/{{_user.id}}edit">Edit Profile</a>
 </button>

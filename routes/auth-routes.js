@@ -15,15 +15,18 @@ const res = require("express/lib/response");
 const { estimatedDocumentCount } = require("../models/user.model");
 const { route } = require("./recipes-routes");
 
+const isLoggedIn = require("../middleware/isLoggedIn");
+const isNotLoggedIn = require("../middleware/isNotLoggedin");
+
 const fileUploader = require("../config/cloudinary");
 
 
 // Sign up
 router
   .route("/signup")
-  .get((req, res) => res.render("auth/signup"))
+  .get(isNotLoggedIn, (req, res) => res.render("auth/signup"))
   // POST route ==> to process form data
-  .post((req, res, next) => {
+  .post(isNotLoggedIn,(req, res, next) => {
     // console.log("The form data: ", req.body);
 
     const { username, email, password /*foodPreferences*/ } = req.body;
@@ -52,8 +55,8 @@ router
   //user login
 router
   .route("/login")
-  .get((req, res) => res.render("auth/login", { section: "user" }))
-  .post((req, res) => {
+  .get(isNotLoggedIn, (req, res) => res.render("auth/login", { section: "user" }))
+  .post(isNotLoggedIn,(req, res) => {
     const { username, email, password } = req.body;
 	//res.render('login');
 
@@ -83,7 +86,7 @@ router
   });
 
 //logout from user profile
-router.get("/logout", (req, res) => {
+router.get("/logout", isLoggedIn, (req, res) => {
   req.session.destroy((err) => {
     if (err) {
       res.render("error", { message: "Something went wrong! Yikes!" });
