@@ -74,9 +74,8 @@ router
 
           if (passwordCorrect) {
             req.session.currentUser = user;
-            console.log("Login working", user)
+            console.log("Login working", req.session.currentUser)
             res.redirect("/homepage"); // redirect to wherever you want
-            return;
           } else {
             res.render("auth/login", { errorMessage: "Wrong credentials" });
           }
