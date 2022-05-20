@@ -85,7 +85,7 @@ router
 
 // homepage
 
-router.get("/homepage", isLoggedIn, (req, res) => {
+router.get("/homepage", isLoggedIn,(req, res) => {
   Recipe.find()
     .populate("title")
     .populate("owner")
