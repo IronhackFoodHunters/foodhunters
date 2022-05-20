@@ -74,7 +74,7 @@ router
 
           if (passwordCorrect) {
             req.session.currentUser = user;
-
+            console.log("Login working", user)
             res.redirect("/homepage"); // redirect to wherever you want
             return;
           } else {
