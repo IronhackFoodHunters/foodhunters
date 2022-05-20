@@ -10,6 +10,12 @@
     
 }
 
+.imagesProfile3 {
+    border-radius: 50%;
+    border: 2px solid white ;
+    object-fit: cover;
+    
+}
 .imagesProfile1 {
     border-radius: 50%;
     border: 2px solid white ;
@@ -24,9 +30,6 @@
 .imagerecipe {
     border-radius: 2px white ;
     border: 2px solid white;
-    -moz-box-shadow: 0px 6px 5px white;
-    -webkit-box-shadow: 0px 6px 5px white;
-    box-shadow: 0px 6px 5px white ;
     object-fit: cover;
 }
 
@@ -61,14 +64,10 @@
 
 }
 
-.sectionborder {
-    background-color: #019992;
-}
-
 .breaklinehomepage {
     padding: 0;
     border: none;
-    border-top: medium double #333;
+    border-top: medium double white;
     color: #333;
     text-align: center;
     width: 35vh;
@@ -81,12 +80,13 @@ hr.breaklinehomepage:after {
     top: -15px;
     font-size: 2em;
     padding: 0 0.25em;
+    color: white;
 }
 
 /*liked photos*/
 
 .likedpostform {
-    background-color: #019992;
+    background-color: #669b98;
     display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
