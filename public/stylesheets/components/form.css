@@ -8,7 +8,7 @@
   font-family: "Staatliches";
 }
 .sectionfoodpreferences {
-  background-image: url("/../../foto12.avif");
+  background-image: url("https://res.cloudinary.com/db8nl1vdy/image/upload/v1653044455/Ironhack%20project2/foto12_qhi6ds.avif");
 }
 
 /*login*/
@@ -20,7 +20,7 @@
 }
 /*create recipe*/
 .backgroundlogin3 {
-    background-image: url("../../images/foto11.avif");
+    background-image: url("https://res.cloudinary.com/db8nl1vdy/image/upload/v1653044381/Ironhack%20project2/foto11_1_wgh21c.avif");
     background-repeat: no-repeat;
     background-size: cover;
     padding: 10px; 
@@ -42,7 +42,7 @@
 }
 
 .backgroundlogin {
-    background-image: url("../../images/foto12.avif");
+    background-image: url("https://res.cloudinary.com/db8nl1vdy/image/upload/v1653044455/Ironhack%20project2/foto12_qhi6ds.avif");
     background-repeat: no-repeat;
     background-size: cover;
     padding: 100px; 
@@ -67,7 +67,7 @@
 }
 
 .backgroundlogin1 {
-    background-image: url("../../images/foto10.avif");
+    background-image: url("https://res.cloudinary.com/db8nl1vdy/image/upload/v1653044380/Ironhack%20project2/foto10_1_cumxgu.avif");
     background-repeat: no-repeat;
     background-size: cover;
     padding: 100px; 
@@ -91,7 +91,7 @@
 }
 .backgroundfoodpreferences {
 
-    background-image: url("../../images/foto1.avif");
+    background-image: url("https://res.cloudinary.com/db8nl1vdy/image/upload/v1653044380/Ironhack%20project2/foto10_1_cumxgu.avif");
     background-repeat: no-repeat;
     background-size: cover;
     padding: 100px; 

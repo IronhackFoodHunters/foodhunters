@@ -115,7 +115,7 @@
 .slider {
     margin-top: 70px;
     height: 60vh;
-    background: url("../../images/foto8.avif") no-repeat center center/cover;
+    background: url("https://res.cloudinary.com/db8nl1vdy/image/upload/v1653044380/Ironhack%20project2/foto8_begh0o.avif") no-repeat center center/cover;
     animation: slide 60s 5;
     animation-iteration-count: infinite;
 
@@ -124,23 +124,23 @@
 /* SLIDE FRAMES PHOTOS LANDING*/
 @keyframes slide {
     20% {
-        background: url("../../images/foto6.avif") no-repeat center center/cover;
+        background: url("https://res.cloudinary.com/db8nl1vdy/image/upload/v1653044380/Ironhack%20project2/foto6_1_g8qymx.avif") no-repeat center center/cover;
     }
 
     40% {
-        background: url("../../images/foto3.avif") no-repeat center center/cover;
+        background: url("https://res.cloudinary.com/db8nl1vdy/image/upload/v1653044379/Ironhack%20project2/foto3_1_alrvcy.avif") no-repeat center center/cover;
     }
 
     60% {
-        background: url("../../images/foto4.avif") no-repeat center center/cover;
+        background: url("https://res.cloudinary.com/db8nl1vdy/image/upload/v1653044379/Ironhack%20project2/foto2_1_k4kskl.avif") no-repeat center center/cover;
     }
 
     80% {
-        background: url("../../images/foto10.avif") no-repeat center center/cover;
+        background: url("https://res.cloudinary.com/db8nl1vdy/image/upload/v1653044379/Ironhack%20project2/foto2_1_k4kskl.avif") no-repeat center center/cover;
     }
 
     100% {
-        background: url("../../images/foto1.avif") no-repeat center center/cover;
+        background: url("https://res.cloudinary.com/db8nl1vdy/image/upload/v1653044379/Ironhack%20project2/foto8_1_v2dmu0.avif") no-repeat center center/cover;
     }
 }
 
@@ -162,7 +162,7 @@
     padding-bottom: 50px;
     overflow: hidden;
     position: relative;
-    background-image: url("../../images/foto12.avif");
+    background-image: url("https://res.cloudinary.com/db8nl1vdy/image/upload/v1653044455/Ironhack%20project2/foto12_qhi6ds.avif");
     background-attachment: fixed;
     background-size: cover;
     -moz-background-size: cover;
@@ -178,7 +178,7 @@
     padding-bottom: 150px;
     overflow: hidden;
     position: relative;
-    background-image: url("../../images/drinks1.avif");
+    background-image: url("https://res.cloudinary.com/db8nl1vdy/image/upload/v1653044397/Ironhack%20project2/drinks1_1_enhfoa.avif");
     background-attachment: fixed;
     background-size: cover;
     -moz-background-size: cover;
