@@ -7,8 +7,6 @@ body {
     padding: 0;
     background-color: #669b98;
 
-
-
 }
 
 /* Text headers*/
@@ -131,7 +129,7 @@ footer {
     bottom: 10px;
     right: 10px;
     color: white;
-    
+
 }
 
 .footerSearch:hover {
@@ -146,7 +144,8 @@ footer {
 
 
 .footerProfile1 {
-    background-color: #114442;;
+    background-color: #114442;
+    ;
     position: fixed;
     bottom: 60px;
     right: 10px;
@@ -544,7 +543,6 @@ footer {
     font-family: 'Staatliches';
     font-size: 15px;
     color: white
-
 }
 
 .emailhrline {
@@ -597,7 +595,7 @@ footer {
     background-color: #30908b;
     padding-left: 10px;
     padding-right: 10px;
-    
+
 
 }
 
@@ -622,13 +620,15 @@ textarea {
 
 .backgroundhomepage {
     background-image: url("https://images.unsplash.com/photo-1627586140648-963d590fab3c?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774");
-    background-size: cover;
+    background-size:cover;
+    height: 7500px;
+
 }
 
 .backgroundhomepage1 {
-background-image: url("https://images.unsplash.com/photo-1511993226957-cd166aba52d8?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1996");
-background-size: contain;
-background-size: 100vh;
+    background-image: url("https://images.unsplash.com/photo-1511993226957-cd166aba52d8?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1996");
+    background-size: contain;
+    background-size: 100vh;
 }
 
 
