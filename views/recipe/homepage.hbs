@@ -1,6 +1,10 @@
+  <section>
+         <div class="headerlayout1">
+            <a href="/homepage"><img class="imagelogoheader" src="/images/logofood.jpg" width="70px" height="70px"></a>
+         </div>
+      </section>
 
-
-
+<div class="backgroundhomepage">
 <button class="createbuttonhomepage"> <a class="createbuttonhomepage" href="/private/create-recipe"> CREATE A RECIPE </a> </button>
 <br>
 <br>
@@ -12,36 +16,47 @@
     <div class="sectionrecipehomepage">
 
 <a href="/recipe-details/{{_id}}">
-    <h4 class="homepagetexth4">{{title}}</h4>
+    <h4  class="homepagetexth4">{{title}}</h4>
 </a>
 
     <a href="/recipe-details/{{_id}}">
         <img class="imagerecipe" src="{{imageUrl}}" width="300" height="300" alt="{{title}}" />
     </a>
     </div>
-
+<br>
+<br>
 
  <div class="sectiontitleownerhomepage">
-
+ 
 <a href="/profile/{{owner._id}}">
-    <h3 class="homepagetexth3">{{owner.username}}</h3>
+    <h3 class="homepagetexth32">{{owner.username}}</h3>
 </a>
 
     <!-- <a href="/profile/{{owner.username}}"> -->
 <a href="/profile/{{owner._id}}">
-    <img class="imagesProfile" src="{{owner.imageUrl}}" width="100" height="100" alt="{{recipe.owner.username}}">
+    <img class="imagesProfile3" src="{{owner.imageUrl}}" width="100" height="100" alt="{{recipe.owner.username}}">
 </a>
 
     <h4 class="homepagetexth4"> {{recipe.owner.username}}</h4>
-
-</div>
 
     <form  class="likebuttonprofile" action="/favourites/{{_id}}" method="POST">
         <button class="likeButton">LIKE</button>
         <!--when this is pushed it need to push the recipe in to recipesLiked-->
     </form>
+    </div>
     </section>
+
     <br>
     <hr class="breaklinehomepage">
     {{/each}}
    
+<div class="bottomdivlikedpost" style="height: 150px"> </div>
+</div>
+   <footer class="footer">
+
+            <a class="footerProfile2" href="/profile"> <button class="footerProfile1"> profile </button> </a>
+            <br>
+            <a class="footerSearch1" href="/search"> <button class="footerSearch"> search </button> </a>
+            
+         </footer>
+      </div>

@@ -23,12 +23,13 @@
     background-image: url("../../images/foto11.avif");
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 100px; 
-    height: 450px;
-    padding-top:180px ;
+    padding: 10px; 
+    height: 600px;
+    padding-top:20px ;
     display: flex;
     align-items: center;
-    align-content: center;
+    align-content: flex-start;
+   
 
 }
 
@@ -57,13 +58,12 @@
 /*signup*/
 
 .loginform6 {
-  margin-top: 50px;
-  padding-right: 5px;
-  padding-left: 15px;
+  padding: 20px;
   background-color: #ffb001;
   opacity: 0.9;
   align-items: center;
   align-content: center;
+  margin-bottom: 150px;
 }
 
 .backgroundlogin1 {

@@ -1,17 +1,23 @@
+  <section>
+         <div class="headerlayout">
+            <a href="/homepage"><img class="imagelogoheader" src="/images/logofood.jpg" width="70px" height="70px"></a>
+         </div>
+      </section>
 
+<div class="bottomdivlikedpost" style="height: 120px"> </div>
 <section class="backgroundlogin">
 <form class="loginform6" action="/edit-recipe/{{_id}}" method="POST" enctype="multipart/form-data">
 
-  <label for="title"> Title:</label>
-  <input class="textlabel" type="text" name="title" value="{{title}}" />
+  <label for="title"></label>
+  <input class="textlabel" type="text" name="title" value="{{title}}"/>
  <br>
   <br />
-  <label class="textlabel" for="ingredients"> Ingredients:</label>
+  <label class="textlabel" for="ingredients"> </label>
   <input class="textlabel" type="text" name="ingredients" value="{{ingredients}}" />
   <br />
 
   <br />
-  <label class="textlabel" for="instructions"> Instructions:</label>
+  <label class="textlabel" for="instructions"> </label>
   <input class="textlabel" type="text" name="instructions" value="{{instructions}}" />
   <br />
 
@@ -42,6 +48,20 @@
 
   <button class="confirmbutton" type="submit">Confirm</button>
   <br />
+     <br>
+  
+  <button class="confirmbutton" type="submit">
+
 <a href="/profile">Go back</a>
+</button> 
 </form>
 </section>
+
+ <footer>
+
+            <a class="footerProfile1" href="/profile"> <button class="footerProfile1"> profile </button> </a>
+            <br>
+            <a class="footerSearch" href="/search"> <button class="footerSearch"> search </button> </a>
+            
+         </footer>
+      </div>
