@@ -78,7 +78,7 @@ router
             res.redirect("/homepage"); // redirect to wherever you want
             return;
           } else {
-            res.render("/auth/login", { errorMessage: "Wrong credentials" });
+            res.render("auth/login", { errorMessage: "Wrong credentials" });
           }
         }
       })
