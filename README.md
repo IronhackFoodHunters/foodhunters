@@ -147,6 +147,8 @@ COMMENTS MODEL
 
 `````
 
+Enjoy the world of sharing recipes with friends at https://foodhuntersiron.herokuapp.com/
+
 For more information don't hesitate and visit our awesome presentation:
 
 https://docs.google.com/presentation/d/1vpxiEZyIrjRlL_643H9PKdsojkwSHB0eBZ6PTIXN4wI/edit?usp=sharing
